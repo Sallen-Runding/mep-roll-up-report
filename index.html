@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEP Roll-Up Report — June 2026</title>
+<style>
+ #rmep{--ink:#15212e;--ink-soft:#3c4b5c;--mute:#6b7a8b;--paper:#ffffff;--surface:#f3f6f8;
+  --surface-2:#eaeff3;--line:#dde4ea;--line-strong:#c4ced7;
+  --hvac:#137a6f;--elec:#b9762a;--plumb:#2f6f9e;--fls:#b34638;--mep:#5a6b7d;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--paper);font-family:var(--sans);line-height:1.5;
+  -webkit-font-smoothing:antialiased;max-width:1180px;margin:0 auto;}
+ #rmep *{box-sizing:border-box;}
+ #rmep .wrap{padding:clamp(20px,4vw,52px);}
+ #rmep .m{color:var(--mute);font-weight:400;}
+ #rmep .mast{border-top:3px solid var(--ink);padding-top:18px;margin-bottom:26px;}
+ #rmep .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);
+  font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+ #rmep .eyebrow .firm{color:var(--ink);} #rmep .eyebrow .dot{width:4px;height:4px;border-radius:50%;background:var(--line-strong);}
+ #rmep h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.02;letter-spacing:-.012em;margin:0 0 6px;}
+ #rmep .subline{font-family:var(--serif);font-style:italic;font-size:clamp(14px,1.7vw,18px);color:var(--mute);margin:0 0 16px;}
+ #rmep .plate{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+ #rmep .plate div{flex:1 1 150px;padding:12px 16px;border-right:1px solid var(--line);}
+ #rmep .plate div:last-child{border-right:0;}
+ #rmep .plate .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:4px;}
+ #rmep .plate .v{font-size:14px;font-weight:600;color:var(--ink);}
+ #rmep .part-label{display:flex;align-items:center;gap:14px;margin:clamp(34px,5vw,52px) 0 4px;}
+ #rmep .part-label .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ink);}
+ #rmep .part-label .rule{flex:1;height:1px;background:var(--line-strong);}
+ #rmep .part-desc{color:var(--mute);font-size:13px;margin:0 0 22px;max-width:74ch;}
+ /* newsletter blocks */
+ #rmep .nl{display:grid;grid-template-columns:60px 1fr;gap:0 24px;padding:24px 0;border-bottom:1px solid var(--line);}
+ #rmep .nl:first-child{border-top:1px solid var(--line-strong);}
+ #rmep .nl-n{font-family:var(--serif);font-size:26px;color:var(--line-strong);font-weight:600;line-height:1.1;}
+ #rmep .nl-eyebrow{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--elec);font-weight:700;margin:0 0 6px;}
+ #rmep .nl-head{font-family:var(--serif);font-size:clamp(18px,2.4vw,23px);font-weight:600;letter-spacing:-.008em;margin:0 0 10px;line-height:1.18;}
+ #rmep .nl-text{font-size:14.5px;color:var(--ink-soft);line-height:1.66;margin:0;max-width:74ch;}
+ @media(max-width:600px){#rmep .nl{grid-template-columns:1fr;}#rmep .nl-n{font-size:20px;margin-bottom:6px;}}
+ /* data sections */
+ #rmep section{margin-top:clamp(34px,5vw,52px);scroll-margin-top:20px;}
+ #rmep .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;}
+ #rmep .sec-num{font-family:var(--serif);font-size:15px;color:var(--mute);font-weight:600;min-width:26px;}
+ #rmep h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.8vw,27px);letter-spacing:-.01em;margin:0;line-height:1.1;}
+ #rmep .sec-sub{color:var(--mute);font-size:13px;margin:8px 0 18px 40px;max-width:74ch;}
+ @media(max-width:620px){#rmep .sec-sub{margin-left:0;}}
+ #rmep .filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 16px;}
+ #rmep .filters .lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--line-strong);font-weight:700;}
+ #rmep .chip{appearance:none;border:1px solid var(--line);background:var(--paper);font-family:var(--sans);font-size:12.5px;
+  font-weight:600;color:var(--ink-soft);padding:6px 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+  transition:background .15s,border-color .15s,color .15s;}
+ #rmep .chip .sw{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+ #rmep .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;}
+ #rmep .chip:hover{border-color:var(--line-strong);} #rmep .chip[aria-pressed="true"]:hover{border-color:var(--ink);}
+ #rmep .t-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;}
+ #rmep table{width:100%;border-collapse:collapse;min-width:820px;font-size:13.5px;}
+ #rmep thead th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:700;
+  padding:13px 16px;background:var(--surface);border-bottom:1px solid var(--line-strong);white-space:nowrap;}
+ #rmep tbody td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;}
+ #rmep tbody tr:last-child td{border-bottom:0;} #rmep tbody tr:hover{background:var(--surface);}
+ #rmep .date{color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:12.5px;}
+ #rmep .acq,#rmep .tgt{font-weight:600;color:var(--ink);}
+ #rmep .sub-cell{white-space:nowrap;}
+ #rmep .sub-tag{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:12.5px;color:var(--ink-soft);}
+ #rmep .sub-tag .sw{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+ #rmep .emp{color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap;}
+ #rmep .emp .blank,#rmep .blank{color:var(--line-strong);}
+ #rmep .type{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);color:var(--ink-soft);white-space:nowrap;}
+ #rmep .src{color:var(--mute);font-size:12px;}
+ #rmep .empty-row td{padding:34px 16px;text-align:center;color:var(--mute);font-size:13px;}
+ #rmep .count{font-size:12px;color:var(--mute);margin:10px 2px 0;}
+ #rmep .snap{border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+ #rmep .snap-row{display:grid;grid-template-columns:30px 1.5fr 1.4fr 1.05fr 130px;gap:14px;padding:12px 18px;
+  border-bottom:1px solid var(--line);align-items:center;font-size:13.5px;}
+ #rmep .snap-row:last-child{border-bottom:0;}
+ #rmep .snap-head{background:var(--surface);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:700;}
+ #rmep .snap-row:not(.snap-head):hover{background:var(--surface);}
+ #rmep .snap-n{font-family:var(--serif);color:var(--mute);font-weight:600;}
+ #rmep .snap-a{font-weight:600;} #rmep .snap-t{color:var(--ink-soft);}
+ #rmep .snap-ty{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+ #rmep .snap-emp{font-size:11px;color:var(--mute);font-variant-numeric:tabular-nums;}
+ @media(max-width:680px){#rmep .snap-row{grid-template-columns:24px 1fr;gap:5px 12px;}#rmep .snap-head{display:none;}
+  #rmep .snap-a,#rmep .snap-t,#rmep .snap-s,#rmep .snap-ty{grid-column:2;}#rmep .snap-n{grid-row:1;}}
+ #rmep .feat{display:flex;flex-direction:column;border-top:1px solid var(--line-strong);}
+ #rmep .deal{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:54px 1fr;gap:6px 22px;}
+ #rmep .deal-n{font-family:var(--serif);font-size:30px;color:var(--line-strong);font-weight:600;line-height:1;grid-row:1 / span 3;}
+ #rmep .deal-head{font-family:var(--serif);font-size:clamp(17px,2.2vw,21px);font-weight:600;margin:0;}
+ #rmep .deal-meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12px;color:var(--mute);font-weight:600;margin:4px 0 2px;}
+ #rmep .deal-meta .sw{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle;}
+ #rmep .deal-meta .pipe{color:var(--line-strong);}
+ #rmep .deal-body{font-size:14px;color:var(--ink-soft);line-height:1.62;margin:8px 0 0;max-width:76ch;}
+ @media(max-width:620px){#rmep .deal{grid-template-columns:1fr;}#rmep .deal-n{grid-row:auto;font-size:24px;}}
+ #rmep footer{margin-top:clamp(38px,5vw,60px);border-top:1px solid var(--line-strong);padding-top:22px;}
+ #rmep .methods{font-size:12px;color:var(--mute);line-height:1.6;max-width:92ch;}
+ #rmep .methods strong{color:var(--ink-soft);font-weight:600;}
+ #rmep .src-list{font-size:11.5px;color:var(--mute);margin-top:14px;line-height:1.7;}
+ #rmep .colophon{margin-top:20px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--line-strong);font-weight:600;}
+ @media print{#rmep{max-width:none;}#rmep .filters{display:none;}#rmep tbody tr:hover,#rmep .snap-row:hover{background:transparent;}}
+ @media(prefers-reduced-motion:reduce){#rmep *{transition:none!important;}}
+</style></head><body><div id="rmep"><div class="wrap">
+
+ <header class="mast">
+  <p class="eyebrow"><span class="firm">Runding</span><span class="dot"></span>MEP Roll-Up Report</p>
+  <h1>MEP Roll-Up Report</h1>
+  <p class="subline">Tracking private equity, consolidation, and operational strategy across the MEP contractor market.</p>
+  <div class="plate">
+   <div><div class="k">Issue</div><div class="v">No. 1 &middot; June 2026</div></div>
+   <div><div class="k">Coverage</div><div class="v">U.S. Commercial MEP</div></div>
+   <div><div class="k">Tracker Window</div><div class="v">Jan 2025 &ndash; Jun 2026</div></div>
+   <div><div class="k">As Of</div><div class="v">June 22, 2026</div></div>
+  </div>
+ </header>
+
+ <div class="part-label"><span class="tag">The Report</span><span class="rule"></span></div>
+ <p class="part-desc">Four sections, one topic each &mdash; formatted for distribution via the Runding MEP Roll-Up Report on LinkedIn.</p>
+<article class="nl"><div class="nl-n">01</div><div class="nl-body"><p class="nl-eyebrow">MEP PE Deal Activity</p><h3 class="nl-head">Truelink Capital forms a mission-critical MEP platform with Horwitz</h3><p class="nl-text">In June, Los Angeles-based Truelink Capital made a significant investment in Horwitz, a 1918-founded Minneapolis provider of mechanical, electrical, plumbing, and building-automation services with roughly 720 employees, including 540 technicians. The deal establishes Horwitz as a regional platform serving high-growth, mission-critical end markets — data centers, semiconductor fabrication, medtech, and healthcare — anchored by a recurring service-and-maintenance base. For Truelink, this is a platform formation rather than a bolt-on: a foundation for consolidating adjacent MEP capabilities across the Upper Midwest. The transaction reflects a broader pattern in commercial MEP, where sponsors increasingly favor multi-trade contractors able to self-perform across disciplines on complex facilities rather than single-trade specialists.</p></div></article>
+<article class="nl"><div class="nl-n">02</div><div class="nl-body"><p class="nl-eyebrow">Market / Strategy Insight</p><h3 class="nl-head">Commercial MEP is still early in its consolidation cycle</h3><p class="nl-text">While residential HVAC consolidation is widely viewed as roughly midway through its cycle, commercial MEP services remain in the early innings, according to PKF Investment Banking — a gap that helps explain where sponsor attention is shifting. Commercial platforms command premium multiples to residential roll-ups, supported by recurring maintenance revenue, multi-trade bundling, and exposure to data-center and mission-critical demand. Deal volume cooled in early 2026 — R.L. Hulett tracked a 21.7% sequential decline in Q1 MEP transactions amid higher project costs and labor constraints — yet private equity's share of that volume reached a four-year high, underscoring sustained sponsor appetite. The pattern points to a longer runway for commercial MEP consolidation than headline volume alone suggests.</p></div></article>
+<article class="nl"><div class="nl-n">03</div><div class="nl-body"><p class="nl-eyebrow">FMI Thought Leadership</p><h3 class="nl-head">PE's playbook shifts from financial engineering to operational execution</h3><p class="nl-text">In FMI's latest “Inside FMI” Q&amp;A, financial-sponsor-coverage lead Jayson Post argues that private equity's value-creation model in the built environment is changing: with multiple expansion and financial engineering harder to rely on, returns increasingly hinge on operational execution, fueling more operator-led strategies. He points to the electrical value chain — from power generation through in-facility electrical infrastructure — as the most active investment area, driven by electrification, AI-led data-center demand, and aging systems. Post notes that platform buyers prize market tailwinds, durable revenue, and fragmentation suited to buy-and-build — but cautions that acquirers at exit now expect demonstrated M&amp;A integration, not merely deal count. Capital, he expects, will keep concentrating in the lower-middle market.</p></div></article>
+<article class="nl"><div class="nl-n">04</div><div class="nl-body"><p class="nl-eyebrow">Runding Case Study</p><h3 class="nl-head">AiRCO Mechanical — building the operational foundation for scale</h3><p class="nl-text">AiRCO Mechanical, a Central Texas HVAC, electrical, and plumbing contractor, has partnered with Runding to strengthen its operational foundation during a period of rapid growth. As volume scaled, AiRCO encountered familiar specialty-contractor pressure points: limited visibility into operational performance, harder capacity planning, and tighter margin protection across an expanding project portfolio. The engagement deploys OpenBuild to centralize project tracking, improve financial visibility, and structure workflows around AiRCO's existing project lifecycle — augmenting current systems rather than replacing them, so field teams retain the flexibility they depend on. The engagement reflects a recurring reality in MEP consolidation: rapid growth exposes the gap between field execution and financial control, and durable scale rests on the project-controls infrastructure that protects margin.</p></div></article>
+
+ <div class="part-label"><span class="tag">The Data &middot; Supporting Deal Intelligence</span><span class="rule"></span></div>
+ <p class="part-desc">The living dataset behind the report: U.S. commercial MEP contractor transactions with private-equity involvement, January 2025 to date.</p>
+
+ <section id="tracker">
+  <div class="sec-head"><span class="sec-num">A</span><h2>M&amp;A / Market Activity</h2></div>
+  <p class="sec-sub">Filter by subsector. Employee counts appear only where a credible source states them explicitly; a dash means undisclosed.</p>
+  <div class="filters" role="group" aria-label="Filter by subsector">
+   <span class="lbl">Subsector</span>
+   <button class="chip" data-filter="all" aria-pressed="true">All</button>
+   <button class="chip" data-filter="hvac" aria-pressed="false"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</button>
+   <button class="chip" data-filter="elec" aria-pressed="false"><span class="sw" style="background:var(--elec)"></span>Electrical</button>
+   <button class="chip" data-filter="plumb" aria-pressed="false"><span class="sw" style="background:var(--plumb)"></span>Plumbing</button>
+   <button class="chip" data-filter="fls" aria-pressed="false"><span class="sw" style="background:var(--fls)"></span>Fire &amp; Life Safety</button>
+   <button class="chip" data-filter="mep" aria-pressed="false"><span class="sw" style="background:var(--mep)"></span>Multi-trade MEP</button>
+  </div>
+  <div class="t-scroll"><table id="deal-table"><thead><tr>
+    <th>Date</th><th>Acquirer / Sponsor</th><th>Target</th><th>Subsector</th><th>Employees</th><th>Type</th><th>Source</th>
+  </tr></thead><tbody>
+<tr data-sub="mep"><td class="date">Jun 15, 2026</td><td class="acq">Truelink Capital</td><td class="tgt">Horwitz</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--mep)"></span>HVAC / Elec / Plumbing</span></td><td class="emp">~720</td><td><span class="type">Platform</span></td><td class="src">PR Newswire</td></tr>
+<tr data-sub="elec"><td class="date">May 4, 2026</td><td class="acq">Prime Electric <span class='m'>(Truelink)</span></td><td class="tgt">Scholes Electric</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PR Newswire</td></tr>
+<tr data-sub="elec"><td class="date">Jan 29, 2026</td><td class="acq">Ares Mgmt &middot; EIP &middot; IPS</td><td class="tgt">Techpro Power Group</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Platform</span></td><td class="src">PitchBook / R.L. Hulett</td></tr>
+<tr data-sub="hvac"><td class="date">Jan 13, 2026</td><td class="acq">Astra Service Partners <span class='m'>(Alpine)</span></td><td class="tgt">CMC Corporate Solutions</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">Astra Service Partners</td></tr>
+<tr data-sub="hvac"><td class="date">Jan 7, 2026</td><td class="acq">Blackstone <span class='m'>(BXPE)</span></td><td class="tgt">AIR Control Concepts</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Electrical</span></td><td class="emp">~1,900</td><td><span class="type">Recap</span></td><td class="src">Blackstone</td></tr>
+<tr data-sub="hvac"><td class="date">Jan 2, 2026</td><td class="acq">Legence <span class='m'>(Blackstone)</span></td><td class="tgt">Bowers</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PitchBook / R.L. Hulett</td></tr>
+<tr data-sub="hvac"><td class="date">Dec 2025</td><td class="acq">Bain Capital &middot; Mubadala</td><td class="tgt">Service Logic</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Recap</span></td><td class="src">PE Hub / CT Acquisitions</td></tr>
+<tr data-sub="hvac"><td class="date">Dec 18, 2025</td><td class="acq">Modigent</td><td class="tgt">Southland Mechanical</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PR Newswire</td></tr>
+<tr data-sub="fls"><td class="date">Dec 2025</td><td class="acq">Investcorp</td><td class="tgt">Guardian Fire Services</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--fls)"></span>Fire &amp; Life Safety</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Recap</span></td><td class="src">Investcorp</td></tr>
+<tr data-sub="fls"><td class="date">Nov 12, 2025</td><td class="acq">Percheron Capital</td><td class="tgt">ASPYRE Fire &amp; Life Safety</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--fls)"></span>Fire &amp; Life Safety</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Platform</span></td><td class="src">Percheron Capital</td></tr>
+<tr data-sub="elec"><td class="date">Nov 5, 2025</td><td class="acq">Norlee Group <span class='m'>(Heartwood)</span></td><td class="tgt">Inter-Bay Electric</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PrivSource</td></tr>
+<tr data-sub="elec"><td class="date">Oct 1, 2025</td><td class="acq">Comfort Systems USA</td><td class="tgt">Feyen Zylstra &middot; Meisner Electric</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">SEC 10-K</td></tr>
+<tr data-sub="hvac"><td class="date">Sep 22, 2025</td><td class="acq">Astra Service Partners <span class='m'>(Alpine)</span></td><td class="tgt">Knott Mechanical</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">Business Wire</td></tr>
+<tr data-sub="hvac"><td class="date">Jul 15, 2025</td><td class="acq">Modigent</td><td class="tgt">VMG Mechanical</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PR Newswire</td></tr>
+<tr data-sub="elec"><td class="date">May 20, 2025</td><td class="acq">Pinnacle MEP <span class='m'>(Blue Point)</span></td><td class="tgt">Hammans Electric</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">Blue Point Capital</td></tr>
+<tr data-sub="elec"><td class="date">May 2025</td><td class="acq">Alaris Equity Partners</td><td class="tgt">Professional Electrical Contractors of CT</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></td><td class="emp">300</td><td><span class="type">Platform</span></td><td class="src">Hartford Business Jrnl</td></tr>
+<tr data-sub="hvac"><td class="date">May 1, 2025</td><td class="acq">Paramount Mechanical <span class='m'>(Stonebridge)</span></td><td class="tgt">Comfort Solutions of Tidewater</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PrivSource</td></tr>
+<tr data-sub="plumb"><td class="date">May 1, 2025</td><td class="acq">Comfort Systems USA</td><td class="tgt">Right Way Plumbing &amp; Mechanical</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--plumb)"></span>Plumbing / Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">SEC 10-K</td></tr>
+<tr data-sub="fls"><td class="date">Feb 26, 2025</td><td class="acq">Agellus Capital</td><td class="tgt">Bluejack Fire &amp; Life Safety</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--fls)"></span>Fire &amp; Life Safety</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Platform</span></td><td class="src">Business Wire</td></tr>
+<tr data-sub="hvac"><td class="date">Jan 1, 2025</td><td class="acq">Comfort Systems USA</td><td class="tgt">Century Contractors</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">SEC 10-K</td></tr>
+<tr data-sub="hvac"><td class="date">2025</td><td class="acq">ENFRA <span class='m'>(fmr. Bernhard)</span></td><td class="tgt">River Mechanical Services</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PrivSource</td></tr>
+<tr data-sub="hvac"><td class="date">2025</td><td class="acq">Grizzly MEP <span class='m'>(Garnett Station)</span></td><td class="tgt">Vermont Mechanical</td><td class="sub-cell"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></td><td class="emp"><span class="blank">&mdash;</span></td><td><span class="type">Add-on</span></td><td class="src">PrivSource</td></tr>
+  </tbody></table></div>
+  <p class="count" id="rowcount"></p>
+ </section>
+
+ <section id="snapshot">
+  <div class="sec-head"><span class="sec-num">B</span><h2>Newsletter Snapshot &mdash; 10 Deals</h2></div>
+  <p class="sec-sub">A skimmable cross-section, recent-weighted and balanced across subsectors and buyers.</p>
+  <div class="snap">
+   <div class="snap-row snap-head"><div>#</div><div>Acquirer / Sponsor</div><div>Target</div><div>Subsector</div><div>Type</div></div>
+<div class="snap-row"><div class="snap-n">1</div><div class="snap-a">Truelink Capital</div><div class="snap-t">Horwitz</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--mep)"></span>HVAC / Elec / Plumbing</span></div><div class="snap-ty"><span class="type">Platform</span><span class="snap-emp">~720 emp.</span></div></div>
+<div class="snap-row"><div class="snap-n">2</div><div class="snap-a">Blackstone (BXPE)</div><div class="snap-t">AIR Control Concepts</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Electrical</span></div><div class="snap-ty"><span class="type">Recap</span><span class="snap-emp">~1,900 emp.</span></div></div>
+<div class="snap-row"><div class="snap-n">3</div><div class="snap-a">Ares Management</div><div class="snap-t">Techpro Power Group</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></div><div class="snap-ty"><span class="type">Platform</span></div></div>
+<div class="snap-row"><div class="snap-n">4</div><div class="snap-a">Bain Capital &middot; Mubadala</div><div class="snap-t">Service Logic</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</span></div><div class="snap-ty"><span class="type">Recap</span></div></div>
+<div class="snap-row"><div class="snap-n">5</div><div class="snap-a">Astra Service Partners</div><div class="snap-t">CMC Corporate Solutions</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>HVAC / Mechanical</span></div><div class="snap-ty"><span class="type">Add-on</span></div></div>
+<div class="snap-row"><div class="snap-n">6</div><div class="snap-a">Investcorp</div><div class="snap-t">Guardian Fire Services</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--fls)"></span>Fire &amp; Life Safety</span></div><div class="snap-ty"><span class="type">Recap</span></div></div>
+<div class="snap-row"><div class="snap-n">7</div><div class="snap-a">Percheron Capital</div><div class="snap-t">ASPYRE Fire &amp; Life Safety</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--fls)"></span>Fire &amp; Life Safety</span></div><div class="snap-ty"><span class="type">Platform</span></div></div>
+<div class="snap-row"><div class="snap-n">8</div><div class="snap-a">Prime Electric (Truelink)</div><div class="snap-t">Scholes Electric</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></div><div class="snap-ty"><span class="type">Add-on</span></div></div>
+<div class="snap-row"><div class="snap-n">9</div><div class="snap-a">Alaris Equity Partners</div><div class="snap-t">Professional Electrical Contractors of CT</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--elec)"></span>Electrical</span></div><div class="snap-ty"><span class="type">Platform</span><span class="snap-emp">300 emp.</span></div></div>
+<div class="snap-row"><div class="snap-n">10</div><div class="snap-a">Legence (Blackstone)</div><div class="snap-t">Bowers</div><div class="snap-s"><span class="sub-tag"><span class="sw" style="background:var(--hvac)"></span>Mechanical</span></div><div class="snap-ty"><span class="type">Add-on</span></div></div>
+  </div>
+ </section>
+
+ <section id="featured">
+  <div class="sec-head"><span class="sec-num">C</span><h2>Signal Over Volume &mdash; 5 Deals</h2></div>
+  <p class="sec-sub">The transactions that best read where the commercial MEP roll-up market is heading.</p>
+  <div class="feat">
+<article class="deal"><div class="deal-n">1</div><h3 class="deal-head">Blackstone &rarr; AIR Control Concepts</h3><div class="deal-meta"><span><span class="sw" style="background:var(--hvac)"></span> HVAC / Electrical</span><span class="pipe">|</span><span>Recapitalization</span><span class="pipe">|</span><span>~1,900 emp.</span></div><p class="deal-body">Blackstone bought out Madison Dearborn to become sole institutional owner of the largest commercial HVAC, electrical, and controls platform in North America — and parked it in BXPE, its perpetual-capital vehicle, signaling a long hold. The clearest sign yet that mega-cap capital treats commercial MEP, with its data-center and mission-critical exposure, as a core consolidation theme rather than an adjacency.</p></article>
+<article class="deal"><div class="deal-n">2</div><h3 class="deal-head">Truelink Capital &rarr; Horwitz</h3><div class="deal-meta"><span><span class="sw" style="background:var(--mep)"></span> HVAC / Electrical / Plumbing</span><span class="pipe">|</span><span>Platform formation</span><span class="pipe">|</span><span>~720 emp.</span></div><p class="deal-body">Truelink formed a platform around a 1918-founded, mission-critical multi-trade MEP provider serving data centers, semiconductor fabs, and healthcare. It is a clean expression of the convergence thesis: sponsors increasingly want one platform that can self-perform across all the MEP trades on high-complexity facilities.</p></article>
+<article class="deal"><div class="deal-n">3</div><h3 class="deal-head">Bain Capital &middot; Mubadala &rarr; Service Logic</h3><div class="deal-meta"><span><span class="sw" style="background:var(--hvac)"></span> HVAC / Mechanical</span><span class="pipe">|</span><span>Recap</span></div><p class="deal-body">Bain Capital and Abu Dhabi's Mubadala took control of Service Logic — widely cited as the largest commercial mechanical services platform — from Leonard Green. Sovereign capital entering U.S. commercial MEP at this scale underscores how much runway sponsors see in a commercial services cycle still in its early innings.</p></article>
+<article class="deal"><div class="deal-n">4</div><h3 class="deal-head">Ares Management &rarr; Techpro Power Group</h3><div class="deal-meta"><span><span class="sw" style="background:var(--elec)"></span> Electrical &middot; Power</span><span class="pipe">|</span><span>Buyout / Platform &middot; ~$350M</span></div><p class="deal-body">Ares, with Energy Impact Partners and Integrated Power Services, backed a ~$350M buyout of an electrical testing and commissioning provider for power and industrial systems. Power reliability is the gating constraint on the data-center build-out, which turns commissioning capacity into a strategically scarce asset rather than a commodity trade.</p></article>
+<article class="deal"><div class="deal-n">5</div><h3 class="deal-head">Legence &rarr; Bowers</h3><div class="deal-meta"><span><span class="sw" style="background:var(--hvac)"></span> Mechanical</span><span class="pipe">|</span><span>Add-on &middot; ~$475M</span></div><p class="deal-body">Legence, the Blackstone-backed energy-services and mechanical platform, opened the year with a ~$475M add-on of Bowers, a mechanical contractor serving commercial and institutional facilities. It shows scaled platforms continuing capability-deepening M&A even as headline volume softened, and the convergence of mechanical contracting with energy-performance services.</p></article>
+  </div>
+ </section>
+
+ <footer>
+  <p class="methods"><strong>Scope &amp; method.</strong> The tracker covers U.S. HVAC, mechanical, plumbing, electrical, and fire &amp; life safety <strong>contractors</strong> with private-equity involvement (platform, add-on, or recap), dated January 1, 2025 &ndash; June 22, 2026, <strong>commercial end markets only</strong>. Pure component manufacturers, distributors, and building-automation product makers are out of scope this cycle. <strong>Employee counts</strong> are shown only where explicitly stated by a credible source &mdash; never estimated; a dash (&mdash;) means undisclosed.</p>
+  <p class="src-list"><strong style="color:var(--ink-soft)">Sources:</strong> PR Newswire / Business Wire; PE Hub; ACHR News; Middle Market Growth (ACG); CT Acquisitions MEP PE Roll-Up Tracker; regional business journals; SEC 10-K filings (Comfort Systems USA); PitchBook via R.L. Hulett <em>MEP Services M&amp;A Update Q1 2026</em>; PKF Investment Banking; Capstone Partners; FMI Corporation (<em>Inside FMI</em>, Jayson Post, May 2026); Runding case study (AiRCO Mechanical); Blackstone; Investcorp; Percheron Capital; Blue Point Capital; Astra Service Partners; PrivSource.</p>
+  <p class="colophon">Runding &middot; MEP Roll-Up Report &middot; Issue No. 1 &middot; June 2026</p>
+ </footer>
+
+</div></div>
+<script>
+ (function(){var root=document.getElementById('rmep');
+  var rows=Array.prototype.slice.call(root.querySelectorAll('#deal-table tbody tr'));
+  var tbody=root.querySelector('#deal-table tbody');var countEl=root.querySelector('#rowcount');
+  var chips=root.querySelectorAll('.filters .chip');
+  function apply(f){var shown=0;rows.forEach(function(r){var ok=(f==='all'||r.getAttribute('data-sub')===f);
+   r.style.display=ok?'':'none';if(ok)shown++;});
+   var e=tbody.querySelector('.empty-row');if(e)e.remove();
+   if(shown===0){var tr=document.createElement('tr');tr.className='empty-row';
+    tr.innerHTML='<td colspan="7">No tracked deals in this subsector.</td>';tbody.appendChild(tr);}
+   countEl.textContent='Showing '+shown+' of '+rows.length+' tracked deals.';}
+  chips.forEach(function(c){c.addEventListener('click',function(){
+   chips.forEach(function(x){x.setAttribute('aria-pressed','false');});c.setAttribute('aria-pressed','true');
+   apply(c.getAttribute('data-filter'));});});
+  apply('all');})();
+</script></body></html>
