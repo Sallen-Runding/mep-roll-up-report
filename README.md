@@ -1,61 +1,54 @@
-# MEP Roll-Up Report
+# MEP Private Equity Deal Tracker
 
-The Runding **MEP Roll-Up Report** — a private-equity deal tracker and newsletter for the U.S.
-commercial MEP contractor market. This repository holds the published page and its source files.
+Living, institutional-grade tracker of **commercial** U.S. private-equity consolidation across the MEP contractor market. Residential deals are out of scope.
 
-## What's in here
+**Current version:** 1.2 · **Baseline:** Jan 1, 2025 → Jul 6, 2026
+
+## Repository structure
 
 ```
-index.html                         The report page (deal tracker + newsletter). This is what gets hosted/embedded.
-downloads/
-  MEP-Roll-Up-Report-2026-06.pdf   Print/share version of the June 2026 issue.
-newsletter/
-  2026-06.md                       The newsletter copy (for posting to LinkedIn).
-README.md                          This file.
+.
+├── data/
+│   └── deals.json      ← SINGLE SOURCE OF TRUTH. Edit this file to update the tracker.
+├── docs/               ← published site (GitHub Pages / Azure Static Web Apps root)
+│   ├── index.html      ← self-contained brief; reads deals.json and renders all 4 sections
+│   ├── deals.json      ← copy of data/deals.json, kept alongside index.html for the fetch
+│   └── MEP_PE_Deal_Tracker.md   ← human-readable markdown master (generated from deals.json)
+├── pdf/
+│   └── MEP_PE_Deal_Tracker_v1.2_Commercial.pdf   ← distribution PDF for team proofing
+└── README.md
 ```
 
-## View it locally
-Double-click `index.html` — it opens in any browser. No build step, no dependencies.
+## The four sections
+1. **Master Deal Tracker** — full dataset, one row per transaction
+2. **Top 5 Deals** — signal over volume, each with a "why it matters"
+3. **Top 10 Snapshot** — clean distribution table, no analysis
+4. **Platform & Sponsor Intelligence** — active roll-ups, new platforms, recaps, structural indicators
 
-## Publish it
+## How to update (Phase 2 workflow)
+1. Edit **`data/deals.json`** only — add or amend entries in the `deals` array; update `top5`, `top10`, `meta.counts`, and append to `changelog`.
+2. Copy it alongside the site: `cp data/deals.json docs/deals.json`
+3. Commit and push. `index.html` re-renders automatically from the new data.
 
-You have two options. Either works; they are not mutually exclusive.
+### Data rules (enforced in every update)
+- **Verified public sources only.** Blanks over estimates.
+- **Employee counts:** only where explicitly stated in a credible source. Never estimated or inferred.
+- **Transaction Date:** the date the deal was announced or closed per the cited source. `date_basis` records announced / completed / closed / advisor-disclosed; `date_precision` records exact / month / year.
+- **Cumulative versioning:** rows are never deleted — only archived or annotated.
+- **Source priority:** PRNewswire, Business Wire, Newsfile, Notified, PrivSource, PE Hub, CT Acquisitions, Capstone Partners, ACHR News, Consulting-Specifying Engineer, Mechanical Hub.
 
-### Option A — GitHub Pages (fastest, no developer needed)
-1. In this repo on GitHub, go to **Settings → Pages**.
-2. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-3. Branch: **main**, folder: **/ (root)**. Click **Save**.
-4. Wait ~1 minute. GitHub shows a live URL like `https://YOUR-ORG.github.io/mep-roll-up-report/`.
+## Hosting (recommended architecture)
+GitHub (source of truth) → Azure Static Web Apps (auto-deploy on push, app root = `/docs`) → iframe embed in the Webflow `/private-equity` page.
 
-### Option B — Azure Static Web Apps (for your developers)
-Your developers connect this repo to a new **Azure Static Web App**. When they do, Azure
-automatically adds a GitHub Action to the repo that redeploys on every push to `main`.
-App location: `/`. No build command and no output/API location are needed (this is a static site).
-
-## Embed it in the website
-Once the page has a public URL, drop this into a Webflow **Embed** element (or any page's HTML):
-
+Example embed:
 ```html
-<iframe
-  src="https://YOUR-PUBLIC-URL/"
-  title="MEP Roll-Up Report"
-  width="100%"
-  height="3200"
-  style="border:0;"
-  loading="lazy">
-</iframe>
+<iframe src="https://YOUR-AZURE-STATIC-APP-URL/index.html"
+        style="width:100%;height:1600px;border:0;" loading="lazy"
+        title="MEP Private Equity Deal Tracker"></iframe>
 ```
 
-Note: `height` is fixed here (≈3200px for this issue). If the inner content grows, raise it, or
-ask a developer to add an auto-resize script (`postMessage`) so the frame sizes itself.
+If you use **GitHub Pages** instead: Settings → Pages → Source = `main` branch, `/docs` folder. The site publishes at `https://USERNAME.github.io/REPO/`.
 
-## Updating for the next issue
-1. Replace `index.html` with the new issue's page.
-2. Add the new PDF to `downloads/` (e.g., `MEP-Roll-Up-Report-2026-07.pdf`).
-3. Add the new newsletter copy to `newsletter/` (e.g., `2026-07.md`).
-4. Commit the changes. If hosting is connected (Option A or B), the live site updates automatically.
-
-## Roadmap
-A small refactor would move the deal records out of `index.html` and into a `deals.json` file, so
-future updates mean editing a structured list instead of regenerating the whole page. Recommended
-once the cadence is regular.
+## Notes
+- `index.html` is fully self-contained (no build step, no dependencies) and fetches `deals.json` from the same directory, falling back to `../data/deals.json`.
+- The PDF is a static snapshot of v1.2; regenerate it when the dataset changes materially.
