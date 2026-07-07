@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEP Private Equity Deal Tracker — Commercial</title>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --steel: #3E5C82;
+    --ink: #222831;
+    --grey: #5A6472;
+    --line: #D5DCE6;
+    --light: #F1F4F8;
+    --paper: #FFFFFF;
+    --accent: #9A7B33;
+    --plat: #1B4A3A;
+    --plat-bg: #E4EFE9;
+    --addon: #4A3A6A;
+    --addon-bg: #ECE6F2;
+    --recap: #7A3B1E;
+    --recap-bg: #F4E7DE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 28px 56px; }
+  .eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 34px; line-height: 1.1; color: var(--navy);
+    font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px;
+  }
+  .sub {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px; color: var(--grey); margin-bottom: 24px;
+  }
+  .statbar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--line); border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .stat { background: var(--light); padding: 16px 18px; }
+  .stat .n {
+    font-size: 26px; color: var(--navy); font-weight: 700; line-height: 1;
+  }
+  .stat .l {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--grey); margin-top: 6px;
+  }
+  .section { margin-bottom: 44px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 14px;
+    border-bottom: 2px solid var(--navy); padding-bottom: 8px; margin-bottom: 18px;
+  }
+  .section-num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+  .section-title {
+    font-size: 19px; color: var(--navy); font-weight: 700;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  thead th {
+    background: var(--navy); color: #fff; text-align: left;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
+    font-weight: 600; padding: 9px 10px; vertical-align: bottom;
+  }
+  tbody td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:nth-child(even) { background: var(--light); }
+  tbody tr:hover { background: #E9EEF5; }
+  .num { color: var(--grey); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag {
+    display: inline-block; font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.03em;
+    padding: 2px 7px; border-radius: 2px; white-space: nowrap;
+  }
+  .tag-platform { background: var(--plat-bg); color: var(--plat); }
+  .tag-addon { background: var(--addon-bg); color: var(--addon); }
+  .tag-recap { background: var(--recap-bg); color: var(--recap); }
+  .date-basis {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px; color: var(--grey); display: block; margin-top: 2px;
+  }
+  .src { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: var(--steel); }
+  .blank { color: #B4BCC8; }
+
+  .top5 { display: grid; gap: 14px; }
+  .t5 {
+    border-left: 3px solid var(--navy); padding: 12px 16px; background: var(--light);
+  }
+  .t5 .rank {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .t5 .deal { font-size: 15px; color: var(--navy); font-weight: 700; margin: 3px 0 5px; }
+  .t5 .desc { font-size: 13px; margin-bottom: 6px; }
+  .t5 .why { font-size: 12.5px; color: var(--ink); }
+  .t5 .why b {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--steel); font-weight: 700;
+  }
+
+  .intel { display: grid; gap: 20px; }
+  .intel-block h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px; color: var(--steel); font-weight: 700;
+    letter-spacing: 0.02em; margin-bottom: 8px;
+  }
+  .intel-block ul { list-style: none; }
+  .intel-block li {
+    font-size: 12.5px; padding: 4px 0 4px 16px; position: relative;
+    border-bottom: 1px solid var(--light);
+  }
+  .intel-block li::before {
+    content: '—'; position: absolute; left: 0; color: var(--accent);
+  }
+  footer {
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px; color: var(--grey); line-height: 1.6;
+  }
+  .loading { text-align: center; padding: 60px; color: var(--grey); font-family: 'Helvetica Neue', Arial, sans-serif; }
+  @media (max-width: 720px) {
+    .statbar { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 26px; }
+    .scroll-x { overflow-x: auto; }
+    table { min-width: 720px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Runding · Deal Intelligence</div>
+  <h1>MEP Private Equity Deal Tracker</h1>
+  <div class="sub" id="sub">Commercial-only · Loading…</div>
+
+  <div class="statbar" id="statbar"></div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-num">01</span><span class="section-title">Master Deal Tracker</span></div>
+    <div class="scroll-x"><table id="master">
+      <thead><tr>
+        <th>#</th><th>Acquirer / Sponsor</th><th>Target</th><th>Subsector</th>
+        <th>Geography</th><th>Employees</th><th>Deal Type</th><th>Transaction Date</th><th>Source</th>
+      </tr></thead>
+      <tbody id="master-body"><tr><td colspan="9" class="loading">Loading dataset…</td></tr></tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-num">02</span><span class="section-title">Top 5 Deals — Signal Over Volume</span></div>
+    <div class="top5" id="top5"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-num">03</span><span class="section-title">Top 10 Deal Snapshot</span></div>
+    <div class="scroll-x"><table id="top10">
+      <thead><tr><th>Acquirer / Sponsor → Target</th><th>Subsector</th><th>Deal Type</th></tr></thead>
+      <tbody id="top10-body"></tbody>
+    </table></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-num">04</span><span class="section-title">Platform &amp; Sponsor Intelligence</span></div>
+    <div class="intel" id="intel"></div>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const TYPE_CLASS = (t) => {
+  const s = (t || '').toLowerCase();
+  if (s.includes('platform')) return 'tag-platform';
+  if (s.includes('recap')) return 'tag-recap';
+  return 'tag-addon';
+};
+const cell = (v) => v == null || v === '' ? '<span class="blank">—</span>' : v;
+
+const INTEL = [
+  { h: 'Highest-frequency acquirers', items: [
+    'Pye-Barker Fire & Safety (Altas + Leonard Green; ADIA/GIC minority) — 57 acquisitions in 2025; 2026 cadence continuing',
+    'AIR Control Concepts (Blackstone) — three acquisitions in 2025 plus Technical Air Systems; six HVAC-equipment add-ons YTD 2026 per Capstone',
+    'ICS Holding (Stellex Capital) — platform formed Jan 2025; add-on Langford Electric (Sep 2025)',
+    'Astra Service Partners / Orion Group (Alpine Investors) — Air Comfort Service Group, Knott Mechanical',
+    'Grizzly MEP (Garnett Station Partners) — Vermont Mechanical, Excel Mechanical Contractors'
+  ]},
+  { h: 'New platform formations (2025–2026)', items: [
+    'Stellex Capital → ICS Holding (mission-critical electrical; Houston/Southeast) — Jan 15, 2025',
+    'Truelink Capital → Horwitz (commercial/industrial MEP; Minneapolis; data-center/semiconductor) — Jul 1, 2026',
+    'Crescendo Capital → PIPCO under new holdco EFI Services (Midwest MEP + fire protection)',
+    'Broadwing Capital → Upchurch Services (commercial MEP; HVAC repair/maintenance)',
+    'Godspeed Capital → ERG (MEP engineering/consulting; Southeast)',
+    'L Squared Capital → Functional Devices (BAS components roll-up)',
+    'Green Heron Partners → Regency Plumbing (commercial facility services; Texas Gulf Coast)'
+  ]},
+  { h: 'Recapitalizations / sponsor transitions', items: [
+    'Service Logic → Bain Capital + Mubadala control (Dec 2025)',
+    'Pye-Barker → ADIA + GIC minority (Jan 2025; Altas / LGP continuing)',
+    'Summit Companies → BlackRock LTPC → BDT & MSD Partners (announced 2025)',
+    'Sciens Building Solutions → Huron Capital → Carlyle',
+    'AIR Control Concepts → Blackstone sole institutional investor (from Madison Dearborn)',
+    'Building Controls & Solutions → LKCM Headwater → Platte River Equity (Feb 2025)'
+  ]},
+  { h: 'Structural indicators', items: [
+    'Fire & Life Safety M&A up ~67% YoY in 2025 to ~125 transactions (Breakwater via CT Acquisitions)',
+    'Electrical contractor acquisitions: 99 in 2025 vs. 140 in 2024 (Cascade Partners); mix shifting to larger PE platform deals',
+    'MEP engineering (Giants) completed 69 acquisitions in 2024, +28% YoY (Morrissey Goodale)',
+    'HVAC equipment PE sponsor acquisitions +2.7% YoY in 2025; data-center cooling the primary catalyst (Capstone)'
+  ]}
+];
+
+function fmtDate(d) {
+  if (!d) return '<span class="blank">—</span>';
+  const parts = d.split('-');
+  const months = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  if (parts.length === 3) return months[+parts[1]] + ' ' + (+parts[2]) + ', ' + parts[0];
+  if (parts.length === 2) return months[+parts[1]] + ' ' + parts[0];
+  return parts[0];
+}
+
+function render(data) {
+  const m = data.meta;
+  document.getElementById('sub').textContent =
+    `Commercial-only · Baseline ${m.baseline_start} → ${m.current_through} · Version ${m.version} · Updated ${m.last_updated}`;
+
+  const c = m.counts;
+  document.getElementById('statbar').innerHTML = [
+    [c.tracked_line_items, 'Tracked line items'],
+    [c.implied_transaction_volume, 'Implied transactions'],
+    [c.platform_recap_events, 'Platform / recap events'],
+    [c.active_commercial_platforms, 'Active platforms']
+  ].map(([n,l]) => `<div class="stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+
+  document.getElementById('master-body').innerHTML = data.deals.map(d => `
+    <tr>
+      <td class="num">${d.id}</td>
+      <td>${cell(d.sponsor)}</td>
+      <td>${cell(d.target)}</td>
+      <td>${cell(d.subsector)}</td>
+      <td>${cell(d.geography)}</td>
+      <td>${cell(d.employee_count)}</td>
+      <td><span class="tag ${TYPE_CLASS(d.deal_type)}">${cell(d.deal_type)}</span></td>
+      <td class="num">${fmtDate(d.transaction_date)}<span class="date-basis">${d.date_basis || ''}${d.date_precision && d.date_precision!=='exact' ? ' · '+d.date_precision : ''}</span></td>
+      <td class="src">${cell(d.source)}</td>
+    </tr>`).join('');
+
+  document.getElementById('top5').innerHTML = data.top5.map(t => `
+    <div class="t5">
+      <div class="rank">Signal ${t.rank} · ${t.type}</div>
+      <div class="deal">${t.deal}</div>
+      <div class="desc">${t.description}</div>
+      <div class="why"><b>Why it matters — </b>${t.why_it_matters}</div>
+    </div>`).join('');
+
+  document.getElementById('top10-body').innerHTML = data.top10.map(t => `
+    <tr>
+      <td>${t.deal.replace('->','→')}</td>
+      <td>${t.subsector}</td>
+      <td><span class="tag ${TYPE_CLASS(t.type)}">${t.type}</span></td>
+    </tr>`).join('');
+
+  document.getElementById('intel').innerHTML = INTEL.map(b => `
+    <div class="intel-block">
+      <h3>${b.h}</h3>
+      <ul>${b.items.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>`).join('');
+
+  document.getElementById('footer').innerHTML =
+    `<strong>Scope:</strong> ${m.scope}. Residential excluded. &nbsp;
+     <strong>Employee counts:</strong> ${m.rules.employee_count} &nbsp;
+     <strong>Transaction Date:</strong> ${m.rules.transaction_date} &nbsp;
+     <strong>Sources:</strong> ${m.rules.sources}`;
+}
+
+fetch('../data/deals.json')
+  .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+  .then(render)
+  .catch(() => {
+    // Fallback for file:// or path issues — try same-dir copy
+    fetch('deals.json').then(r => r.json()).then(render).catch(() => {
+      document.getElementById('master-body').innerHTML =
+        '<tr><td colspan="9" class="loading">Could not load deals.json. Ensure it sits alongside or one level up from this page.</td></tr>';
+    });
+  });
+</script>
+</body>
+</html>
