@@ -91,7 +91,7 @@
 <body>
 <div class="sheet">
   <div class="runhead">
-    <span>MEP PRIVATE EQUITY DEAL TRACKER&nbsp; |&nbsp; COMMERCIAL-ONLY&nbsp; |&nbsp; v1.2</span>
+    <span id="runhead-title">MEP PRIVATE EQUITY DEAL TRACKER&nbsp; |&nbsp; COMMERCIAL-ONLY&nbsp; |&nbsp; v1.2</span>
     <span>DRAFT FOR INTERNAL PROOFING</span>
   </div>
   <div class="body-pad">
@@ -191,10 +191,18 @@ const INTEL = [
   ]}
 ];
 
-function render(data) {
+function fullDate(s) {
+    var p = s.split('-');
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return months[parseInt(p[1],10)-1] + ' ' + parseInt(p[2],10) + ', ' + p[0];
+}
+  
+  function render(data) {
   const m = data.meta, c = m.counts;
+      document.title = `MEP Private Equity Deal Tracker — Commercial-Only — v${m.version}`;
+      document.getElementById('runhead-title').textContent = `MEP PRIVATE EQUITY DEAL TRACKER  |  COMMERCIAL-ONLY  |  v${m.version}`;
   document.getElementById('subtitle').textContent =
-    `Commercial-Only · Baseline: January 1, 2025 – July 6, 2026 · Version ${m.version} · Draft for team proofing`;
+        `Commercial-Only · Baseline: ${fullDate(m.baseline_start)} – ${fullDate(m.current_through)} · Version ${m.version} · Draft for team proofing`;
 
   document.getElementById('meta').innerHTML = `
     <div class="k">Tracked line items</div><div>${c.tracked_line_items} (1 aggregate: Pye-Barker, 57 add-ons FY2025)</div>
