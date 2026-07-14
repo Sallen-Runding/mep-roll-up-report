@@ -3,264 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEP Private Equity Deal Tracker — Commercial-Only — v1.2</title>
+<title>MEP Private Equity Deal Scout — Commercial</title>
 <style>
-  :root {
-    --navy: #1B2A4A;
-    --steel: #3E5C82;
-    --ink: #222222;
-    --grey: #5A6472;
-    --rule: #C7D0DC;
-    --light: #EEF2F7;
-    --paper: #FFFFFF;
-    --accent: #B08D3E;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: var(--ink);
-    background: #F5F6F8;
-    line-height: 1.4;
-    -webkit-font-smoothing: antialiased;
-  }
-  .sheet { max-width: 1160px; margin: 0 auto; background: var(--paper); }
-  .runhead {
-    background: var(--navy); color: #fff;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 7px 22px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em;
-  }
-  .body-pad { padding: 22px 26px 10px; }
-  h1 { font-size: 30px; line-height: 1.05; color: var(--navy); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 5px; }
-  .subtitle { font-size: 13px; color: var(--grey); margin-bottom: 16px; }
-  .meta {
-    display: grid; grid-template-columns: 1.1fr 2.1fr 1.25fr 2fr;
-    border: 1px solid var(--rule); background: var(--light);
-    margin-bottom: 20px; font-size: 11.5px;
-  }
-  .meta > div { padding: 7px 10px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .meta .k { font-weight: 700; }
-  .meta > div:nth-child(4n) { border-right: none; }
-  .meta > div:nth-last-child(-n+4) { border-bottom: none; }
-  .section-title { font-size: 15px; color: var(--navy); font-weight: 700; margin: 20px 0 8px; }
-  .scroll { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 10.6px; }
-  thead th {
-    background: var(--navy); color: #fff; text-align: left;
-    font-size: 9.5px; letter-spacing: 0.03em; text-transform: uppercase;
-    font-weight: 700; padding: 5px 6px; vertical-align: bottom; border: 1px solid var(--rule);
-  }
-  tbody td { padding: 4px 6px; border: 1px solid var(--rule); vertical-align: top; }
-  tbody tr:nth-child(even) { background: var(--light); }
-  .num { color: var(--grey); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .src { color: var(--steel); }
-  .blank { color: #AEB7C4; }
-  .date-basis { display: block; color: var(--grey); font-size: 9.3px; margin-top: 1px; }
-  .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 2px; white-space: nowrap; }
-  .tag-platform { background: #E4EFE9; color: #1B4A3A; }
-  .tag-addon    { background: #ECE6F2; color: #4A3A6A; }
-  .tag-recap    { background: #F4E7DE; color: #7A3B1E; }
-  .note {
-    font-size: 10px; color: var(--grey); line-height: 1.5;
-    margin-top: 8px; padding: 7px 9px; background: #FBFBFC; border-left: 2px solid var(--accent);
-  }
-  .note b { color: var(--ink); }
-  .t5 { margin: 10px 0; }
-  .t5 .head { font-size: 12.5px; color: var(--steel); font-weight: 700; margin-bottom: 2px; }
-  .t5 .desc { font-size: 11.5px; margin-bottom: 3px; }
-  .t5 .why  { font-size: 11.5px; font-style: italic; color: #333; margin-bottom: 4px; }
-  .t5 .why b { font-style: normal; }
-  .snap { width: 100%; font-size: 11px; }
-  .snap th, .snap td { padding: 5px 8px; }
-  .intel h3 { font-size: 12px; color: var(--steel); font-weight: 700; margin: 12px 0 4px; }
-  .intel ul { list-style: none; }
-  .intel li { font-size: 11px; padding: 2px 0 2px 14px; position: relative; }
-  .intel li::before { content: '\2022'; position: absolute; left: 2px; color: var(--accent); }
-  .runfoot {
-    margin-top: 18px; padding: 8px 26px; border-top: 1px solid var(--rule);
-    font-size: 9.5px; color: var(--grey); line-height: 1.5;
-  }
-  @media (max-width: 800px) {
-    .meta { grid-template-columns: 1fr 1fr; }
-    .meta > div:nth-child(2n) { border-right: none; }
-    h1 { font-size: 23px; }
-    table { min-width: 900px; }
-  }
+:root {
+--navy: #1B2A4A;
+--steel: #3E5C82;
+--ink: #222222;
+--grey: #5A6472;
+--rule: #C7D0DC;
+--light: #EEF2F7;
+--paper: #FFFFFF;
+--accent: #B08D3E;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+font-family: 'Helvetica Neue', Arial, sans-serif;
+color: var(--ink);
+background: #F5F6F8;
+line-height: 1.4;
+-webkit-font-smoothing: antialiased;
+}
+.sheet { max-width: 1160px; margin: 0 auto; background: var(--paper); }
+.runhead {
+background: var(--navy); color: #fff;
+display: flex; justify-content: space-between; align-items: center;
+padding: 7px 22px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em;
+}
+.body-pad { padding: 22px 26px 10px; }
+h1 { font-size: 30px; line-height: 1.05; color: var(--navy); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 5px; }
+.subtitle { font-size: 13px; color: var(--grey); margin-bottom: 16px; }
+.meta {
+display: grid; grid-template-columns: 1.1fr 2.1fr 1.25fr 2fr;
+border: 1px solid var(--rule); background: var(--light);
+margin-bottom: 20px; font-size: 11.5px;
+}
+.meta > div { padding: 7px 10px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.meta .k { font-weight: 700; }
+.meta > div:nth-child(4n) { border-right: none; }
+.meta > div:nth-last-child(-n+4) { border-bottom: none; }
+.section-title { font-size: 15px; color: var(--navy); font-weight: 700; margin: 20px 0 8px; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 10.6px; }
+thead th {
+background: var(--navy); color: #fff; text-align: left;
+font-size: 9.5px; letter-spacing: 0.03em; text-transform: uppercase;
+font-weight: 700; padding: 5px 6px; vertical-align: bottom; border: 1px solid var(--rule);
+}
+tbody td { padding: 4px 6px; border: 1px solid var(--rule); vertical-align: top; }
+tbody tr:nth-child(even) { background: var(--light); }
+.num { color: var(--grey); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.src { color: var(--steel); }
+.blank { color: #AEB7C4; }
+.date-basis { display: block; color: var(--grey); font-size: 9.3px; margin-top: 1px; }
+.tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 2px; white-space: nowrap; }
+.tag-platform { background: #E4EFE9; color: #1B4A3A; }
+.tag-addon { background: #ECE6F2; color: #4A3A6A; }
+.tag-recap { background: #F4E7DE; color: #7A3B1E; }
+.note {
+font-size: 10px; color: var(--grey); line-height: 1.5;
+margin-top: 8px; padding: 7px 9px; background: #FBFBFC; border-left: 2px solid var(--accent);
+}
+.note b { color: var(--ink); }
+.t5 { margin: 10px 0; }
+.t5 .head { font-size: 12.5px; color: var(--steel); font-weight: 700; margin-bottom: 2px; }
+.t5 .desc { font-size: 11.5px; margin-bottom: 3px; }
+.t5 .why { font-size: 11.5px; font-style: italic; color: #333; margin-bottom: 4px; }
+.t5 .why b { font-style: normal; }
+.snap { width: 100%; font-size: 11px; }
+.snap th, .snap td { padding: 5px 8px; }
+.intel h3 { font-size: 12px; color: var(--steel); font-weight: 700; margin: 12px 0 4px; }
+.intel ul { list-style: none; }
+.intel li { font-size: 11px; padding: 2px 0 2px 14px; position: relative; }
+.intel li::before { content: '•'; position: absolute; left: 2px; color: var(--accent); }
+.runfoot {
+margin-top: 18px; padding: 8px 26px; border-top: 1px solid var(--rule);
+font-size: 9.5px; color: var(--grey); line-height: 1.5;
+}
+@media (max-width: 800px) {
+.meta { grid-template-columns: 1fr 1fr; }
+.meta > div:nth-child(2n) { border-right: none; }
+h1 { font-size: 23px; }
+table { min-width: 900px; }
+}
 </style>
 </head>
 <body>
 <div class="sheet">
-  <div class="runhead">
-    <span id="runhead-title">MEP PRIVATE EQUITY DEAL TRACKER&nbsp; |&nbsp; COMMERCIAL-ONLY&nbsp; |&nbsp; v1.2</span>
-    <span>DRAFT FOR INTERNAL PROOFING</span>
-  </div>
-  <div class="body-pad">
-    <h1>MEP Private Equity Deal Tracker</h1>
-    <div class="subtitle" id="subtitle">Commercial-Only · Baseline: January 1, 2025 – July 6, 2026 · Version 1.2 · Draft for team proofing</div>
-    <div class="meta" id="meta"></div>
+<div class="runhead">
+<span id="runhead-title">MEP PRIVATE EQUITY DEAL SCOUT&nbsp; |&nbsp; COMMERCIAL ONLY</span>
+</div>
+<div class="body-pad">
+<h1>MEP Private Equity Deal Scout</h1>
+<div class="subtitle" id="subtitle">Commercial-Only · U.S. private-equity–sponsored MEP contractor transactions · Baseline: January 1, 2025 – July 2026</div>
+<div class="meta" id="meta"></div>
 
-    <div class="section-title">01 — Master Deal Tracker (Full Dataset — Commercial Only)</div>
-    <div class="scroll"><table id="master">
-      <thead><tr>
-        <th>#</th><th>Acquirer / Sponsor</th><th>Target</th><th>Subsector</th>
-        <th>Geography</th><th>Employee&nbsp;Ct.</th><th>Deal Type</th><th>Transaction Date</th><th>Source</th>
-      </tr></thead>
-      <tbody id="master-body"></tbody>
-    </table></div>
-    <div class="note" id="note-new"></div>
-    <div class="note" id="note-archive"></div>
+<div class="section-title">01 — Master Deal Tracker (Full Dataset — Commercial Only)</div>
+<div class="scroll"><table id="master">
+<thead><tr>
+<th>#</th><th>Acquirer / Sponsor</th><th>Target</th><th>Subsector</th>
+<th>Geography</th><th>Emp.&nbsp;Ct.</th><th>Deal Type</th><th>Transaction Date</th><th>Source</th>
+</tr></thead>
+<tbody id="master-body"></tbody>
+</table></div>
+<div class="note" id="note-archive"></div>
 
-    <div class="section-title">02 — Top 5 Deals (Signal Over Volume)</div>
-    <div id="top5"></div>
+<div class="section-title">02 — Top 5 Deals (Signal Over Volume)</div>
+<div id="top5"></div>
 
-    <div class="section-title">03 — Top 10 Deal Snapshot (Broad Coverage)</div>
-    <div class="scroll"><table class="snap" id="top10">
-      <thead><tr><th>Acquirer / Sponsor → Target</th><th>Subsector</th><th>Deal Type</th></tr></thead>
-      <tbody id="top10-body"></tbody>
-    </table></div>
+<div class="section-title">03 — Top 10 Deal Snapshot (Broad Coverage)</div>
+<div class="scroll"><table class="snap" id="top10">
+<thead><tr><th>Acquirer / Sponsor → Target</th><th>Subsector</th><th>Deal Type</th></tr></thead>
+<tbody id="top10-body"></tbody>
+</table></div>
 
-    <div class="section-title">04 — Platform &amp; Sponsor Intelligence (Commercial)</div>
-    <div class="intel" id="intel"></div>
-
-    <div class="section-title">Update Log</div>
-    <div class="scroll"><table id="log">
-      <thead><tr><th style="width:70px">Version</th><th style="width:90px">Date</th><th>Change</th></tr></thead>
-      <tbody id="log-body"></tbody>
-    </table></div>
-  </div>
-  <div class="runfoot" id="runfoot"></div>
+<div class="section-title">04 — Platform &amp; Sponsor Intelligence (Commercial)</div>
+<div class="intel" id="intel"></div>
+</div>
+<div class="runfoot" id="runfoot"></div>
 </div>
 
 <script>
-const TYPE_CLASS = (t) => {
-  const s = (t || '').toLowerCase();
-  if (s.includes('platform')) return 'tag-platform';
-  if (s.includes('recap')) return 'tag-recap';
-  return 'tag-addon';
+const TYPE_CLASS = function(t) {
+var s = (t || '').toLowerCase();
+if (s.indexOf('platform') !== -1) return 'tag-platform';
+if (s.indexOf('recap') !== -1) return 'tag-recap';
+return 'tag-addon';
 };
-const cell = (v) => (v == null || v === '') ? '<span class="blank">—</span>' : v;
+const cell = function(v) { return (v == null || v === '') ? '<span class="blank">—</span>' : v; };
 const months = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const monthsFull = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
 function fmtDate(d) {
-  if (!d) return '<span class="blank">—</span>';
-  const p = d.split('-');
-  if (p.length === 3) return months[+p[1]] + ' ' + (+p[2]) + ', ' + p[0];
-  if (p.length === 2) return months[+p[1]] + ' ' + p[0];
-  return p[0];
+if (!d) return '<span class="blank">—</span>';
+var p = d.split('-');
+if (p.length === 3) return months[+p[1]] + ' ' + (+p[2]) + ', ' + p[0];
+if (p.length === 2) return months[+p[1]] + ' ' + p[0];
+return p[0];
 }
-
-const INTEL = [
-  { h: 'Highest-frequency acquirers (in window)', items: [
-    'Pye-Barker Fire &amp; Safety (Altas + Leonard Green; ADIA/GIC minority) → 57 acquisitions in 2025; 2026 cadence continuing (ASCI Security, Fire Protection Specialists, Texas Homeland Security &amp; Sound)',
-    'AIR Control Concepts (Blackstone) → three acquisitions in 2025 plus Technical Air Systems (Feb 2026); six commercial-HVAC-equipment add-ons YTD in 2026 per Capstone',
-    'ICS Holding (Stellex Capital) → platform formed Jan 2025; add-on Langford Electric (Sep 2025); stated further buy-and-build',
-    'Astra Service Partners / Orion Group (Alpine Investors) → commercial mechanical add-ons (Air Comfort Service Group, Knott Mechanical)',
-    'PremiStar → commercial HVAC / plumbing / BAS add-ons (Armistead Mechanical, Smith\u2019s Refrigeration)',
-    'Grizzly MEP (Garnett Station Partners) → multi-add-on commercial MEP build (Vermont Mechanical, Excel Mechanical Contractors)'
-  ]},
-  { h: 'New platform formations (2025–2026)', items: [
-    'Stellex Capital → ICS Holding (mission-critical electrical/instrumentation; Houston/Southeast) — Jan 15, 2025',
-    'Truelink Capital → Horwitz (commercial/industrial MEP; Minneapolis; data-center/semiconductor end markets) — Jul 1, 2026',
-    'Crescendo Capital → PIPCO under new holdco EFI Services (Midwest MEP + fire protection platform)',
-    'Broadwing Capital → Upchurch Services (commercial MEP; HVAC repair/maintenance)',
-    'Bear Castle Capital → Allied Services Group; anchor: Colstrip Electrical (electrical, Mountain West; power/industrial/data-center)',
-    'Godspeed Capital → ERG anchor for new MEP engineering/consulting platform (Southeast)',
-    'L Squared Capital → Functional Devices anchor for BAS peripheral-components roll-up; stated add-on pipeline',
-    'Green Heron Partners → Regency Plumbing anchor for commercial facility-services platform (Texas Gulf Coast)',
-    'Broadtree Partners → ACME Plumbing anchor for stated MEP services strategy (Carolinas)',
-    'MFG Partners → Regency Electric (Colorado commercial electrical); New State Capital → Harrell-Fish (Midwest mechanical); Hudson Glade → ComNet Communications (low-voltage)'
-  ]},
-  { h: 'Recapitalizations / sponsor transitions', items: [
-    'Service Logic → Bain Capital + Mubadala control (Dec 2025)',
-    'Pye-Barker → ADIA + GIC minority (Jan 2025; Altas / LGP continuing)',
-    'Summit Companies → BlackRock LTPC → BDT &amp; MSD Partners (announced 2025)',
-    'Sciens Building Solutions → Huron Capital → Carlyle',
-    'AIR Control Concepts → Blackstone sole institutional investor (from Madison Dearborn; initial invest Jul 2024)',
-    'Building Controls &amp; Solutions → LKCM Headwater → Platte River Equity (Feb 2025)',
-    'Rogers Building Solutions → Aterian / Craft Work → GHK Capital; MCS → MBO backed by J.P. Morgan Asset Management'
-  ]},
-  { h: 'Public strategic consolidators &amp; scaled platforms (context; not in PE master table)', items: [
-    'Comfort Systems USA (NYSE: FIX) → Century Contractors (Jan 2025), Right Way Plumbing &amp; Mechanical (May 2025), Feyen Zylstra + Meisner Electric (Oct 2025); record share price early 2026 on commercial mechanical / data-center demand',
-    'Kelso Industries → national MEP+ contractor; reached $1B revenue with 31 acquisitions since 2021 (Newsfile, Oct 2025) — revenue milestone, not a single transaction',
-    'APi Group (NYSE: APG) → ~$7.0B FY2025 revenue; FLS market-share leader (~15%+); EMCOR Group (NYSE: EME) → active commercial mechanical/electrical acquirer'
-  ]},
-  { h: 'Structural indicators (in window, commercial-relevant)', items: [
-    'Fire &amp; Life Safety M&amp;A up ~67% YoY in 2025 to ~125 transactions (Breakwater via CT Acquisitions)',
-    'Electrical contractor acquisitions: 99 in 2025 vs. 140 in 2024 (Cascade Partners); mix shifting to larger PE platform deals; 2026 rebound expected on data-center, grid-modernization, electrification tailwinds',
-    'MEP Giants (engineering) completed 69 acquisitions in 2024, +28% YoY, near the 2021 record; momentum continuing in 2025 (Morrissey Goodale via Consulting-Specifying Engineer)',
-    'HVAC Equipment PE sponsor acquisitions +2.7% YoY in 2025; data-center cooling the primary end-market catalyst (Capstone Partners)'
-  ]}
-];
-
 function fullDate(s) {
-    var p = s.split('-');
-    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    return months[parseInt(p[1],10)-1] + ' ' + parseInt(p[2],10) + ', ' + p[0];
+var p = s.split('-');
+return monthsFull[parseInt(p[1],10)] + ' ' + parseInt(p[2],10) + ', ' + p[0];
 }
-  
-  function render(data) {
-  const m = data.meta, c = m.counts;
-      document.title = `MEP Private Equity Deal Tracker — Commercial-Only — v${m.version}`;
-      document.getElementById('runhead-title').textContent = `MEP PRIVATE EQUITY DEAL TRACKER  |  COMMERCIAL-ONLY  |  v${m.version}`;
-  document.getElementById('subtitle').textContent =
-        `Commercial-Only · Baseline: ${fullDate(m.baseline_start)} – ${fullDate(m.current_through)} · Version ${m.version} · Draft for team proofing`;
+function monthYear(s) {
+var p = s.split('-');
+return monthsFull[parseInt(p[1],10)] + ' ' + p[0];
+}
+function dateKey(d) {
+if (!d) return -1;
+var p = d.split('-');
+var y = parseInt(p[0], 10) || 0;
+var mo = p[1] ? parseInt(p[1], 10) : 0;
+var da = p[2] ? parseInt(p[2], 10) : 0;
+return y * 10000 + mo * 100 + da;
+}
 
-  document.getElementById('meta').innerHTML = `
-    <div class="k">Tracked line items</div><div>${c.tracked_line_items} (1 aggregate: Pye-Barker, 57 add-ons FY2025)</div>
-    <div class="k">Implied transaction volume</div><div>${c.implied_transaction_volume} incl. aggregate</div>
-    <div class="k">Platform / recap events</div><div>${c.platform_recap_events}</div>
-    <div class="k">Active commercial platforms</div><div>${c.active_commercial_platforms}</div>
-    <div class="k">Transaction Date field</div><div>Deal announcement/close date per source. Precision noted (exact date, month, or year).</div>
-    <div class="k">Employee Count rule</div><div>Verified sources only; never estimated. Blank = unavailable.</div>`;
+function render(data) {
+var m = data.meta, c = m.counts;
+document.title = 'MEP Private Equity Deal Scout — Commercial';
+document.getElementById('runhead-title').textContent = 'MEP PRIVATE EQUITY DEAL SCOUT   |   COMMERCIAL ONLY';
+document.getElementById('subtitle').textContent =
+'Commercial-Only · U.S. private-equity–sponsored MEP contractor transactions · Baseline: ' + fullDate(m.baseline_start) + ' – ' + monthYear(m.current_through);
 
-  document.getElementById('master-body').innerHTML = data.deals.map(d => `
-    <tr>
-      <td class="num">${d.id}</td>
-      <td>${cell(d.sponsor)}</td>
-      <td>${cell(d.target)}</td>
-      <td>${cell(d.subsector)}</td>
-      <td>${cell(d.geography)}</td>
-      <td>${cell(d.employee_count)}</td>
-      <td><span class="tag ${TYPE_CLASS(d.deal_type)}">${cell(d.deal_type)}</span></td>
-      <td class="num">${fmtDate(d.transaction_date)}<span class="date-basis">${d.date_basis ? '('+d.date_basis+')' : ''}</span></td>
-      <td class="src">${cell(d.source)}</td>
-    </tr>`).join('');
+document.getElementById('meta').innerHTML =
+'<div class="k">Tracked line items</div><div>' + c.tracked_line_items + ' (1 aggregate: Pye-Barker, 57 add-ons FY2025)</div>' +
+'<div class="k">Implied transaction volume</div><div>' + c.implied_transaction_volume + ' incl. aggregate</div>' +
+'<div class="k">Platform / recap events</div><div>' + c.platform_recap_events + '</div>' +
+'<div class="k">Active commercial platforms</div><div>' + c.active_commercial_platforms + '</div>' +
+'<div class="k">Transaction Date field</div><div>Deal announcement/close date per source; precision noted.</div>' +
+'<div class="k">Employee Count rule</div><div>Verified sources only; never estimated. Blank = unavailable.</div>';
 
-  document.getElementById('note-new').innerHTML =
-    '<b>New in v1.2 (highlighted for proofing):</b> Row 1 Stellex/ICS platform (Jan 15, 2025 Business Wire) — previously missing. Rows 25 Crescendo/PIPCO-EFI, 26 Broadwing/Upchurch, 27 Truelink/Horwitz added from Newsfile/PRNewswire/S&amp;P sweep. Row 12 Langford Electric now carries its advisor-disclosed date. Transaction Date column now states whether each date is an announcement, close, or advisor-disclosure, and its precision.';
-  document.getElementById('note-archive').innerHTML =
-    '<b>Archive note:</b> residential/residential-led transactions from v1.0 remain archived (commercial-only scope). Sila Services / Goldman Sachs (~$1.7B, announced Nov 2024) is context-only: residential-led and pre-baseline. Kelso Industries ($1B revenue, 31 acquisitions since 2021) noted in Section 04 — the Oct 2025 release is a revenue milestone, not a single transaction. Stonebridge/Paramount Mechanical still excluded (unverifiable transaction date).';
+var activeDeals = data.deals
+.filter(function(d) { return !d.archived; })
+.map(function(d, i) { d._key = dateKey(d.transaction_date); d._origIndex = i; return d; })
+.sort(function(a, b) { return (b._key - a._key) || (a._origIndex - b._origIndex); });
 
-  document.getElementById('top5').innerHTML = data.top5.map(t => `
-    <div class="t5">
-      <div class="head">${t.rank}. ${t.deal.replace('->','→')} — ${t.type}</div>
-      <div class="desc">${t.description}</div>
-      <div class="why"><b>Why it matters:</b> ${t.why_it_matters}</div>
-    </div>`).join('');
+document.getElementById('master-body').innerHTML = activeDeals.map(function(d, i) {
+return '<tr>' +
+'<td class="num">' + (i + 1) + '</td>' +
+'<td>' + cell(d.sponsor) + '</td>' +
+'<td>' + cell(d.target) + '</td>' +
+'<td>' + cell(d.subsector) + '</td>' +
+'<td>' + cell(d.geography) + '</td>' +
+'<td>' + cell(d.employee_count) + '</td>' +
+'<td><span class="tag ' + TYPE_CLASS(d.deal_type) + '">' + cell(d.deal_type) + '</span></td>' +
+'<td class="num">' + fmtDate(d.transaction_date) + '<span class="date-basis">' + (d.date_basis ? '(' + d.date_basis + ')' : '') + '</span></td>' +
+'<td class="src">' + cell(d.source) + '</td>' +
+'</tr>';
+}).join('');
 
-  document.getElementById('top10-body').innerHTML = data.top10.map(t => `
-    <tr>
-      <td>${t.deal.replace('->','→')}</td>
-      <td>${t.subsector}</td>
-      <td><span class="tag ${TYPE_CLASS(t.type)}">${t.type}</span></td>
-    </tr>`).join('');
+document.getElementById('note-archive').innerHTML =
+'<b>Scope note.</b> residential/residential-led transactions remain archived (commercial-only scope). Engineering Resource Group (ERG) / Godspeed — architecture/engineering firm, outside commercial-contractor scope. Kelso Industries (~$1B+ revenue, 31 acquisitions since 2021) noted in Section 04 as a platform milestone, not a single transaction. Sila Services / Goldman Sachs (~$1.7B) is context-only: residential-led and pre-baseline. Stonebridge/Paramount Mechanical excluded (unverifiable transaction date).';
 
-  document.getElementById('intel').innerHTML = INTEL.map(b => `
-    <h3>${b.h}</h3><ul>${b.items.map(i => `<li>${i}</li>`).join('')}</ul>`).join('');
+document.getElementById('top5').innerHTML = data.top5.map(function(t) {
+return '<div class="t5">' +
+'<div class="head">' + t.rank + '. ' + t.deal.replace('->', '→') + ' — ' + t.type + '</div>' +
+'<div class="desc">' + t.description + '</div>' +
+'<div class="why"><b>Why it matters:</b> ' + t.why_it_matters + '</div>' +
+'</div>';
+}).join('');
 
-  document.getElementById('log-body').innerHTML = data.changelog.map(ch => `
-    <tr><td class="num">${ch.version}</td><td class="num">${ch.date}</td><td>${ch.change}</td></tr>`).join('');
+document.getElementById('top10-body').innerHTML = data.top10.map(function(t) {
+return '<tr>' +
+'<td>' + t.deal.replace('->', '→') + '</td>' +
+'<td>' + t.subsector + '</td>' +
+'<td><span class="tag ' + TYPE_CLASS(t.type) + '">' + t.type + '</span></td>' +
+'</tr>';
+}).join('');
 
-  document.getElementById('runfoot').innerHTML =
-    'Transaction Date = date deal was announced or closed per cited source. Sources: verified public disclosures only. Blanks = data unavailable. &nbsp;|&nbsp; Runding · MEP Private Equity Deal Tracker · v' + m.version;
+document.getElementById('intel').innerHTML = data.intel.map(function(b) {
+var items = b.items.map(function(i) {
+return '<li>' + i.replace(/->/g, '→') + '</li>';
+}).join('');
+return '<h3>' + b.h + '</h3><ul>' + items + '</ul>';
+}).join('');
+
+document.getElementById('runfoot').innerHTML =
+'Transaction Date = date deal was announced or closed per cited source. Sources: verified public disclosures only. Blanks = data unavailable. &nbsp;|&nbsp; Runding · MEP Private Equity Deal Scout';
 }
 
 fetch('deals.json')
-  .then(r => { if (!r.ok) throw new Error(); return r.json(); })
-  .then(render)
-  .catch(() => fetch('../data/deals.json').then(r => r.json()).then(render).catch(() => {
-    document.getElementById('master-body').innerHTML =
-      '<tr><td colspan="9" style="padding:40px;text-align:center;color:#5A6472">Could not load deals.json. Ensure it sits alongside index.html.</td></tr>';
-  }));
+.then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+.then(render)
+.catch(function() { fetch('data/deals.json').then(function(r){ return r.json(); }).then(render).catch(function() {
+document.getElementById('master-body').innerHTML =
+'<tr><td colspan="9" style="padding:40px;text-align:center;color:#5A6472">Could not load deals.json. Ensure it sits alongside index.html.</td></tr>';
+}); });
 </script>
 </body>
 </html>
