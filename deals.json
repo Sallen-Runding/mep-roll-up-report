@@ -13,9 +13,9 @@
     ],
     "residential_excluded": true,
     "baseline_start": "2025-01-01",
-    "current_through": "2026-07-13",
+    "current_through": "2026-07-16",
     "version": "1.3",
-    "last_updated": "2026-07-13",
+    "last_updated": "2026-07-16",
     "rules": {
       "employee_count": "Included only where explicitly stated in a credible source. Never estimated or inferred. Null = unavailable.",
       "transaction_date": "Date deal was announced or closed per cited source. 'precision' notes exact/month/year; 'basis' notes announced/completed/closed/advisor-disclosed.",
@@ -23,7 +23,7 @@
       "sources": "Verified public disclosures only. Priority: PRNewswire, Business Wire, Newsfile, Notified, PrivSource, PE Hub, CT Acquisitions, Capstone Partners, ACHR News, Consulting-Specifying Engineer, Mechanical Hub."
     },
     "counts": {
-      "tracked_line_items": 67,
+      "tracked_line_items": 74,
       "aggregate_rows": 1,
       "implied_transaction_volume": "~115",
       "platform_recap_events": "~30",
@@ -957,6 +957,90 @@
       "date_basis": "announced",
       "source": "Nextech / Audax",
       "new_in": "1.3"
+    },
+    {
+      "sponsor": "Shore Capital Partners",
+      "target": "Ackerman Plumbing, Inc.",
+      "subsector": "Plumbing",
+      "geography": "Sarasota, FL (+ Buffalo, NY)",
+      "employee_count": "180+",
+      "deal_type": "Platform (formation)",
+      "transaction_date": "2025-01-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire / Shore Capital",
+      "id": 70,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Crete United (Ridgemont Equity Partners)",
+      "target": "CAM H.V.A.C. & Construction",
+      "subsector": "HVAC / Mechanical",
+      "geography": null,
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-06-05",
+      "date_precision": "exact",
+      "date_basis": "per PitchBook",
+      "source": "PitchBook / PrivSource",
+      "id": 71,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Mid-Am Building Solutions (Craft Work Capital)",
+      "target": "Haase Mechanical Contractors",
+      "subsector": "Mechanical (union)",
+      "geography": "Henderson, KY",
+      "employee_count": null,
+      "deal_type": "Add-on (control investment)",
+      "transaction_date": "2025-06-02",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "ACCESS Newswire",
+      "id": 72,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "TriplePoint MEP (Stellex Capital)",
+      "target": "Atlantic Constructors",
+      "subsector": "Mechanical / Electrical",
+      "geography": "Richmond, VA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-04-14",
+      "date_precision": "exact",
+      "date_basis": "per PitchBook",
+      "source": "PitchBook",
+      "id": 73,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Shore Capital Partners",
+      "target": "Comfort Temp Company",
+      "subsector": "HVAC / Mechanical / Plumbing (comm + resi)",
+      "geography": "Gainesville, FL",
+      "employee_count": null,
+      "deal_type": "Platform (growth partnership)",
+      "transaction_date": "2025-09-25",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "id": 74,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Shore Capital Partners",
+      "target": "Maintera Facility Services (TCG + Commercial Asset Preservation)",
+      "subsector": "Facilities Management (multi-trade: HVAC / electrical / plumbing / lighting)",
+      "geography": "Chicago, IL / North America",
+      "employee_count": null,
+      "deal_type": "Platform (formation)",
+      "transaction_date": "2026-01-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire / PE Hub",
+      "id": 75,
+      "new_in": "1.3"
     }
   ],
   "top5": [
@@ -1067,7 +1151,7 @@
     {
       "version": "1.3",
       "date": "2026-07-10",
-      "change": "Added 18 commercial deals from Scott's coverage feedback (Fortis/LaMarco, Exigent, Symbiome, FirstCall x3, Sciens/Southern Fire, Ares/Techpro, Legence/Bowers, Prime/Scholes, Investcorp/Guardian, Percheron/ASPYRE, Agellus/Bluejack, McNally-Foundral x2, APIC x2, Modigent/Southland). Modigent owner set to OMERS Private Equity. ERG archived (A&E, out of scope). Section 04 intel and notes moved into deals.json (fully data-driven). Top 5/Top 10 refreshed. 60 active line items. Subsector labels de-prefixed ('Comm' dropped — commercial is assumed; 'Industrial' retained where a target spans both) Kelso Industries reclassified as private-equity (Oxbow · Peterson; $50M Paceline) and moved out of the public-strategic context bucket; 7 Kelso commercial add-ons added to the master (Galloway & Company excluded per A&E rule)."
+      "change": "Added 18 commercial deals from Scott's coverage feedback (Fortis/LaMarco, Exigent, Symbiome, FirstCall x3, Sciens/Southern Fire, Ares/Techpro, Legence/Bowers, Prime/Scholes, Investcorp/Guardian, Percheron/ASPYRE, Agellus/Bluejack, McNally-Foundral x2, APIC x2, Modigent/Southland). Modigent owner set to OMERS Private Equity. ERG archived (A&E, out of scope). Section 04 intel and notes moved into deals.json (fully data-driven). Top 5/Top 10 refreshed. 60 active line items. Subsector labels de-prefixed ('Comm' dropped — commercial is assumed; 'Industrial' retained where a target spans both) Kelso Industries reclassified as private-equity (Oxbow · Peterson; $50M Paceline) and moved out of the public-strategic context bucket; 7 Kelso commercial add-ons added to the master (Galloway & Company excluded per A&E rule). Added Shore/Ackerman Plumbing, Crete United/CAM HVAC, Mid-Am/Haase Mechanical, TriplePoint/Atlantic Constructors; added Crete United, Mid-Am, TriplePoint and Shore plumbing platform to Section 04. Added Shore Capital add-ons Comfort Temp (Sep 2025) and Maintera Facility Services (Jan 2026, facilities-management platform from TCG + CAP); refined subheading to name MEP + Fire/Life-Safety/Security trades. Cross-referenced the 111-owner PE owner-universe watchlist (87/111 already covered); watchlist retained internally (not published) to drive future update checks."
     }
   ],
   "intel": [
@@ -1081,7 +1165,11 @@
         "APIC Solutions (Tower Arch Capital) -> Control Fire Systems and Sierra Detention Systems (Aug 2025); platform now 500+ employees; new fire/life-safety and corrections-security lines",
         "Astra Service Partners / Orion Group (Alpine Investors) -> commercial mechanical add-ons (Air Comfort Service Group, Knott Mechanical)",
         "Grizzly MEP (Garnett Station Partners) -> multi-add-on commercial MEP build (Vermont Mechanical, Excel Mechanical Contractors)",
-        "Nextech / CMS Nextech (Audax Private Equity, since 2020; Banyan Growth co-investor) -> largest independent self-performing commercial HVAC/R provider (Melbourne, FL; ~2,000 employees, 45+ states, 50,000+ sites; $353M raised). ~11 acquisitions since 2020, nearly all pre-baseline: Arctic Services & Patriot Mechanical (2021), DegreeOne portfolio (~2022), CMI Mechanical (Denver, Dec 2022), Aire Rite (So. Cal, Jan 2023), Ramco Refrigeration (Anaheim, 2023), Service Specialists (Madison WI, 2023), Brine's Refrigeration (Lathrup Village MI, 2023), Hotside Equipment Services (2023); only in-window deal is Chandler's Air Conditioning & Refrigeration (Nov 14, 2025), shown in the master"
+        "Nextech / CMS Nextech (Audax Private Equity, since 2020; Banyan Growth co-investor) -> largest independent self-performing commercial HVAC/R provider (Melbourne, FL; ~2,000 employees, 45+ states, 50,000+ sites; $353M raised). ~11 acquisitions since 2020, nearly all pre-baseline: Arctic Services & Patriot Mechanical (2021), DegreeOne portfolio (~2022), CMI Mechanical (Denver, Dec 2022), Aire Rite (So. Cal, Jan 2023), Ramco Refrigeration (Anaheim, 2023), Service Specialists (Madison WI, 2023), Brine's Refrigeration (Lathrup Village MI, 2023), Hotside Equipment Services (2023); only in-window deal is Chandler's Air Conditioning & Refrigeration (Nov 14, 2025), shown in the master",
+        "Crete United (Ridgemont Equity Partners) -> national commercial MEP network (HVAC, electrical, plumbing, building automation); 40+ partner companies, 4,000+ employees, ~$680M revenue, all 50 states; 23 investments incl. CAM H.V.A.C. & Construction (Jun 2025), Hartwig Mechanical, AC Corporation, C&C Service",
+        "Mid-Am Building Solutions (Craft Work Capital) -> Midwestern union MEP platform (HVAC, mechanical, plumbing, electrical); add-on Haase Mechanical Contractors (Jun 2025, Henderson KY)",
+        "TriplePoint MEP (Stellex Capital, since May 2024; built by Caymus Equity from Temp-Con) -> top-10 U.S. non-union commercial mechanical contractor, ~$500M revenue, 10+ states; add-on Atlantic Constructors (Apr 2025)",
+        "Shore Capital Partners ($14B+ AUM) -> building multiple commercial trade/facilities platforms: Ackerman Plumbing (commercial plumbing platform, Jan 2025, Sarasota FL, 180+ employees); Comfort Temp Company (Florida mechanical/plumbing, Sep 2025); and Maintera Facility Services (outsourced commercial facility management, formed Jan 2026 from TCG Services + Commercial Asset Preservation; multi-site MEP/lighting maintenance across retail, F&B, office, hospitality, industrial)"
       ]
     },
     {
@@ -1110,7 +1198,9 @@
         "Building Controls & Solutions -> LKCM Headwater -> Platte River Equity (Feb 2025)",
         "Rogers Building Solutions -> Aterian / Craft Work -> GHK Capital; MCS -> MBO backed by J.P. Morgan Asset Management",
         "Sponsor ownership noted: Modigent = OMERS Private Equity; PremiStar = Partners Group; APIC Solutions = Tower Arch Capital",
-        "Nextech (Audax Private Equity) -> sale process underway in 2026; Audax advanced bidders into a second round (PE Hub) — a potential sponsor transition to watch"
+        "Nextech (Audax Private Equity) -> sale process underway in 2026; Audax advanced bidders into a second round (PE Hub) — a potential sponsor transition to watch",
+        "TriplePoint MEP (Stellex Capital) -> reportedly in market to be sold in 2026 — potential sponsor transition to watch",
+        "Crete United (Ridgemont) -> tested the buyout market in early 2025; Ridgemont still backing as of 2026"
       ]
     },
     {

@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MEP Private Equity Deal Scout — Commercial</title>
-  <meta name="robots" content="noindex, nofollow">
 <style>
   :root {
     --navy: #1B2A4A;
@@ -28,6 +27,7 @@
   .sheet { max-width: 1160px; margin: 0 auto; background: var(--paper); }
   .runhead {
     background: var(--navy); color: #fff;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
     padding: 7px 22px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em;
   }
   .body-pad { padding: 22px 26px 10px; }
@@ -101,6 +101,7 @@
 <div class="sheet">
   <div class="runhead">
     <span>MEP PRIVATE EQUITY DEAL SCOUT&nbsp; &nbsp;|&nbsp; &nbsp;COMMERCIAL ONLY</span>
+    <span>UPDATED MONTHLY</span>
   </div>
   <div class="body-pad">
     <div class="masthead">
@@ -118,7 +119,7 @@
     <div class="scroll"><table id="master">
       <thead><tr>
         <th>#</th><th>Acquirer / Sponsor</th><th>Target</th><th>Subsector</th>
-        <th>Geography</th><th>Employee&nbsp;Ct.</th><th>Deal Type</th><th>Transaction Date</th><th>Source</th>
+        <th>Geography</th><th>Deal Type</th><th>Transaction Date</th><th>Source</th>
       </tr></thead>
       <tbody id="master-body"></tbody>
     </table></div>
@@ -165,7 +166,7 @@ const prettyMonth = (ym) => { const p = (ym||'').split('-'); return p.length>=2 
 function render(data) {
   const m = data.meta, c = m.counts;
   document.getElementById('subtitle').textContent =
-    `Commercial-Only · U.S. private-equity–sponsored MEP contractor transactions · Baseline: January 1, 2025 – ${prettyMonth(m.current_through)}`;
+    `Commercial-Only · U.S. private-equity–sponsored Mechanical, Electrical, Plumbing (MEP) and Fire, Life-Safety, Security trade contractor transactions · Baseline: January 1, 2025 – ${prettyMonth(m.current_through)}`;
 
   document.getElementById('meta').innerHTML = `
     <div class="k">Tracked line items</div><div>${c.tracked_line_items} (1 aggregate: Pye-Barker, 57 add-ons FY2025)</div>
@@ -173,7 +174,7 @@ function render(data) {
     <div class="k">Platform / recap events</div><div>${c.platform_recap_events}</div>
     <div class="k">Active commercial platforms</div><div>${c.active_commercial_platforms}</div>
     <div class="k">Transaction Date field</div><div>Deal announcement/close date per source. Precision noted (exact date, month, or year).</div>
-    <div class="k">Employee Count rule</div><div>Verified sources only; never estimated. Blank = unavailable.</div>`;
+    <div class="k">Data rule</div><div>Verified public sources only; never estimated. Blank = undisclosed.</div>`;
 
   const active = data.deals
     .filter(d => !d.archived)
@@ -189,7 +190,6 @@ function render(data) {
       <td>${cell(d.target)}</td>
       <td>${cell(d.subsector)}</td>
       <td>${cell(d.geography)}</td>
-      <td>${cell(d.employee_count)}</td>
       <td><span class="tag ${TYPE_CLASS(d.deal_type)}">${cell(d.deal_type)}</span></td>
       <td class="num">${fmtDate(d.transaction_date)}<span class="date-basis">${d.date_basis ? '('+d.date_basis+')' : ''}</span></td>
       <td class="src">${cell(d.source)}</td>
@@ -225,7 +225,7 @@ fetch('deals.json')
   .then(render)
   .catch(() => fetch('../data/deals.json').then(r => r.json()).then(render).catch(() => {
     document.getElementById('master-body').innerHTML =
-      '<tr><td colspan="9" style="padding:40px;text-align:center;color:#5A6472">Could not load deals.json. Ensure it sits alongside index.html.</td></tr>';
+      '<tr><td colspan="8" style="padding:40px;text-align:center;color:#5A6472">Could not load deals.json. Ensure it sits alongside index.html.</td></tr>';
   }));
 </script>
 </body>
