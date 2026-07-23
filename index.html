@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEP Private Equity Deal Scout — Commercial</title>
+<title>Deal Scout — M&amp;A Tracker for the Trades</title>
 <style>
   :root {
     --navy: #1B2A4A;
@@ -100,13 +100,13 @@
 <body>
 <div class="sheet">
   <div class="runhead">
-    <span>MEP PRIVATE EQUITY DEAL SCOUT&nbsp; &nbsp;|&nbsp; &nbsp;COMMERCIAL ONLY</span>
+    <span>PRIVATE EQUITY DEAL SCOUT&nbsp; &nbsp;|&nbsp; &nbsp;COMMERCIAL ONLY</span>
     <span>UPDATED MONTHLY</span>
   </div>
   <div class="body-pad">
     <div class="masthead">
       <div class="titles">
-        <h1>MEP Private Equity Deal Scout</h1>
+        <h1>Deal Scout &mdash; M&amp;A Tracker for the Trades</h1>
         <div class="subtitle" id="subtitle"></div>
       </div>
       <div class="brand">
@@ -217,7 +217,7 @@ function render(data) {
     <h3>${b.h}</h3><ul>${b.items.map(i => `<li>${arrow(i)}</li>`).join('')}</ul>`).join('');
 
   document.getElementById('runfoot').innerHTML =
-    'Transaction Date = date deal was announced or closed per cited source. Sources: verified public disclosures only. Blanks = data unavailable. &nbsp;|&nbsp; Runding · MEP Private Equity Deal Scout';
+    'Transaction Date = date deal was announced or closed per cited source. Sources: verified public disclosures only. Blanks = data unavailable. &nbsp;|&nbsp; Runding · Deal Scout — M&A Tracker for the Trades';
 }
 
 fetch('deals.json')
