@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deal Scout — M&amp;A Tracker for the Trades</title>
+<title>Deal Scout — Private Equity Deal Intelligence for the Trades</title>
 <style>
   :root {
     --navy: #1B2A4A;
@@ -38,7 +38,8 @@
   .masthead .titles { flex: 1 1 auto; min-width: 0; }
   .masthead .brand { flex: 0 0 auto; }
   .masthead .brand img { display: block; width: 190px; height: auto; }
-  h1 { font-size: 30px; line-height: 1.05; color: var(--navy); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 5px; }
+  h1 { font-size: 30px; line-height: 1.05; color: var(--navy); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 2px; }
+  .tagline { font-size: 15.5px; color: var(--steel); font-weight: 600; letter-spacing: 0.01em; margin-bottom: 6px; }
   .subtitle { font-size: 13px; color: var(--grey); }
   .meta {
     display: grid; grid-template-columns: 1.1fr 2.1fr 1.25fr 2fr;
@@ -106,7 +107,8 @@
   <div class="body-pad">
     <div class="masthead">
       <div class="titles">
-        <h1>Deal Scout &mdash; M&amp;A Tracker for the Trades</h1>
+        <h1>Deal Scout</h1>
+        <div class="tagline">Private Equity Deal Intelligence for the Trades</div>
         <div class="subtitle" id="subtitle"></div>
       </div>
       <div class="brand">
@@ -217,7 +219,7 @@ function render(data) {
     <h3>${b.h}</h3><ul>${b.items.map(i => `<li>${arrow(i)}</li>`).join('')}</ul>`).join('');
 
   document.getElementById('runfoot').innerHTML =
-    'Transaction Date = date deal was announced or closed per cited source. Sources: verified public disclosures only. Blanks = data unavailable. &nbsp;|&nbsp; Runding · Deal Scout — M&A Tracker for the Trades';
+    'Transaction Date = date deal was announced or closed per cited source. Sources: verified public disclosures only. Blanks = data unavailable. &nbsp;|&nbsp; Runding · Deal Scout — Private Equity Deal Intelligence for the Trades';
 }
 
 fetch('deals.json')
