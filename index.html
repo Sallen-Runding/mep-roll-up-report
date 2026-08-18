@@ -220,33 +220,26 @@
   .section-body { padding: 0 18px 18px; }
   .section-card.collapsed .section-body { display: none; }
 
-  /* ===== Deal cards (replaces grid table) ===== */
-  .deal-list { display: flex; flex-direction: column; gap: 7px; }
-  .deal-card {
-    display: grid; grid-template-columns: 78px 1fr auto; gap: 14px; align-items: center;
-    padding: 11px 14px; border: 1px solid var(--rule); border-radius: var(--radius-sm);
-    background: var(--paper); transition: box-shadow .12s ease, border-color .12s ease;
+  /* ===== Master table (original grid, restored) ===== */
+  .table-scroll { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--rule); }
+  #master-table { width: 100%; border-collapse: collapse; font-size: 11.2px; background: var(--paper); }
+  #master-table thead th {
+    background: var(--navy); color: #fff; text-align: left;
+    font-size: 11px; letter-spacing: 0.03em; text-transform: uppercase;
+    font-weight: 700; padding: 8px 8px; vertical-align: bottom; white-space: nowrap;
   }
-  .deal-card:hover { box-shadow: var(--shadow-hover); border-color: var(--steel-soft); }
-  .deal-date { text-align: left; }
-  .deal-date .dnum { font-size: 13px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .deal-date .dbasis { font-size: 9.5px; color: var(--grey-soft); }
-  .deal-main .dtitle { font-size: 13.6px; font-weight: 600; color: var(--ink); line-height: 1.35; }
-  .deal-main .dtitle .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
-  .deal-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-  .meta-tag {
-    font-size: 10.6px; color: var(--steel); background: var(--light); border-radius: 999px; padding: 1.5px 8px; font-weight: 600;
-  }
-  .meta-tag.src { color: var(--grey); background: transparent; padding-left: 0; }
-  .deal-side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  #master-table tbody td { padding: 6px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  #master-table tbody tr:nth-child(even) { background: var(--light); }
+  #master-table tbody tr:hover { background: var(--accent-soft); }
+  #master-table .num { color: var(--grey); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  #master-table .src { color: var(--steel); }
+  #master-table .blank { color: #AEB7C4; }
+  #master-table .date-basis { display: block; color: var(--grey-soft); font-size: 9.6px; margin-top: 1px; }
   .tag { display: inline-block; font-size: 9.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
   .tag-platform { background: var(--platform-bg); color: var(--platform-fg); }
   .tag-addon    { background: var(--addon-bg); color: var(--addon-fg); }
   .tag-recap    { background: var(--recap-bg); color: var(--recap-fg); }
-  @media (max-width: 700px) {
-    .deal-card { grid-template-columns: 1fr; gap: 6px; }
-    .deal-side { flex-direction: row; align-items: center; }
-  }
+  @media (max-width: 900px) { #master-table { min-width: 900px; } }
 
   /* ===== Empty state ===== */
   .empty-state { text-align: center; padding: 46px 20px; color: var(--grey); }
@@ -344,7 +337,16 @@
         <span class="schev">▾</span>
       </div>
       <div class="section-body">
-        <div class="deal-list" id="master-list"></div>
+        <div class="table-scroll">
+          <table id="master-table">
+            <thead><tr>
+              <th>#</th><th>Acquirer / Sponsor</th><th>Target</th><th>Subsector</th>
+              <th>Geography</th><th>Deal Type</th><th>Transaction Date</th><th>Source</th>
+            </tr></thead>
+            <tbody id="master-body"></tbody>
+          </table>
+        </div>
+        <div id="master-empty" style="display:none;"></div>
         <div class="note" id="note-archive"></div>
       </div>
     </div>
@@ -470,26 +472,19 @@ function renderKPIs(filtered) {
     <div class="kpi-card"><div class="kpi-num">${platforms}</div><div class="kpi-label">Active commercial platforms</div></div>`;
 }
 
-function dealCardHTML(d, idx) {
+function dealRowHTML(d, rowNum) {
   const bucket = TYPE_BUCKET(d.deal_type);
   return `
-    <div class="deal-card">
-      <div class="deal-date">
-        <div class="dnum">${fmtDate(d.transaction_date)}</div>
-        ${d.date_basis ? `<div class="dbasis">${escHtml(d.date_basis)}</div>` : ''}
-      </div>
-      <div class="deal-main">
-        <div class="dtitle">${escHtml(d.sponsor)}<span class="arrow">→</span>${escHtml(d.target)}</div>
-        <div class="deal-meta">
-          <span class="meta-tag">${escHtml(cellText(d.subsector))}</span>
-          <span class="meta-tag">${escHtml(cellText(d.geography))}</span>
-          <span class="meta-tag src">${escHtml(cellText(d.source))}</span>
-        </div>
-      </div>
-      <div class="deal-side">
-        <span class="tag ${TYPE_CLASS(bucket)}">${escHtml(d.deal_type)}</span>
-      </div>
-    </div>`;
+    <tr>
+      <td class="num">${rowNum}</td>
+      <td>${escHtml(cellText(d.sponsor))}</td>
+      <td>${escHtml(cellText(d.target))}</td>
+      <td>${escHtml(cellText(d.subsector))}</td>
+      <td>${escHtml(cellText(d.geography))}</td>
+      <td><span class="tag ${TYPE_CLASS(bucket)}">${escHtml(cellText(d.deal_type))}</span></td>
+      <td class="num">${fmtDate(d.transaction_date)}${d.date_basis ? `<span class="date-basis">(${escHtml(d.date_basis)})</span>` : ''}</td>
+      <td class="src">${escHtml(cellText(d.source))}</td>
+    </tr>`;
 }
 
 function renderMaster(filtered) {
@@ -498,9 +493,14 @@ function renderMaster(filtered) {
     return (kb[0]-ka[0]) || (kb[1]-ka[1]) || (kb[2]-ka[2]);
   });
   document.getElementById('count-master').textContent = `${sorted.length} of ${ACTIVE.length}`;
-  const listEl = document.getElementById('master-list');
+  const bodyEl = document.getElementById('master-body');
+  const emptyEl = document.getElementById('master-empty');
+  const scrollWrap = document.querySelector('.table-scroll');
   if (sorted.length === 0) {
-    listEl.innerHTML = `
+    bodyEl.innerHTML = '';
+    scrollWrap.style.display = 'none';
+    emptyEl.style.display = 'block';
+    emptyEl.innerHTML = `
       <div class="empty-state">
         <div class="emoji">🔎</div>
         <h3>No deals match these filters</h3>
@@ -509,7 +509,9 @@ function renderMaster(filtered) {
       </div>`;
     document.getElementById('empty-reset').onclick = resetAllFilters;
   } else {
-    listEl.innerHTML = sorted.map(dealCardHTML).join('');
+    scrollWrap.style.display = 'block';
+    emptyEl.style.display = 'none';
+    bodyEl.innerHTML = sorted.map((d, i) => dealRowHTML(d, i + 1)).join('');
   }
 }
 
