@@ -423,7 +423,7 @@ let ACTIVE = [];
 
 const state = {
   search: '',
-  filters: { subsector: new Set(), sponsor: new Set(), dealType: new Set(), year: new Set() },
+  filters: { subsector: new Set(), sponsor: new Set(), dealType: new Set(), geography: new Set() },
   openPanel: null,
   sections: JSON.parse(localStorage.getItem('dealscout-sections-v2') || 'null') || {
     master: true, top5: true, top10: true, intel: true
@@ -433,8 +433,8 @@ const state = {
 const FACETS = [
   { key: 'subsector', label: 'Subsector', getVal: d => d.subsector, searchable: false },
   { key: 'sponsor',   label: 'Sponsor',   getVal: d => sponsorKey(d.sponsor), searchable: true },
-  { key: 'dealType',  label: 'Stage',     getVal: d => TYPE_BUCKET(d.deal_type), searchable: false },
-  { key: 'year',      label: 'Year',      getVal: d => (d.transaction_date||'').split('-')[0], searchable: false },
+  { key: 'dealType',  label: 'Deal Type', getVal: d => TYPE_BUCKET(d.deal_type), searchable: false },
+  { key: 'geography', label: 'Geography', getVal: d => (d.geography || '').trim(), searchable: true },
 ];
 
 function matchesSearch(d, q) {
@@ -601,7 +601,7 @@ function renderFilterPanel(f) {
   const base = ACTIVE.filter(d => matchesSearch(d, state.search) && matchesFacets(d, f.key));
   const tally = new Map();
   base.forEach(d => { const v = f.getVal(d); tally.set(v, (tally.get(v) || 0) + 1); });
-  let values = [...tally.keys()].sort((a, b) => f.key === 'year' ? b - a : tally.get(b) - tally.get(a));
+  let values = [...tally.keys()].sort((a, b) => tally.get(b) - tally.get(a));
   const q = f.searchable ? (document.getElementById(`panelsearch-${f.key}`)?.value || '').toLowerCase() : '';
   if (q) values = values.filter(v => v.toLowerCase().includes(q));
   const listEl = document.getElementById(`panellist-${f.key}`);
