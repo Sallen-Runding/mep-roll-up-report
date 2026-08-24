@@ -432,7 +432,7 @@ const state = {
 
 const FACETS = [
   { key: 'subsector', label: 'Subsector', getVal: d => d.subsector, searchable: false },
-  { key: 'sponsor',   label: 'Sponsor',   getVal: d => sponsorKey(d.sponsor), searchable: true },
+  { key: 'sponsor',   label: 'Platform',  getVal: d => sponsorKey(d.sponsor), searchable: true },
   { key: 'dealType',  label: 'Deal Type', getVal: d => TYPE_BUCKET(d.deal_type), searchable: false },
   { key: 'geography', label: 'Geography', getVal: d => (d.geography || '').trim(), searchable: true },
 ];
