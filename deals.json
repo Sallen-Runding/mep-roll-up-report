@@ -23,7 +23,7 @@
       "sources": "Verified public disclosures only. Priority: PRNewswire, Business Wire, Newsfile, Notified, PrivSource, PE Hub, CT Acquisitions, Capstone Partners, ACHR News, Consulting-Specifying Engineer, Mechanical Hub."
     },
     "counts": {
-      "tracked_line_items": 163,
+      "tracked_line_items": 181,
       "aggregate_rows": 1,
       "implied_transaction_volume": "~115",
       "platform_recap_events": "~30",
@@ -314,10 +314,10 @@
       "geography": "NJ / Hudson Valley, NY",
       "employee_count": null,
       "deal_type": "Add-on",
-      "transaction_date": "2026",
-      "date_precision": "year",
-      "date_basis": "per PrivSource",
-      "source": "PrivSource"
+      "transaction_date": "2026-04-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar"
     },
     {
       "id": 23,
@@ -361,7 +361,7 @@
     },
     {
       "id": 26,
-      "sponsor": "Broadwing Capital Management",
+      "sponsor": "Upchurch Companies (Broadwing Capital + Davidson Kempner)",
       "target": "Upchurch Services (platform)",
       "subsector": "MEP (HVAC repair/maintenance)",
       "geography": "US",
@@ -2303,50 +2303,317 @@
       "source": "Business Wire",
       "id": 165,
       "new_in": "1.3"
+    },
+    {
+      "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
+      "target": "Andrew's",
+      "subsector": "HVAC / Refrigeration / Plumbing / Electrical / Construction",
+      "geography": "Phoenix, AZ",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-05-27",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Orion Services Group",
+      "id": 166,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Leo (Orion Group / Alpine Investors)",
+      "target": "Bevara Building Services + Blackfin",
+      "subsector": "Facilities Maintenance (Building Engineering)",
+      "geography": "Pewaukee, WI + Kansas City, KS",
+      "employee_count": null,
+      "deal_type": "Add-on (merger of 2)",
+      "transaction_date": "2026-02-19",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Orion Services Group",
+      "id": 167,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Trademark Mechanical",
+      "subsector": "HVAC / Mechanical / Controls",
+      "geography": "Elmsford, NY",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-01-15",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 168,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Air Temp Mechanical",
+      "subsector": "HVAC",
+      "geography": "Berlin, CT",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-01-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 169,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Dahme Mechanical Industries (HVAC division)",
+      "subsector": "HVAC",
+      "geography": "Countryside, IL",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-03-04",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 170,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "B.T. Lindsay & Co.",
+      "subsector": "HVAC",
+      "geography": "Hartford, CT",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-06-17",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 171,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Farmer & Irwin (Fandi Corp)",
+      "subsector": "HVAC",
+      "geography": "Southeast Florida",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-07-16",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 172,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Rabe Environmental Systems (Rabe HVAC)",
+      "subsector": "HVAC / Plumbing",
+      "geography": "Erie, PA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-07-22",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 173,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Smith's Refrigeration",
+      "subsector": "HVAC / Mechanical",
+      "geography": "Lumberton, NC",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-10-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 174,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "McCormick Allum",
+      "subsector": "HVAC",
+      "geography": "Springfield, MA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-02-13",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 175,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "PremiStar (Partners Group)",
+      "target": "Mechanical Service & Systems (MSS)",
+      "subsector": "HVAC / Mechanical",
+      "geography": "Salt Lake City, UT",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-06-10",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PremiStar",
+      "id": 176,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "NexCore (Trinity Hunt Partners)",
+      "target": "DWC Mechanical",
+      "subsector": "HVAC / Mechanical",
+      "geography": "New York",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-01",
+      "date_precision": "month",
+      "date_basis": "per Private Equity Professional",
+      "source": "Private Equity Professional",
+      "id": 177,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "NexCore (Trinity Hunt Partners)",
+      "target": "Action Air Systems",
+      "subsector": "HVAC / Mechanical",
+      "geography": "Connecticut",
+      "employee_count": null,
+      "deal_type": "Add-on (9th)",
+      "transaction_date": "2025-08-26",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "id": 178,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "NexCore (Trinity Hunt Partners)",
+      "target": "Accutemp Engineering",
+      "subsector": "HVAC / Mechanical",
+      "geography": "Massachusetts",
+      "employee_count": null,
+      "deal_type": "Add-on (10th)",
+      "transaction_date": "2025-08-26",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "id": 179,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "NexCore (Trinity Hunt Partners)",
+      "target": "FX Automation",
+      "subsector": "HVAC / Controls",
+      "geography": "Northeast US",
+      "employee_count": null,
+      "deal_type": "Add-on (11th)",
+      "transaction_date": "2025",
+      "date_precision": "year",
+      "date_basis": "per Business Wire (exact month unconfirmed)",
+      "source": "Business Wire",
+      "id": 180,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Upchurch Companies (Broadwing Capital + Davidson Kempner)",
+      "target": "New Generation Mechanical",
+      "subsector": "HVAC / Plumbing / Mechanical",
+      "geography": "Dallas, TX",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-08-26",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Upchurch Companies",
+      "id": 181,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Upchurch Companies (Broadwing Capital + Davidson Kempner)",
+      "target": "Xencom Energy Management, LLC",
+      "subsector": "Building Automation / Energy Management",
+      "geography": "Texas",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-12-03",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Broadwing Capital / Upchurch",
+      "id": 182,
+      "new_in": "1.3"
+    },
+    {
+      "sponsor": "Upchurch Companies (Broadwing Capital + Davidson Kempner)",
+      "target": "Standard Maintenance Company (SMC)",
+      "subsector": "Mechanical Contracting / Industrial Services",
+      "geography": "Southeast US",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-05-18",
+      "date_precision": "exact",
+      "date_basis": "per PitchBook",
+      "source": "PitchBook",
+      "id": 183,
+      "new_in": "1.3"
     }
   ],
   "top5": [
     {
       "rank": 1,
+      "deal": "Permira -> Encore Fire Protection",
+      "type": "Recap (PE-to-PE, ~$1.8B, Mar 2025)",
+      "description": "Permira acquired Encore Fire Protection from Levine Leichtman Capital Partners in a deal valued near $1.8B, the largest transaction tracked this window.",
+      "why_it_matters": "The single largest dollar-value transaction in the commercial FLS space this window — a top-tier global sponsor underwriting fire-protection recurring revenue at scale, reinforcing FLS as an institutional-grade asset class."
+    },
+    {
+      "rank": 2,
+      "deal": "Sandbrook Capital + Blackstone -> United Utility Services",
+      "type": "Recap (PE-to-PE, ~$1.0B, announced Dec 2025)",
+      "description": "Sandbrook Capital, with Blackstone Credit & Insurance, acquired United Utility Services (parent to W.A. Chester, B&B Electrical, Williams Electric and more) from Bernhard Capital Partners.",
+      "why_it_matters": "A ~$1B utility-electrical-infrastructure recap confirms institutional capital is scaling beyond building-level MEP into grid and transmission/distribution services — the same data-center-driven power thesis reshaping the broader trades."
+    },
+    {
+      "rank": 3,
       "deal": "Bain Capital + Mubadala -> Service Logic",
       "type": "Recap (control, Dec 2025)",
       "description": "Control transaction in the largest independent U.S. commercial mechanical services platform.",
       "why_it_matters": "The defining commercial-MEP capital event of the window — top-tier sponsor plus sovereign-adjacent capital underwriting contracted commercial mechanical service revenue at national scale."
     },
     {
-      "rank": 2,
-      "deal": "ADIA + GIC (minority) -> Pye-Barker Fire & Safety",
-      "type": "Recap (Jan 2025)",
-      "description": "Altas and Leonard Green retained lead positions; two sovereign wealth funds took minority stakes. Platform then executed 57 acquisitions in 2025 (9,000 employees, 47 states).",
-      "why_it_matters": "Sovereign wealth entry validates code-mandated recurring inspection revenue as institutional-grade; funds the fastest add-on cadence in commercial MEP."
-    },
-    {
-      "rank": 3,
-      "deal": "Blackstone -> AIR Control Concepts",
-      "type": "Recap (sole institutional investor, 2026)",
-      "description": "Blackstone acquired Madison Dearborn's remaining stake; founder/CEO reinvested. 38 operating companies across 35 states + Canada; stated data-center expansion focus; six add-ons YTD 2026 per Capstone.",
-      "why_it_matters": "Mega-cap capital consolidating ownership of a commercial HVAC platform explicitly to pursue data-center cooling demand — the clearest end-market signal in commercial HVAC."
-    },
-    {
       "rank": 4,
-      "deal": "Truelink Capital -> Horwitz",
-      "type": "Platform (completed Jul 1, 2026)",
-      "description": "Significant investment in a 1918-founded Minneapolis MEP services provider (HVAC/plumbing/electrical/BAS) serving data centers, semiconductor fab, medtech, healthcare, and advanced manufacturing; management retains significant ownership.",
-      "why_it_matters": "Freshest platform in the window and a direct commercial/industrial mission-critical play — confirms sponsor appetite for MEP contractors tied to the data-center and semiconductor build-out is still accelerating into mid-2026."
+      "deal": "Truelink Capital -> JT Thorpe Group",
+      "type": "Platform (PE-to-PE, from H.I.G. Capital, Jul 30 2026)",
+      "description": "Truelink acquired the $1B+ revenue industrial-services platform (refractory, fireproofing, insulation, mechanical, asset-integrity) from H.I.G. Capital.",
+      "why_it_matters": "One of the largest industrial-MEP platform changes of hands this window, signaling continued sponsor rotation among the largest mission-critical industrial services platforms."
     },
     {
       "rank": 5,
-      "deal": "Stellex Capital -> ICS Holding",
-      "type": "Platform (completed Jan 15, 2025)",
-      "description": "NY middle-market sponsor acquired a mission-critical electrical/instrumentation services provider (Houston; Southeast US) serving industrial, healthcare, energy/power, institutional end markets; Langford Electric followed as add-on.",
-      "why_it_matters": "Anchors the window's start with a clean commercial/industrial electrical platform formation that has already demonstrated the add-on thesis — the template for the mission-critical electrical roll-up."
+      "deal": "ADIA + GIC (minority) -> Pye-Barker Fire & Safety",
+      "type": "Recap (minority, Jan 2025)",
+      "description": "Two sovereign-wealth-adjacent institutional investors took a minority stake in Pye-Barker alongside continuing sponsors Altas Partners and Leonard Green.",
+      "why_it_matters": "Sovereign capital validating the largest FLS roll-up in the country is a strong signal of institutional conviction in the category — Pye-Barker went on to complete 57 add-ons in FY2025 and 22 more in H1 2026."
     }
   ],
   "top10": [
     {
+      "deal": "Permira -> Encore Fire Protection",
+      "subsector": "Fire & Life Safety",
+      "type": "Recap"
+    },
+    {
+      "deal": "Sandbrook Capital + Blackstone -> United Utility Services",
+      "subsector": "Utility Electrical Infrastructure",
+      "type": "Recap"
+    },
+    {
       "deal": "Bain Capital + Mubadala -> Service Logic",
       "subsector": "Mechanical",
       "type": "Recap"
+    },
+    {
+      "deal": "Truelink Capital -> JT Thorpe Group",
+      "subsector": "Industrial MEP",
+      "type": "Platform"
     },
     {
       "deal": "ADIA + GIC (minority) -> Pye-Barker Fire & Safety",
@@ -2359,38 +2626,23 @@
       "type": "Recap"
     },
     {
+      "deal": "Wind Point Partners -> The Hiller Companies",
+      "subsector": "Fire & Life Safety",
+      "type": "Recap (PE-to-PE, from Littlejohn)"
+    },
+    {
+      "deal": "Kohlberg & Co. -> RESA Power",
+      "subsector": "Electrical Infrastructure",
+      "type": "Recap (PE-to-PE, from Investcorp)"
+    },
+    {
       "deal": "Truelink Capital -> Horwitz",
       "subsector": "Industrial MEP",
       "type": "Platform"
     },
     {
       "deal": "Stellex Capital -> ICS Holding",
-      "subsector": "Industrial Electrical",
-      "type": "Platform"
-    },
-    {
-      "deal": "BDT & MSD Partners -> Summit Companies (SFP Holding)",
-      "subsector": "Fire & Life Safety",
-      "type": "Platform"
-    },
-    {
-      "deal": "Citation Capital -> Gallo Mechanical",
-      "subsector": "Mechanical",
-      "type": "Platform"
-    },
-    {
-      "deal": "McNally Capital (Foundral) -> Smith & Oby",
-      "subsector": "Mechanical (union)",
-      "type": "Platform"
-    },
-    {
-      "deal": "L Squared Capital -> Functional Devices",
-      "subsector": "Building Controls (BAS)",
-      "type": "Platform"
-    },
-    {
-      "deal": "Green Heron Partners -> Regency Plumbing Contractors",
-      "subsector": "Plumbing",
+      "subsector": "Electrical / Instrumentation",
       "type": "Platform"
     }
   ],
@@ -2413,7 +2665,7 @@
     {
       "version": "1.3",
       "date": "2026-07-10",
-      "change": "Added 18 commercial deals from Scott's coverage feedback (Fortis/LaMarco, Exigent, Symbiome, FirstCall x3, Sciens/Southern Fire, Ares/Techpro, Legence/Bowers, Prime/Scholes, Investcorp/Guardian, Percheron/ASPYRE, Agellus/Bluejack, McNally-Foundral x2, APIC x2, Modigent/Southland). Modigent owner set to OMERS Private Equity. ERG archived (A&E, out of scope). Section 04 intel and notes moved into deals.json (fully data-driven). Top 5/Top 10 refreshed. 60 active line items. Subsector labels de-prefixed ('Comm' dropped — commercial is assumed; 'Industrial' retained where a target spans both) Kelso Industries reclassified as private-equity (Oxbow · Peterson; $50M Paceline) and moved out of the public-strategic context bucket; 7 Kelso commercial add-ons added to the master (Galloway & Company excluded per A&E rule). Added Shore/Ackerman Plumbing, Crete United/CAM HVAC, Mid-Am/Haase Mechanical, TriplePoint/Atlantic Constructors; added Crete United, Mid-Am, TriplePoint and Shore plumbing platform to Section 04. Added Shore Capital add-ons Comfort Temp (Sep 2025) and Maintera Facility Services (Jan 2026, facilities-management platform from TCG + CAP); refined subheading to name MEP + Fire/Life-Safety/Security trades. Cross-referenced the 111-owner PE owner-universe watchlist (87/111 already covered); watchlist retained internally (not published) to drive future update checks. FLS enrichment pass (Hyde Park seed): added 7 in-window FLS/security add-ons (Everon/ADT-Multifamily, Summit/PSI, Sciens/Fire Security & Sound, Convergint x3, CertaSite/Accurate Fire); added Everon, Convergint, CertaSite, Hiller, AI Fire, Altus platforms and the Summit/AI Fire/Hiller/CertaSite ownership events to Section 04. Aug 2026 update sweep: added CoolSys/Lima + CoolSys/Georgia Air, ArchKey/Diefenderfer + ArchKey/Bruce & Merrilees, and Pye-Barker H1-2026 aggregate (22); CoolSys and ArchKey graduate from watchlist to master; noted Nextech sale ongoing, Legence Sep-2025 IPO, Audax/Enviromatic exit. Coverage through Aug 2026. Watchlist news-page comb: added Cobalt/STS360, Pavion x2 (Safeway Fire, Integrated Security & Comms), Apollo/PowerGrid Services, Loenbro x2 (Stewart Electric, Weifield); Cobalt, Pavion, PowerGrid, Loenbro graduate to master; corrected Protegis (absorbed into Summit 2022); noted APi public-strategic FLS deals. Legence reclassified to public-strategic (Nasdaq: LGN, IPO Sep 2025): Legence/Bowers moved out of the PE master into Section 04 public-strategic context. Sanity-check vs first edition: restored two dropped-in-rebuild deals — Pinnacle MEP (Blue Point)/Hammans Electric (May 2025) and Astra/CMC Corporate Solutions (Jan 2026); ENFRA/River Mechanical held pending verification. Hiller deep-dive (for CEO call): added all 23 in-window (2025-26) Hiller/Littlejohn add-ons to the master and expanded the Section 04 Hiller profile with pre-2025 history, CEO, and Wind Point sale context. Kelso Industries verification (per Scott/Schryver): confirmed 7 existing Kelso deals, added missing 8th — Allied Mechanical (Oct 15, 2025). Roll-Up Report cross-check (Aug 2026 edition, per Scott): added 3 Kelso Aug-2026 add-ons (Gaddy Electric & Plumbing AL, All Electric WY, Clearwater Construction & Management WA) and Truelink Capital/JT Thorpe Group platform acquisition (Jul 30 2026, verified via PRNewswire). Added 3 more verified platforms surfaced via Roll-Up Report cross-check: Citation Capital/Gallo Mechanical (Jun 2025), Green Heron/Regency Plumbing (Feb 2026), L Squared/Functional Devices (Feb 2026, building controls). Full source sweep of Fidelity BSG, Orion Services Group, Astra Service Partners: added Fidelity/Onex platform (4 in-window add-ons: Cyrco, St. Johns Air, Masters Mechanical, MVH Industrial) and 2 more Astra/Orion add-ons (Berg Industrial Service, Agentis Plumbing); refined Knott Mechanical to exact date. Tier 1 full watchlist sweep completed: Kassel Mechanical/Paceline (3 new: Arrow Electric, Henderson Electric, Coastal Electric FL), Exigent/Huron (Premier Mechanical). Checked with no in-window activity found (remain on watchlist): TRIO Electric, Ambient, MechanAir, Criticore, One Team Electrical, BCES/Kroon, Telgian, QualTek, PowerVac, ENFRA. Enviromatic/Wind Point confirmed already tracked. Tier 1 RE-CHECK via direct sponsor/platform site visits (per Shannon request): corrected Ambient/ICG from \"no in-window activity\" to 2 confirmed add-ons (WRP Associates Feb 2026, Integ Systems Apr 2026); resolved previously-unverifiable ENFRA/River Mechanical Services to confirmed Jun 2025; confirmed One Team Electrical Group has 3 total acquisitions (Tasker Electric dated Jul 2024, pre-baseline; 2 unnamed); noted Harris Mechanical Services and Trademark Mechanical as unconfirmed-date MechanAir companies; corrected QualTek was renamed InfraServices under Atlas (no post-rename add-ons found); Paceline, Huron, BDC/Kroon confirmed via direct site visit with no additional gaps. PE Owner Universe full sweep (Excel-driven, 29 gap platforms checked via direct site visits): added OPTERRA/LS Power, Altus/Apax, United Building Solutions x4, Climate Pros/Amos Refrigeration, Heritage/Airside, Broad Sky/CET+NuWave, Sandbrook/United Utility, Splash Plumbing x2. Corrected Gryphon/Consolidated Fire Protection (sold to Minimax 2007, stale spreadsheet entry) and The Facilities Group (out of scope, janitorial not MEP). Held National Fire & Safety/CFP pending clearer date; Stryker Electric, Telgian confirmed no in-window activity. New matrix file cross-check: added RESA Power (Kohlberg, 4 deals), Albireo/PASCO, Solidaire/Enervise platform launch, Smart Care/HiTech of Texas. Corrected sponsor conflicts noted in new source file; excluded roofing/restoration/residential platforms as out of scope. Low-priority watchlist completed: added East Coast Power platform+add-on (A&M Capital), Encore Fire Protection recap (Permira, $1.8B) + Fireline add-on. Excluded as out-of-scope: Sabre Industries (manufacturer not contractor), Champions Group + Redwood Services (residential, not commercial), ENTOUCH (SaaS/software not trade contractor). Checked no activity: Southeast Mechanical (Riverside), Cavalier Fire Protection (dormant since 2017)."
+      "change": "Added 18 commercial deals from Scott's coverage feedback (Fortis/LaMarco, Exigent, Symbiome, FirstCall x3, Sciens/Southern Fire, Ares/Techpro, Legence/Bowers, Prime/Scholes, Investcorp/Guardian, Percheron/ASPYRE, Agellus/Bluejack, McNally-Foundral x2, APIC x2, Modigent/Southland). Modigent owner set to OMERS Private Equity. ERG archived (A&E, out of scope). Section 04 intel and notes moved into deals.json (fully data-driven). Top 5/Top 10 refreshed. 60 active line items. Subsector labels de-prefixed ('Comm' dropped — commercial is assumed; 'Industrial' retained where a target spans both) Kelso Industries reclassified as private-equity (Oxbow · Peterson; $50M Paceline) and moved out of the public-strategic context bucket; 7 Kelso commercial add-ons added to the master (Galloway & Company excluded per A&E rule). Added Shore/Ackerman Plumbing, Crete United/CAM HVAC, Mid-Am/Haase Mechanical, TriplePoint/Atlantic Constructors; added Crete United, Mid-Am, TriplePoint and Shore plumbing platform to Section 04. Added Shore Capital add-ons Comfort Temp (Sep 2025) and Maintera Facility Services (Jan 2026, facilities-management platform from TCG + CAP); refined subheading to name MEP + Fire/Life-Safety/Security trades. Cross-referenced the 111-owner PE owner-universe watchlist (87/111 already covered); watchlist retained internally (not published) to drive future update checks. FLS enrichment pass (Hyde Park seed): added 7 in-window FLS/security add-ons (Everon/ADT-Multifamily, Summit/PSI, Sciens/Fire Security & Sound, Convergint x3, CertaSite/Accurate Fire); added Everon, Convergint, CertaSite, Hiller, AI Fire, Altus platforms and the Summit/AI Fire/Hiller/CertaSite ownership events to Section 04. Aug 2026 update sweep: added CoolSys/Lima + CoolSys/Georgia Air, ArchKey/Diefenderfer + ArchKey/Bruce & Merrilees, and Pye-Barker H1-2026 aggregate (22); CoolSys and ArchKey graduate from watchlist to master; noted Nextech sale ongoing, Legence Sep-2025 IPO, Audax/Enviromatic exit. Coverage through Aug 2026. Watchlist news-page comb: added Cobalt/STS360, Pavion x2 (Safeway Fire, Integrated Security & Comms), Apollo/PowerGrid Services, Loenbro x2 (Stewart Electric, Weifield); Cobalt, Pavion, PowerGrid, Loenbro graduate to master; corrected Protegis (absorbed into Summit 2022); noted APi public-strategic FLS deals. Legence reclassified to public-strategic (Nasdaq: LGN, IPO Sep 2025): Legence/Bowers moved out of the PE master into Section 04 public-strategic context. Sanity-check vs first edition: restored two dropped-in-rebuild deals — Pinnacle MEP (Blue Point)/Hammans Electric (May 2025) and Astra/CMC Corporate Solutions (Jan 2026); ENFRA/River Mechanical held pending verification. Hiller deep-dive (for CEO call): added all 23 in-window (2025-26) Hiller/Littlejohn add-ons to the master and expanded the Section 04 Hiller profile with pre-2025 history, CEO, and Wind Point sale context. Kelso Industries verification (per Scott/Schryver): confirmed 7 existing Kelso deals, added missing 8th — Allied Mechanical (Oct 15, 2025). Roll-Up Report cross-check (Aug 2026 edition, per Scott): added 3 Kelso Aug-2026 add-ons (Gaddy Electric & Plumbing AL, All Electric WY, Clearwater Construction & Management WA) and Truelink Capital/JT Thorpe Group platform acquisition (Jul 30 2026, verified via PRNewswire). Added 3 more verified platforms surfaced via Roll-Up Report cross-check: Citation Capital/Gallo Mechanical (Jun 2025), Green Heron/Regency Plumbing (Feb 2026), L Squared/Functional Devices (Feb 2026, building controls). Full source sweep of Fidelity BSG, Orion Services Group, Astra Service Partners: added Fidelity/Onex platform (4 in-window add-ons: Cyrco, St. Johns Air, Masters Mechanical, MVH Industrial) and 2 more Astra/Orion add-ons (Berg Industrial Service, Agentis Plumbing); refined Knott Mechanical to exact date. Tier 1 full watchlist sweep completed: Kassel Mechanical/Paceline (3 new: Arrow Electric, Henderson Electric, Coastal Electric FL), Exigent/Huron (Premier Mechanical). Checked with no in-window activity found (remain on watchlist): TRIO Electric, Ambient, MechanAir, Criticore, One Team Electrical, BCES/Kroon, Telgian, QualTek, PowerVac, ENFRA. Enviromatic/Wind Point confirmed already tracked. Tier 1 RE-CHECK via direct sponsor/platform site visits (per Shannon request): corrected Ambient/ICG from \"no in-window activity\" to 2 confirmed add-ons (WRP Associates Feb 2026, Integ Systems Apr 2026); resolved previously-unverifiable ENFRA/River Mechanical Services to confirmed Jun 2025; confirmed One Team Electrical Group has 3 total acquisitions (Tasker Electric dated Jul 2024, pre-baseline; 2 unnamed); noted Harris Mechanical Services and Trademark Mechanical as unconfirmed-date MechanAir companies; corrected QualTek was renamed InfraServices under Atlas (no post-rename add-ons found); Paceline, Huron, BDC/Kroon confirmed via direct site visit with no additional gaps. PE Owner Universe full sweep (Excel-driven, 29 gap platforms checked via direct site visits): added OPTERRA/LS Power, Altus/Apax, United Building Solutions x4, Climate Pros/Amos Refrigeration, Heritage/Airside, Broad Sky/CET+NuWave, Sandbrook/United Utility, Splash Plumbing x2. Corrected Gryphon/Consolidated Fire Protection (sold to Minimax 2007, stale spreadsheet entry) and The Facilities Group (out of scope, janitorial not MEP). Held National Fire & Safety/CFP pending clearer date; Stryker Electric, Telgian confirmed no in-window activity. New matrix file cross-check: added RESA Power (Kohlberg, 4 deals), Albireo/PASCO, Solidaire/Enervise platform launch, Smart Care/HiTech of Texas. Corrected sponsor conflicts noted in new source file; excluded roofing/restoration/residential platforms as out of scope. Low-priority watchlist completed: added East Coast Power platform+add-on (A&M Capital), Encore Fire Protection recap (Permira, $1.8B) + Fireline add-on. Excluded as out-of-scope: Sabre Industries (manufacturer not contractor), Champions Group + Redwood Services (residential, not commercial), ENTOUCH (SaaS/software not trade contractor). Checked no activity: Southeast Mechanical (Riverside), Cavalier Fire Protection (dormant since 2017). Confirmed orionservicesgroup.com is in active rotation (direct site + /news page visited): added Andrew's (Astra, May 2026) and Bevara Building Services+Blackfin (Leo, Feb 2026); noted Leo's formal platform unification (Feb 2026); verified Air Comfort Feb 12 close date is correct per multiple sources. Scott-directed deep dive (9 companies): PremiStar/Partners Group +9 in-window add-ons (major gap closed); NexCore/Trinity Hunt +4 add-ons; Upchurch sponsor corrected to Broadwing Capital+Davidson Kempner; confirmed Nextech/Smart Care/Hiller/Modigent/Solidaire/ASPYRE current with no new in-window gaps; flagged Response Team 1 (Nautic) as property restoration, likely out of MEP/FLS scope, for Scott review. Per Scott: excluded Response Team 1 (Nautic) entirely from scope discussion. Resolved the 3 missing Upchurch add-ons (independently verified): New Generation Mechanical (Aug 2025), Xencom Energy Management (Dec 2025), Standard Maintenance Company (May 2026)."
     }
   ],
   "intel": [
@@ -2448,7 +2700,12 @@
         "Truelink Capital -> JT Thorpe Group (acquired from H.I.G. Capital, announced Jul 30, 2026; $1B+ revenue; industrial MEP/thermal-management services; H.I.G. had owned since 2022, formerly Terra Millennium)",
         "Fidelity Building Services Group (Onex Corporation, since ~2018; founded 1945, Hunt Valley MD) -> HVAC/Mechanical, Building Automation, Emergency Power, Energy Solutions; 75+ US locations; 2025-26 add-ons Cyrco, St. Johns Air, Masters Mechanical, MVH Industrial (heritage: H.E. Neumann 2022, Star Service 2019)",
         "Ambient Enterprises (Intermediate Capital Group, since Gil-Bar initial investment) -> national HVAC design/sales/service collective (Gil-Bar, APA HVAC Technologies, Mechanical Technologies, H.C. Nye + more); 2026 add-ons WRP Associates (Feb) and Integ Systems (Apr, power protection); heritage add-ons DMG/Johnson Barrow (2024), Aercon (2023), Midgley-Huber (2024) pre-baseline",
-        "ENFRA (CVC DIF Capital Partners; rebranded from Bernhard, LLC in May 2025) -> Energy-as-a-Service (EaaS) platform, B+ financed projects, 20+ partnerships; add-on River Mechanical Services (Jun 2025)"
+        "ENFRA (CVC DIF Capital Partners; rebranded from Bernhard, LLC in May 2025) -> Energy-as-a-Service (EaaS) platform, B+ financed projects, 20+ partnerships; add-on River Mechanical Services (Jun 2025)",
+        "Upchurch Companies (Broadwing Capital + Davidson Kempner, since Mar 2024) -> Mississippi MEP service provider; 7 add-ons total incl. Weldon Services (Sep 2024, pre-baseline), New Generation Mechanical (Aug 2025), Xencom Energy Management (Dec 2025), Standard Maintenance Company (May 2026)",
+        "PremiStar (Partners Group, fmr Reedy Industries) -> commercial HVAC/plumbing/building-automation; 10 in-window add-ons (Trademark Mechanical, Air Temp Mechanical, Dahme HVAC division, B.T. Lindsay, Farmer & Irwin, Rabe HVAC, Smith's Refrigeration, McCormick Allum, Armistead Mechanical, Mechanical Service & Systems) — one of the most active commercial HVAC consolidators nationally, previously undercounted",
+        "NexCore (Trinity Hunt Partners, since Mar 2023) -> commercial HVAC platform; 11 total add-ons, 4 in-window (DWC Mechanical, Action Air Systems, Accutemp Engineering, FX Automation) plus Mechanical Systems Technology (Apr 2026)",
+        "RESA Power (Kohlberg & Co., recap from Investcorp Apr 2025) -> electrical infrastructure/power systems, 50+ locations US/Canada; 3 in-window add-ons (Commercial Switchgear, 3MD Power Services, Societe Generale d'Electrotechnique)",
+        "Kassel Mechanical (Paceline Equity Partners) -> electrical/mechanical roll-up; in-window add-ons Arrow Electric (Apr 2025), Henderson Electric (Feb 2026), Coastal Electric of FL (2026)"
       ]
     },
     {
@@ -2463,7 +2720,13 @@
         "Bear Castle Capital -> Allied Services Group; anchor Colstrip Electrical (Mountain West; power/industrial/data-center)",
         "L Squared Capital -> Functional Devices (BAS peripheral-components roll-up)",
         "Green Heron Partners -> Regency Plumbing (commercial facility-services platform; Texas Gulf Coast)",
-        "MFG Partners -> Regency Electric (Colorado); New State Capital -> Harrell-Fish (Midwest mechanical); Hudson Glade -> ComNet Communications (low-voltage)"
+        "MFG Partners -> Regency Electric (Colorado); New State Capital -> Harrell-Fish (Midwest mechanical); Hudson Glade -> ComNet Communications (low-voltage)",
+        "Leo (Orion Group / Alpine Investors) -> formally unified/launched as single national facilities-maintenance brand Feb 10, 2026 (West Chester, PA), consolidating existing self-perform + vetted-partner network; CEO Cecil Moore",
+        "OPTERRA Energy Services (LS Power, Jun 2025, relaunch of ENGIE Services U.S.) -> energy services/HVAC; add-on NORESCO (Aug 2026)",
+        "United Building Solutions (AE Industrial Partners, Jan 2025) -> national HVAC platform; add-ons Total Comfort Solutions, DFW Mechanical Group, McCarl's Services",
+        "Solidaire HVAC & Energy Solutions (Percheron Capital, Sep 2025, foundational acquisition of Enervise) -> national commercial HVAC/plumbing/electrical/refrigeration/controls platform",
+        "Heritage Holdings -> Airside Technology Corporation (Jul 2026) -> union commercial HVAC platform (East Syracuse, NY)",
+        "Broad Sky Partners -> Commonwealth Electrical Technologies (Mar 2025) -> electrical/energy-solutions platform; add-on NuWave Energy Solutions (Oct 2025)"
       ]
     },
     {
@@ -2486,7 +2749,12 @@
         "APi Group (NYSE: APG) -> CertaSite (from The Riverside Company, ~$90M rev) — agreed Dec 10, 2025, close Q1 2026 (PE exit to public strategic)",
         "Nextech (Audax Private Equity) -> sale process still progressing in 2026 (not yet closed as of mid-2026); Nextech remains on the Audax portfolio",
         "Audax Private Equity -> exited Enviromatic Systems (Dec 2025)",
-        "Protegis Fire & Safety (fmr Align Capital Partners) -> absorbed into Summit Fire & Security (SFP Holding, BlackRock LTPC -> BDT & MSD) back in 2022; no longer an independent platform"
+        "Protegis Fire & Safety (fmr Align Capital Partners) -> absorbed into Summit Fire & Security (SFP Holding, BlackRock LTPC -> BDT & MSD) back in 2022; no longer an independent platform",
+        "Permira -> Encore Fire Protection (from Levine Leichtman Capital Partners, ~$1.8B, Mar 2025)",
+        "Sandbrook Capital + Blackstone Credit & Insurance -> United Utility Services (from Bernhard Capital Partners, ~$1.0B, announced Dec 2025, closed Mar 2026)",
+        "Kohlberg & Co. -> RESA Power (from Investcorp, Apr 2025)",
+        "A&M Capital Partners -> East Coast Power (platform formation, Jan 2025)",
+        "Apax Partners -> Altus Fire & Life Safety (from AE Industrial Partners, Sep 2024)"
       ]
     },
     {
@@ -2503,7 +2771,8 @@
       "items": [
         "Fire & Life Safety M&A up ~67% YoY in 2025 to ~125 transactions (Breakwater via CT Acquisitions)",
         "Electrical contractor acquisitions: 99 in 2025 vs. 140 in 2024 (Cascade Partners); mix shifting to larger PE platform deals; 2026 rebound expected on data-center, grid-modernization, electrification tailwinds",
-        "HVAC Equipment PE sponsor acquisitions +2.7% YoY in 2025; data-center cooling the primary end-market catalyst (Capstone Partners)"
+        "HVAC Equipment PE sponsor acquisitions +2.7% YoY in 2025; data-center cooling the primary end-market catalyst (Capstone Partners)",
+        "Commercial HVAC service consolidation remains the single most active MEP subsector this window by platform count (PremiStar, NexCore, United Building Solutions, Solidaire, Airside all active/newly formed) — reflecting durable recurring-revenue demand from data-center and mission-critical cooling"
       ]
     }
   ],
