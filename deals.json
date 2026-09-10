@@ -13,9 +13,9 @@
     ],
     "residential_excluded": true,
     "baseline_start": "2025-01-01",
-    "current_through": "2026-08",
-    "version": "1.3",
-    "last_updated": "2026-08-09",
+    "current_through": "2026-09",
+    "version": "1.5",
+    "last_updated": "2026-09-10",
     "rules": {
       "employee_count": "Included only where explicitly stated in a credible source. Never estimated or inferred. Null = unavailable.",
       "transaction_date": "Date deal was announced or closed per cited source. 'precision' notes exact/month/year; 'basis' notes announced/completed/closed/advisor-disclosed.",
@@ -23,7 +23,7 @@
       "sources": "Verified public disclosures only. Priority: PRNewswire, Business Wire, Newsfile, Notified, PrivSource, PE Hub, CT Acquisitions, Capstone Partners, ACHR News, Consulting-Specifying Engineer, Mechanical Hub."
     },
     "counts": {
-      "tracked_line_items": 181,
+      "tracked_line_items": 190,
       "aggregate_rows": 1,
       "implied_transaction_volume": "~115",
       "platform_recap_events": "~30",
@@ -1818,7 +1818,7 @@
       "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
       "target": "Berg Industrial Service",
       "subsector": "Industrial Refrigeration",
-      "geography": "West Chester, PA",
+      "geography": "Mississauga, ON, Canada",
       "employee_count": null,
       "deal_type": "Add-on",
       "transaction_date": "2025-11-17",
@@ -2555,6 +2555,132 @@
       "source": "PitchBook",
       "id": 183,
       "new_in": "1.3"
+    },
+    {
+      "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
+      "target": "Diamondback Plumbing",
+      "subsector": "Plumbing",
+      "geography": "Phoenix, AZ",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-01-14",
+      "date_precision": "exact",
+      "date_basis": "announced (Orion roster lists 2024 join; kept in-window per dated Astra press release, flagged for Scott)",
+      "source": "Astra Service Partners",
+      "id": 184,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
+      "target": "Griffen Plumbing and Heating",
+      "subsector": "Plumbing / HVAC",
+      "geography": "Elkhart, IN",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-07-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Astra Service Partners",
+      "id": 185,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
+      "target": "Lowe Mechanical Services",
+      "subsector": "Mechanical",
+      "geography": "Winnipeg, MB, Canada",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-04",
+      "date_precision": "month",
+      "date_basis": "per orionservicesgroup.com/our-companies",
+      "source": "Orion Services Group",
+      "id": 186,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
+      "target": "DAEL Thermal Group",
+      "subsector": "Mechanical / Thermal",
+      "geography": "Ontario, Canada",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-10",
+      "date_precision": "month",
+      "date_basis": "per orionservicesgroup.com/our-companies",
+      "source": "Orion Services Group",
+      "id": 187,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "Leo (Orion Group / Alpine Investors)",
+      "target": "Field Technologies LLC (FTL)",
+      "subsector": "Facilities Management",
+      "geography": "San Francisco, CA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025",
+      "date_precision": "year",
+      "date_basis": "per orionservicesgroup.com/our-companies, exact date unconfirmed",
+      "source": "Orion Services Group",
+      "id": 188,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "Astra Service Partners (Alpine Investors / Orion Group)",
+      "target": "J.L. Refrigeration",
+      "subsector": "Refrigeration (add-on to Berg Industrial Service)",
+      "geography": "Toronto, ON, Canada",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-26",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Astra Service Partners",
+      "id": 189,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "The State Group (Apollo Global Management)",
+      "target": "Ruder Electric, Inc.",
+      "subsector": "Electrical",
+      "geography": "Kankakee, IL",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-02-12",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "id": 190,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "The State Group (Apollo Global Management)",
+      "target": "J&J Electric of Indiana, Inc.",
+      "subsector": "Electrical",
+      "geography": "Kokomo, IN",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-12-22",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "id": 191,
+      "new_in": "1.5"
+    },
+    {
+      "sponsor": "The State Group (Apollo Global Management)",
+      "target": "Mel-Kay Electric Co. (MelKay)",
+      "subsector": "MEP (Electrical / Mechanical / Plumbing)",
+      "geography": "Evansville, IN (Southern IN / Western KY / Southern IL)",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "id": 192,
+      "new_in": "1.5"
     }
   ],
   "top5": [
@@ -2666,6 +2792,14 @@
       "version": "1.3",
       "date": "2026-07-10",
       "change": "Added 18 commercial deals from Scott's coverage feedback (Fortis/LaMarco, Exigent, Symbiome, FirstCall x3, Sciens/Southern Fire, Ares/Techpro, Legence/Bowers, Prime/Scholes, Investcorp/Guardian, Percheron/ASPYRE, Agellus/Bluejack, McNally-Foundral x2, APIC x2, Modigent/Southland). Modigent owner set to OMERS Private Equity. ERG archived (A&E, out of scope). Section 04 intel and notes moved into deals.json (fully data-driven). Top 5/Top 10 refreshed. 60 active line items. Subsector labels de-prefixed ('Comm' dropped — commercial is assumed; 'Industrial' retained where a target spans both) Kelso Industries reclassified as private-equity (Oxbow · Peterson; $50M Paceline) and moved out of the public-strategic context bucket; 7 Kelso commercial add-ons added to the master (Galloway & Company excluded per A&E rule). Added Shore/Ackerman Plumbing, Crete United/CAM HVAC, Mid-Am/Haase Mechanical, TriplePoint/Atlantic Constructors; added Crete United, Mid-Am, TriplePoint and Shore plumbing platform to Section 04. Added Shore Capital add-ons Comfort Temp (Sep 2025) and Maintera Facility Services (Jan 2026, facilities-management platform from TCG + CAP); refined subheading to name MEP + Fire/Life-Safety/Security trades. Cross-referenced the 111-owner PE owner-universe watchlist (87/111 already covered); watchlist retained internally (not published) to drive future update checks. FLS enrichment pass (Hyde Park seed): added 7 in-window FLS/security add-ons (Everon/ADT-Multifamily, Summit/PSI, Sciens/Fire Security & Sound, Convergint x3, CertaSite/Accurate Fire); added Everon, Convergint, CertaSite, Hiller, AI Fire, Altus platforms and the Summit/AI Fire/Hiller/CertaSite ownership events to Section 04. Aug 2026 update sweep: added CoolSys/Lima + CoolSys/Georgia Air, ArchKey/Diefenderfer + ArchKey/Bruce & Merrilees, and Pye-Barker H1-2026 aggregate (22); CoolSys and ArchKey graduate from watchlist to master; noted Nextech sale ongoing, Legence Sep-2025 IPO, Audax/Enviromatic exit. Coverage through Aug 2026. Watchlist news-page comb: added Cobalt/STS360, Pavion x2 (Safeway Fire, Integrated Security & Comms), Apollo/PowerGrid Services, Loenbro x2 (Stewart Electric, Weifield); Cobalt, Pavion, PowerGrid, Loenbro graduate to master; corrected Protegis (absorbed into Summit 2022); noted APi public-strategic FLS deals. Legence reclassified to public-strategic (Nasdaq: LGN, IPO Sep 2025): Legence/Bowers moved out of the PE master into Section 04 public-strategic context. Sanity-check vs first edition: restored two dropped-in-rebuild deals — Pinnacle MEP (Blue Point)/Hammans Electric (May 2025) and Astra/CMC Corporate Solutions (Jan 2026); ENFRA/River Mechanical held pending verification. Hiller deep-dive (for CEO call): added all 23 in-window (2025-26) Hiller/Littlejohn add-ons to the master and expanded the Section 04 Hiller profile with pre-2025 history, CEO, and Wind Point sale context. Kelso Industries verification (per Scott/Schryver): confirmed 7 existing Kelso deals, added missing 8th — Allied Mechanical (Oct 15, 2025). Roll-Up Report cross-check (Aug 2026 edition, per Scott): added 3 Kelso Aug-2026 add-ons (Gaddy Electric & Plumbing AL, All Electric WY, Clearwater Construction & Management WA) and Truelink Capital/JT Thorpe Group platform acquisition (Jul 30 2026, verified via PRNewswire). Added 3 more verified platforms surfaced via Roll-Up Report cross-check: Citation Capital/Gallo Mechanical (Jun 2025), Green Heron/Regency Plumbing (Feb 2026), L Squared/Functional Devices (Feb 2026, building controls). Full source sweep of Fidelity BSG, Orion Services Group, Astra Service Partners: added Fidelity/Onex platform (4 in-window add-ons: Cyrco, St. Johns Air, Masters Mechanical, MVH Industrial) and 2 more Astra/Orion add-ons (Berg Industrial Service, Agentis Plumbing); refined Knott Mechanical to exact date. Tier 1 full watchlist sweep completed: Kassel Mechanical/Paceline (3 new: Arrow Electric, Henderson Electric, Coastal Electric FL), Exigent/Huron (Premier Mechanical). Checked with no in-window activity found (remain on watchlist): TRIO Electric, Ambient, MechanAir, Criticore, One Team Electrical, BCES/Kroon, Telgian, QualTek, PowerVac, ENFRA. Enviromatic/Wind Point confirmed already tracked. Tier 1 RE-CHECK via direct sponsor/platform site visits (per Shannon request): corrected Ambient/ICG from \"no in-window activity\" to 2 confirmed add-ons (WRP Associates Feb 2026, Integ Systems Apr 2026); resolved previously-unverifiable ENFRA/River Mechanical Services to confirmed Jun 2025; confirmed One Team Electrical Group has 3 total acquisitions (Tasker Electric dated Jul 2024, pre-baseline; 2 unnamed); noted Harris Mechanical Services and Trademark Mechanical as unconfirmed-date MechanAir companies; corrected QualTek was renamed InfraServices under Atlas (no post-rename add-ons found); Paceline, Huron, BDC/Kroon confirmed via direct site visit with no additional gaps. PE Owner Universe full sweep (Excel-driven, 29 gap platforms checked via direct site visits): added OPTERRA/LS Power, Altus/Apax, United Building Solutions x4, Climate Pros/Amos Refrigeration, Heritage/Airside, Broad Sky/CET+NuWave, Sandbrook/United Utility, Splash Plumbing x2. Corrected Gryphon/Consolidated Fire Protection (sold to Minimax 2007, stale spreadsheet entry) and The Facilities Group (out of scope, janitorial not MEP). Held National Fire & Safety/CFP pending clearer date; Stryker Electric, Telgian confirmed no in-window activity. New matrix file cross-check: added RESA Power (Kohlberg, 4 deals), Albireo/PASCO, Solidaire/Enervise platform launch, Smart Care/HiTech of Texas. Corrected sponsor conflicts noted in new source file; excluded roofing/restoration/residential platforms as out of scope. Low-priority watchlist completed: added East Coast Power platform+add-on (A&M Capital), Encore Fire Protection recap (Permira, $1.8B) + Fireline add-on. Excluded as out-of-scope: Sabre Industries (manufacturer not contractor), Champions Group + Redwood Services (residential, not commercial), ENTOUCH (SaaS/software not trade contractor). Checked no activity: Southeast Mechanical (Riverside), Cavalier Fire Protection (dormant since 2017). Confirmed orionservicesgroup.com is in active rotation (direct site + /news page visited): added Andrew's (Astra, May 2026) and Bevara Building Services+Blackfin (Leo, Feb 2026); noted Leo's formal platform unification (Feb 2026); verified Air Comfort Feb 12 close date is correct per multiple sources. Scott-directed deep dive (9 companies): PremiStar/Partners Group +9 in-window add-ons (major gap closed); NexCore/Trinity Hunt +4 add-ons; Upchurch sponsor corrected to Broadwing Capital+Davidson Kempner; confirmed Nextech/Smart Care/Hiller/Modigent/Solidaire/ASPYRE current with no new in-window gaps; flagged Response Team 1 (Nautic) as property restoration, likely out of MEP/FLS scope, for Scott review. Per Scott: excluded Response Team 1 (Nautic) entirely from scope discussion. Resolved the 3 missing Upchurch add-ons (independently verified): New Generation Mechanical (Aug 2025), Xencom Energy Management (Dec 2025), Standard Maintenance Company (May 2026)."
+    },
+    {
+      "version": "1.5",
+      "change": "Verified Limbach (Nasdaq: LMB) acquisition of 1901 Inc. (Sep 2026, $63M) via Business Wire -- added to Section 04 public-strategic context (Limbach is public, not PE-backed). Orion/Astra deep re-audit via orionservicesgroup.com/our-companies (dated portfolio roster) + astraservicepartners.com full news archive: found and added 6 missing in-window deals -- Diamondback Plumbing (Jan 2025), Griffen Plumbing and Heating (Jul 2025), Lowe Mechanical Services (Apr 2025, Canada), DAEL Thermal Group (Oct 2025, Canada), Field Technologies/FTL (2025, facilities mgmt), J.L. Refrigeration (Aug 2026, add-on to Berg Industrial Service). Corrected Berg Industrial Service geography from mislabeled 'West Chester, PA' (Orion HQ, picked up from press-release dateline) to actual Mississauga, ON, Canada. FLAGGED FOR SCOTT: (1) Diamondback baseline date -- Orion roster says joined 2024, Astra press release says announced Jan 14 2025; kept in-window per the dated primary source, consistent with how Knott Mechanical/CMC/Andrew's date gaps were handled. (2) Canada scope -- tracker meta.scope says 'U.S.' but Berg (already in master) and now Lowe Mechanical, DAEL Thermal, and J.L. Refrigeration are Canadian. Kept all in-window pending Scott's explicit scope call; alternative is archiving all 4 Canadian entries to Section 04 context only. All ~35 pre-2025 Astra/Orion portfolio companies and all landscaping affiliates (LMI Texas/Colorado, Landtamers, Sungrow, Top Notch, Exclusive) reconfirmed correctly excluded."
+    },
+    {
+      "version": "1.5",
+      "change": "Added The State Group (Apollo Global Management) -- new platform, verified via stategroup.com/news-updates and apollo.com press releases directly, plus a Scott/Schryver LinkedIn lead (MelKay). 3 in-window add-ons: Ruder Electric (Feb 2026, Kankakee IL), J&J Electric of Indiana (Dec 2025, Kokomo IN), MelKay/Mel-Kay Electric (Sep 2026, Evansville IN, 400+ union tradesmen). Platform formation (Apollo majority stake from Blue Wolf Capital, Nov 2024) noted in Section 04 as pre-baseline context. stategroup.com, apollo.com, and schryverco.com confirmed in the standing source rotation."
     }
   ],
   "intel": [
@@ -2726,7 +2860,8 @@
         "United Building Solutions (AE Industrial Partners, Jan 2025) -> national HVAC platform; add-ons Total Comfort Solutions, DFW Mechanical Group, McCarl's Services",
         "Solidaire HVAC & Energy Solutions (Percheron Capital, Sep 2025, foundational acquisition of Enervise) -> national commercial HVAC/plumbing/electrical/refrigeration/controls platform",
         "Heritage Holdings -> Airside Technology Corporation (Jul 2026) -> union commercial HVAC platform (East Syracuse, NY)",
-        "Broad Sky Partners -> Commonwealth Electrical Technologies (Mar 2025) -> electrical/energy-solutions platform; add-on NuWave Energy Solutions (Oct 2025)"
+        "Broad Sky Partners -> Commonwealth Electrical Technologies (Mar 2025) -> electrical/energy-solutions platform; add-on NuWave Energy Solutions (Oct 2025)",
+        "The State Group (Apollo Global Management, majority stake from Blue Wolf Capital, Nov 18 2024; Blue Wolf retains minority) -> Franklin TN-HQ'd multi-trade industrial/electrical/mechanical contractor, est. 1961, 1,100+ employees, 8M+ man-hours/year; Brian Jones appointed CEO Jan 5 2026; 3 in-window add-ons: Ruder Electric (Feb 2026), J&J Electric of Indiana (Dec 2025), MelKay (Sep 2026)"
       ]
     },
     {
@@ -2763,7 +2898,8 @@
         "Comfort Systems USA (NYSE: FIX) -> Century Contractors (Jan 2025), Right Way Plumbing & Mechanical (May 2025), Feyen Zylstra + Meisner Electric (Oct 2025); record share price early 2026 on commercial mechanical / data-center demand",
         "APi Group (NYSE: APG) -> ~$7.0B FY2025 revenue; FLS market-share leader (~15%+); EMCOR Group (NYSE: EME) -> active commercial mechanical/electrical acquirer",
         "APi Group (NYSE: APG) -> continued public-strategic FLS consolidation: CertaSite (from Riverside, Dec 2025), WTech Fire Group (Europe, closed Jul 2026), Onyx-Fire Protection (Canada, from Blackstone Tactical Opportunities, 2026) — public buyer; context, not PE master",
-        "Legence (Nasdaq: LGN; IPO Sep 2025; Blackstone retains a stake) -> commercial energy-services, engineering & mechanical; acquired The Bowers Group (Beltsville MD; mechanical/plumbing/process; ~$325M+, Jan 2026); now a public strategic — context, not PE master"
+        "Legence (Nasdaq: LGN; IPO Sep 2025; Blackstone retains a stake) -> commercial energy-services, engineering & mechanical; acquired The Bowers Group (Beltsville MD; mechanical/plumbing/process; ~$325M+, Jan 2026); now a public strategic — context, not PE master",
+        "Limbach Holdings (Nasdaq: LMB) -> public building-systems/MEPC strategic; acquired 1901 Inc. (Madison WI union MEP contractor, $63M, Sep 1 2026) and CYMCOR Inc. (TX, data-center commissioning, $30M, closed Aug 4 2026) -- public buyer, context only, not PE master"
       ]
     },
     {
