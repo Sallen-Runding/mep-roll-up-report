@@ -15,7 +15,7 @@
     "baseline_start": "2025-01-01",
     "current_through": "2026-09",
     "version": "1.5",
-    "last_updated": "2026-09-10",
+    "last_updated": "2026-09-14",
     "rules": {
       "employee_count": "Included only where explicitly stated in a credible source. Never estimated or inferred. Null = unavailable.",
       "transaction_date": "Date deal was announced or closed per cited source. 'precision' notes exact/month/year; 'basis' notes announced/completed/closed/advisor-disclosed.",
@@ -23,7 +23,7 @@
       "sources": "Verified public disclosures only. Priority: PRNewswire, Business Wire, Newsfile, Notified, PrivSource, PE Hub, CT Acquisitions, Capstone Partners, ACHR News, Consulting-Specifying Engineer, Mechanical Hub."
     },
     "counts": {
-      "tracked_line_items": 190,
+      "tracked_line_items": 196,
       "aggregate_rows": 1,
       "implied_transaction_volume": "~115",
       "platform_recap_events": "~30",
@@ -288,10 +288,10 @@
       "geography": "National (38 operating cos., 35 states + Canada)",
       "employee_count": null,
       "deal_type": "Recap (sole institutional investor)",
-      "transaction_date": "2026",
-      "date_precision": "year",
-      "date_basis": "per PrivSource; initial invest Jul 2024",
-      "source": "PrivSource"
+      "transaction_date": "2026-01-06",
+      "date_precision": "exact",
+      "date_basis": "closed",
+      "source": "Business Wire"
     },
     {
       "id": 21,
@@ -2681,6 +2681,90 @@
       "source": "PRNewswire",
       "id": 192,
       "new_in": "1.5"
+    },
+    {
+      "sponsor": "J.P. Morgan Asset Management",
+      "target": "MCS Building Services (management buyout)",
+      "subsector": "Facilities Management (HVAC/Plumbing/Electrical self-performed)",
+      "geography": "Lewisville, TX (national)",
+      "employee_count": null,
+      "deal_type": "Recap (management buyout)",
+      "transaction_date": "2026-01-05",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "id": 193,
+      "new_in": "1.6"
+    },
+    {
+      "sponsor": "Platform Ventures",
+      "target": "Staco Electric Construction Company",
+      "subsector": "Electrical",
+      "geography": "Kansas City, MO",
+      "employee_count": null,
+      "deal_type": "Platform",
+      "transaction_date": "2025-09-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "id": 194,
+      "new_in": "1.6"
+    },
+    {
+      "id": 195,
+      "sponsor": "Hidden Harbor Capital Partners",
+      "target": "Escape Fire Protection Inc.",
+      "subsector": "Fire & Life Safety",
+      "geography": "Vadnais Heights, MN (Twin Cities / Duluth / Fargo ND)",
+      "employee_count": null,
+      "deal_type": "Platform (Fund III, $825M vehicle)",
+      "transaction_date": "2026-08-25",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "schryverco.com / Hidden Harbor Capital Partners",
+      "new_in": "1.6"
+    },
+    {
+      "sponsor": "Loenbro (Kohlberg & Company)",
+      "target": "Prism Electric",
+      "subsector": "Electrical",
+      "geography": "Garland, TX (Texas / Oklahoma)",
+      "employee_count": null,
+      "deal_type": "Add-on (largest acquisition in Loenbro history)",
+      "transaction_date": "2026-09-14",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "id": 196,
+      "new_in": "1.6"
+    },
+    {
+      "sponsor": "Loenbro (Braemont Capital, pre-Kohlberg)",
+      "target": "Revolution Industrial",
+      "subsector": "Industrial Services",
+      "geography": "Arizona",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2025-01-09",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "GlobeNewswire",
+      "id": 197,
+      "new_in": "1.6"
+    },
+    {
+      "sponsor": "Peterson Partners (NorthSands Capital, lead investor)",
+      "target": "Kelso Industries (continuation vehicle, $510M)",
+      "subsector": "Electrical / Automation / Building Services (multi-trade)",
+      "geography": "US",
+      "employee_count": null,
+      "deal_type": "Recap (single-asset continuation vehicle)",
+      "transaction_date": "2026-09-09",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "schryverco.com / LinkedIn (Will Schryver)",
+      "id": 198,
+      "new_in": "1.6"
     }
   ],
   "top5": [
@@ -2800,6 +2884,14 @@
     {
       "version": "1.5",
       "change": "Added The State Group (Apollo Global Management) -- new platform, verified via stategroup.com/news-updates and apollo.com press releases directly, plus a Scott/Schryver LinkedIn lead (MelKay). 3 in-window add-ons: Ruder Electric (Feb 2026, Kankakee IL), J&J Electric of Indiana (Dec 2025, Kokomo IN), MelKay/Mel-Kay Electric (Sep 2026, Evansville IN, 400+ union tradesmen). Platform formation (Apollo majority stake from Blue Wolf Capital, Nov 2024) noted in Section 04 as pre-baseline context. stategroup.com, apollo.com, and schryverco.com confirmed in the standing source rotation."
+    },
+    {
+      "version": "1.6",
+      "change": "ICP Master Target List cross-check (1809-row CRM enrichment file, 307 unique sponsor+platform pairs): most rows lack a confirmed PE sponsor (large ESOP/family-owned contractors -- not deal-tracker candidates without a sponsor). Of the ~50 sponsor-confirmed rows, most were already tracked/excluded from prior sessions. Added 2 genuine new gaps: MCS Building Services (J.P. Morgan Asset Management-backed MBO, Jan 2026, facilities mgmt) and Staco Electric Construction (Platform Ventures, Sep 2025, Kansas City electrical). Refined AIR Control Concepts to exact date (Jan 6 2026, Blackstone buyout of Madison Dearborn's remaining stake). Checked Gardiner Service Company (IntelliTech Fire and Security lead) -- confirmed NOT PE-backed (internal management succession), correctly excluded. Full schryverco.com scrub (homepage feed + insights archive): added Hidden Harbor Capital Partners/Escape Fire Protection (new MN FLS platform, Aug 2026, Fund III). Checked AMPAM (Gemspring)/Coastal Fire & Integration Systems -- excluded, AMPAM self-describes as residential MEP serving multifamily/student housing/senior living. Found a Six Pillars Partners/Majestic Facility Experts (Indiana facilities-maintenance platform) east-central Illinois add-on mentioned on schryverco.com but could not identify the specific company name/date -- held pending confirmation. LinkedIn direct access via connected browser was blocked by permission prompt -- not yet completed, flagged for Shannon to approve or provide manually."
+    },
+    {
+      "version": "1.6",
+      "change": "LinkedIn direct access resolved (Claude in Chrome, per Shannon's browser selection) -- reviewed Will Schryver's recent activity feed directly. Added 3 verified deals: Loenbro (Kohlberg)/Prism Electric (Sep 14 2026, largest acquisition in Loenbro's history, TX/OK electrical, 2,500 employees, confirmed via Business Wire); Loenbro/Revolution Industrial (Jan 9 2025, Arizona, previously-missed in-window add-on, confirmed via GlobeNewswire); Peterson Partners \\$510M single-asset continuation vehicle for Kelso Industries (Sep 9 2026, NorthSands Capital lead investor). Checked and confirmed pre-baseline (excluded): Switch Electric/Loenbro (Oct 25 2021, Business Wire confirmed). Checked and excluded as residential/out-of-scope: Team First (Grove Mountain, residential plumbing), Titan Trades Alliance/Semper Fi (residential HVAC), KKR/A1 Garage Door Service (\\$2B, garage doors not MEP)."
     }
   ],
   "intel": [
@@ -2861,7 +2953,8 @@
         "Solidaire HVAC & Energy Solutions (Percheron Capital, Sep 2025, foundational acquisition of Enervise) -> national commercial HVAC/plumbing/electrical/refrigeration/controls platform",
         "Heritage Holdings -> Airside Technology Corporation (Jul 2026) -> union commercial HVAC platform (East Syracuse, NY)",
         "Broad Sky Partners -> Commonwealth Electrical Technologies (Mar 2025) -> electrical/energy-solutions platform; add-on NuWave Energy Solutions (Oct 2025)",
-        "The State Group (Apollo Global Management, majority stake from Blue Wolf Capital, Nov 18 2024; Blue Wolf retains minority) -> Franklin TN-HQ'd multi-trade industrial/electrical/mechanical contractor, est. 1961, 1,100+ employees, 8M+ man-hours/year; Brian Jones appointed CEO Jan 5 2026; 3 in-window add-ons: Ruder Electric (Feb 2026), J&J Electric of Indiana (Dec 2025), MelKay (Sep 2026)"
+        "The State Group (Apollo Global Management, majority stake from Blue Wolf Capital, Nov 18 2024; Blue Wolf retains minority) -> Franklin TN-HQ'd multi-trade industrial/electrical/mechanical contractor, est. 1961, 1,100+ employees, 8M+ man-hours/year; Brian Jones appointed CEO Jan 5 2026; 3 in-window add-ons: Ruder Electric (Feb 2026), J&J Electric of Indiana (Dec 2025), MelKay (Sep 2026)",
+        "Hidden Harbor Capital Partners (Boca Raton, FL) -> Escape Fire Protection (Vadnais Heights, MN) -- new Midwest fire & life-safety platform, Fund III (\\$825M), President Jason Gahm staying, add-ons planned"
       ]
     },
     {
@@ -2889,7 +2982,8 @@
         "Sandbrook Capital + Blackstone Credit & Insurance -> United Utility Services (from Bernhard Capital Partners, ~$1.0B, announced Dec 2025, closed Mar 2026)",
         "Kohlberg & Co. -> RESA Power (from Investcorp, Apr 2025)",
         "A&M Capital Partners -> East Coast Power (platform formation, Jan 2025)",
-        "Apax Partners -> Altus Fire & Life Safety (from AE Industrial Partners, Sep 2024)"
+        "Apax Partners -> Altus Fire & Life Safety (from AE Industrial Partners, Sep 2024)",
+        "Peterson Partners -> \\$510M single-asset continuation vehicle for Kelso Industries (Peterson Kelso Coinvest, LP), closed Sep 9 2026; NorthSands Capital (founded 2023 by fmr Blackstone SMD Bruce McEvoy) sole lead investor committing \\$450M+; Peterson Partners Fund X rolled its position and added further investment"
       ]
     },
     {
