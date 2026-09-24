@@ -3,19 +3,18 @@
     "title": "MEP Private Equity Deal Tracker",
     "scope": "Commercial-only U.S. PE-sponsored transactions",
     "subsectors": [
-      "HVAC",
-      "Mechanical",
+      "Fire, Life, Safety, Security",
+      "HVAC / Mechanical / Refrigeration",
       "Plumbing",
       "Electrical",
-      "Fire & Life Safety",
-      "Building Controls/BAS",
-      "MEP Engineering/Consulting"
+      "Building Controls / BAS",
+      "Energy Services / ESCO"
     ],
     "residential_excluded": true,
     "baseline_start": "2025-01-01",
     "current_through": "2026-09",
-    "version": "1.5",
-    "last_updated": "2026-09-14",
+    "version": "1.8",
+    "last_updated": "2026-09-24",
     "rules": {
       "employee_count": "Included only where explicitly stated in a credible source. Never estimated or inferred. Null = unavailable.",
       "transaction_date": "Date deal was announced or closed per cited source. 'precision' notes exact/month/year; 'basis' notes announced/completed/closed/advisor-disclosed.",
@@ -23,11 +22,11 @@
       "sources": "Verified public disclosures only. Priority: PRNewswire, Business Wire, Newsfile, Notified, PrivSource, PE Hub, CT Acquisitions, Capstone Partners, ACHR News, Consulting-Specifying Engineer, Mechanical Hub."
     },
     "counts": {
-      "tracked_line_items": 197,
-      "aggregate_rows": 1,
-      "implied_transaction_volume": "~115",
-      "platform_recap_events": "~30",
-      "active_commercial_platforms": "~40"
+      "tracked_line_items": 216,
+      "aggregate_rows": 2,
+      "implied_transaction_volume": "~293",
+      "platform_recap_events": "46",
+      "active_commercial_platforms": "106"
     }
   },
   "deals": [
@@ -57,7 +56,9 @@
       "date_precision": "exact",
       "date_basis": "announced",
       "source": "Platte River PR / Stephens",
-      "subsector_detail": "Building Controls (distribution)"
+      "subsector_detail": "Building Controls (distribution)",
+      "archived": true,
+      "archive_reason": "Out of scope per Scott (Sep 24 2026): pure distributor, not a contractor (v1.8) -- BCS is a value-added distributor of building controls (Platte River PR, Feb 3 2025)"
     },
     {
       "id": 3,
@@ -222,7 +223,9 @@
       "date_precision": "exact",
       "date_basis": "announced",
       "source": "L Squared PR / Business Wire",
-      "subsector_detail": "Building Controls (BAS components)"
+      "subsector_detail": "Building Controls (BAS components)",
+      "archived": true,
+      "archive_reason": "Out of scope per Scott (Sep 24 2026): manufacturer, not a services contractor (v1.8) -- L Squared / Functional Devices (RIB relays, Sharpsville IN)"
     },
     {
       "id": 15,
@@ -235,7 +238,9 @@
       "transaction_date": "2026-02-23",
       "date_precision": "exact",
       "date_basis": "announced",
-      "source": "PR Newswire via CT Acquisitions"
+      "source": "PR Newswire via CT Acquisitions",
+      "archived": true,
+      "archive_reason": "Duplicate row of #125 (Green Heron / Regency Plumbing, Feb 23 2026) (v1.8)"
     },
     {
       "id": 16,
@@ -249,7 +254,9 @@
       "date_precision": "month",
       "date_basis": "per Capstone",
       "source": "Capstone Partners",
-      "subsector_detail": "HVAC"
+      "subsector_detail": "HVAC",
+      "archived": true,
+      "archive_reason": "Out of scope per Scott (Sep 24 2026): HVAC manufacturers' representative (sales channel), not a contractor (v1.8) -- Technical Air Systems described by AIR as a 'regional HVAC manufacturers' representative' (Jan 23 2026)"
     },
     {
       "id": 17,
@@ -305,7 +312,9 @@
       "date_precision": "exact",
       "date_basis": "closed",
       "source": "Business Wire",
-      "subsector_detail": "HVAC"
+      "subsector_detail": "HVAC",
+      "archived": true,
+      "archive_reason": "Out of scope per Scott (Sep 24 2026): HVAC manufacturers' representative (sales channel), not a contractor (v1.8) -- AIR Control Concepts is an HVAC manufacturers'-rep network"
     },
     {
       "id": 21,
@@ -390,7 +399,9 @@
       "date_precision": "year",
       "date_basis": "per S&P Global",
       "source": "S&P Global Market Intelligence",
-      "subsector_detail": "MEP (HVAC repair/maintenance)"
+      "subsector_detail": "MEP (HVAC repair/maintenance)",
+      "archived": true,
+      "archive_reason": "Pre-baseline per primary source; archived per Scott (Sep 24 2026) and moved to Section 04 context (v1.8) -- Broadwing Capital + Davidson Kempner investment in Upchurch closed Mar 27 2024 (Business Wire)"
     },
     {
       "id": 27,
@@ -530,7 +541,9 @@
       "date_precision": "year",
       "date_basis": "per PrivSource",
       "source": "PrivSource",
-      "subsector_detail": "HVAC / Plumbing"
+      "subsector_detail": "HVAC / Plumbing",
+      "archived": true,
+      "archive_reason": "Pre-baseline per primary source; archived per Scott (Sep 24 2026) and moved to Section 04 context (v1.8) -- Slate Capital invested in Vertical Mechanical Group on Jun 22 2023"
     },
     {
       "id": 37,
@@ -572,7 +585,9 @@
       "date_precision": "year",
       "date_basis": "per PrivSource",
       "source": "PrivSource",
-      "subsector_detail": "Building Services (commercial/gov property services)"
+      "subsector_detail": "Building Services (commercial/gov property services)",
+      "archived": true,
+      "archive_reason": "Duplicate row of #193 (J.P. Morgan AM / MCS Building Services MBO, Jan 5 2026) (v1.8)"
     },
     {
       "id": 40,
@@ -610,11 +625,12 @@
       "geography": "West Texas",
       "employee_count": null,
       "deal_type": "Add-on",
-      "transaction_date": "2026",
-      "date_precision": "year",
-      "date_basis": "per PrivSource",
-      "source": "PrivSource",
-      "subsector_detail": "Fire & Life Safety / Security"
+      "transaction_date": "2025-11-19",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Pye-Barker news",
+      "subsector_detail": "Fire & Life Safety / Security",
+      "corrected_in": "1.8"
     },
     {
       "id": 43,
@@ -736,7 +752,7 @@
       "subsector_detail": "Fire & Life Safety"
     },
     {
-      "sponsor": "Ares Mgmt + Energy Impact Partners + Integrated Power Services",
+      "sponsor": "Integrated Power Services (Searchlight Capital Partners)",
       "target": "Techpro Power Group",
       "subsector": "Electrical",
       "geography": "US",
@@ -744,11 +760,12 @@
       "deal_type": "Buyout / Platform (~$350M)",
       "transaction_date": "2026-01-29",
       "date_precision": "exact",
-      "date_basis": "announced",
-      "source": "PitchBook / R.L. Hulett",
+      "date_basis": "completed",
+      "source": "GlobeNewswire / Business Wire",
       "id": 51,
       "new_in": "1.3",
-      "subsector_detail": "Industrial Electrical (testing & commissioning)"
+      "subsector_detail": "Industrial Electrical (testing & commissioning)",
+      "corrected_in": "1.8"
     },
     {
       "sponsor": "Legence (Blackstone-backed)",
@@ -1327,7 +1344,9 @@
       "source": "PrivSource",
       "id": 90,
       "new_in": "1.3",
-      "subsector_detail": "Security / Fire & Life Safety integration"
+      "subsector_detail": "Security / Fire & Life Safety integration",
+      "archived": true,
+      "archive_reason": "Pre-baseline per primary source; archived per Scott (Sep 24 2026) and moved to Section 04 context (v1.8) -- Pavion's own release dates the Integrated Security and Communications acquisition Jan 18 2024"
     },
     {
       "sponsor": "Apollo (Hybrid Funds)",
@@ -1835,7 +1854,9 @@
       "source": "PRNewswire",
       "id": 124,
       "new_in": "1.3",
-      "subsector_detail": "Mechanical (HVAC/Plumbing)"
+      "subsector_detail": "Mechanical (HVAC/Plumbing)",
+      "archived": true,
+      "archive_reason": "Duplicate row of #6 (Citation Capital / Gallo Mechanical, Jun 23 2025) (v1.8)"
     },
     {
       "sponsor": "Green Heron Partners",
@@ -1863,7 +1884,9 @@
       "date_basis": "announced",
       "source": "Business Wire",
       "id": 126,
-      "new_in": "1.3"
+      "new_in": "1.3",
+      "archived": true,
+      "archive_reason": "Out of scope per Scott (Sep 24 2026): manufacturer, not a services contractor (v1.8) -- duplicate of #14"
     },
     {
       "sponsor": "Fidelity Building Services Group (Onex Corporation)",
@@ -2945,6 +2968,456 @@
       "date_basis": "announced",
       "source": "DCA Partners",
       "new_in": "1.7"
+    },
+    {
+      "sponsor": "Apax Partners (from Dunes Point Capital)",
+      "target": "NextGen Security",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Exton, PA (8 branches, US/Canada)",
+      "employee_count": null,
+      "deal_type": "Platform (PE-to-PE)",
+      "transaction_date": "2026-09-09",
+      "date_precision": "exact",
+      "date_basis": "completed",
+      "source": "Apax Partners",
+      "subsector_detail": "Commercial integrated security (video, access control, intrusion)",
+      "new_in": "1.8",
+      "id": 200
+    },
+    {
+      "sponsor": "Commonwealth Electrical Technologies (Broad Sky Partners)",
+      "target": "Horton Electrical Services",
+      "subsector": "Electrical",
+      "geography": "Connecticut",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-15",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Commercial/industrial electrical & civil (wastewater, solar O&M, generators)",
+      "new_in": "1.8",
+      "id": 201
+    },
+    {
+      "sponsor": "Pavion (Wind Point Partners)",
+      "target": "Communication Company",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Midwest US",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire / Pavion",
+      "subsector_detail": "Life-safety, security, AV and communications integrator",
+      "new_in": "1.8",
+      "id": 202
+    },
+    {
+      "sponsor": "Convergint (Ares Management)",
+      "target": "Surveillance Systems Incorporated (SSI)",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Las Vegas, NV",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Convergint",
+      "subsector_detail": "Gaming/casino surveillance integrator",
+      "new_in": "1.8",
+      "id": 203
+    },
+    {
+      "sponsor": "Summit Fire & Security (BlackRock LTPC → BDT & MSD)",
+      "target": "Casteel Automatic Fire Protection",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Houston, TX (Amarillo / Austin / Lubbock)",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-01",
+      "date_precision": "exact",
+      "date_basis": "effective",
+      "source": "Summit Companies",
+      "subsector_detail": "Commercial/industrial fire sprinkler",
+      "new_in": "1.8",
+      "id": 204
+    },
+    {
+      "sponsor": "Fire Protection Team (Right Angle Partners)",
+      "target": "Brake Fire Protection",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Trumbull, CT",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-01",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Right Angle Partners",
+      "subsector_detail": "Commercial fire sprinkler and alarm",
+      "new_in": "1.8",
+      "id": 205
+    },
+    {
+      "sponsor": "Pye-Barker (Altas + LGP)",
+      "target": "Suppression Systems, Inc.",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Tacoma, WA (+ Portland, OR)",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-31",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Fire alarm, detection and suppression (data centers, power, healthcare)",
+      "new_in": "1.8",
+      "id": 206
+    },
+    {
+      "sponsor": "Security 101 (Morgan Stanley Capital Partners)",
+      "target": "Silverstrand Technologies",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "San Diego, CA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-26",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Security 101",
+      "subsector_detail": "Commercial security integrator",
+      "new_in": "1.8",
+      "id": 207
+    },
+    {
+      "sponsor": "Flow Service Partners (Quad-C Management)",
+      "target": "Altman Air Conditioning Co., Inc.",
+      "subsector": "HVAC / Mechanical / Refrigeration",
+      "geography": "South Florida",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-25",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Commercial HVAC service, replacement, maintenance",
+      "new_in": "1.8",
+      "id": 208
+    },
+    {
+      "sponsor": "AI Fire / Impact Fire (Blackstone)",
+      "target": "River City Sprinklers",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Tennessee",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "AI Fire",
+      "subsector_detail": "Fire sprinkler",
+      "new_in": "1.8",
+      "id": 209
+    },
+    {
+      "sponsor": "AI Fire / Impact Fire (Blackstone)",
+      "target": "Blaze Master Fire Protection",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Utah",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-09-18",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "AI Fire",
+      "subsector_detail": "Fire protection",
+      "new_in": "1.8",
+      "id": 210
+    },
+    {
+      "sponsor": "Albireo Energy (Huron Capital)",
+      "target": "Powers — Oklahoma and Mississippi/Louisiana divisions",
+      "subsector": "Building Controls / BAS",
+      "geography": "OK / MS / LA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-20",
+      "date_precision": "exact",
+      "date_basis": "completed",
+      "source": "Albireo Energy",
+      "subsector_detail": "Building automation systems",
+      "new_in": "1.8",
+      "id": 211
+    },
+    {
+      "sponsor": "Security Fire Solutions (Blackford Capital)",
+      "target": "Industrial Electronic Systems (IES)",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Greater Sacramento, CA",
+      "employee_count": null,
+      "deal_type": "Add-on (2nd)",
+      "transaction_date": "2026-08-19",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Fire alarm, security and life-safety systems",
+      "new_in": "1.8",
+      "id": 212
+    },
+    {
+      "sponsor": "Sciens Building Solutions (Carlyle)",
+      "target": "Fire Safe Protection Services",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Houston, TX",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-19",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Sciens Building Solutions",
+      "subsector_detail": "Fire and life safety",
+      "new_in": "1.8",
+      "id": 213
+    },
+    {
+      "sponsor": "Bluejack Fire & Life Safety (Agellus Capital)",
+      "target": "Phillips Fire & Life Safety",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Houston, TX",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-18",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "citybiz",
+      "subsector_detail": "Fire and life safety",
+      "new_in": "1.8",
+      "id": 214
+    },
+    {
+      "sponsor": "Sciens Building Solutions (Carlyle)",
+      "target": "Priority Systems, Inc.",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Metairie, LA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-12",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Sciens Building Solutions",
+      "subsector_detail": "Fire and life safety",
+      "new_in": "1.8",
+      "id": 215
+    },
+    {
+      "sponsor": "Optimum Energy Co. (Bernhard Capital Partners)",
+      "target": "Hussung Mechanical Contractors + HMC Service Company",
+      "subsector": "HVAC / Mechanical / Refrigeration",
+      "geography": "Kentucky / Indiana",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-12",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Mission-critical HVAC, plumbing, medical gas, piping",
+      "new_in": "1.8",
+      "id": 216
+    },
+    {
+      "sponsor": "Guardian Fire Services (Investcorp)",
+      "target": "Houston Fire & Security",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Houston, TX",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-10",
+      "date_precision": "exact",
+      "date_basis": "completed",
+      "source": "GlobeNewswire",
+      "subsector_detail": "Commercial fire and security",
+      "new_in": "1.8",
+      "id": 217
+    },
+    {
+      "sponsor": "Heartwood Partners (Norlee Group)",
+      "target": "Vintage Electric, Inc.",
+      "subsector": "Electrical",
+      "geography": "Gainesville, FL",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-06",
+      "date_precision": "exact",
+      "date_basis": "closed",
+      "source": "Norlee Group",
+      "subsector_detail": "Commercial/industrial/institutional electrical",
+      "new_in": "1.8",
+      "id": 218
+    },
+    {
+      "sponsor": "Everon (GTCR)",
+      "target": "Scarsdale Security Systems",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Scarsdale, NY",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-08-06",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Everon",
+      "subsector_detail": "Commercial security integrator",
+      "new_in": "1.8",
+      "id": 219
+    },
+    {
+      "sponsor": "Gemspring Capital",
+      "target": "Key Line Construction + Palouse Power",
+      "subsector": "Electrical",
+      "geography": "Pacific Northwest (OR / WA / ID / CA / UT)",
+      "employee_count": null,
+      "deal_type": "Platform (formation)",
+      "transaction_date": "2026-07-29",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Utility T&D, substation and communications infrastructure",
+      "new_in": "1.8",
+      "id": 220
+    },
+    {
+      "sponsor": "Pye-Barker (Altas + LGP)",
+      "target": "Southland Fire & Safety Equipment, Inc.",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Louisiana",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-07-29",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire / Pye-Barker news",
+      "subsector_detail": "Fire suppression, extinguishers, inspection",
+      "new_in": "1.8",
+      "id": 221
+    },
+    {
+      "sponsor": "Trivest Partners",
+      "target": "Halo Service Partners (ProTech Security + Verified Security)",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "North Canton, OH / Atlanta, GA",
+      "employee_count": null,
+      "deal_type": "Platform (formation)",
+      "transaction_date": "2026-07-21",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Business Wire",
+      "subsector_detail": "Commercial security integration and monitoring",
+      "new_in": "1.8",
+      "id": 222
+    },
+    {
+      "sponsor": "Greenbelt Capital Partners",
+      "target": "Bowe & Gant",
+      "subsector": "Electrical",
+      "geography": "Southern New Jersey",
+      "employee_count": null,
+      "deal_type": "Platform (majority)",
+      "transaction_date": "2026-07-20",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire",
+      "subsector_detail": "Electrical and energy-infrastructure services (data center, utility)",
+      "new_in": "1.8",
+      "id": 223
+    },
+    {
+      "sponsor": "Pye-Barker (Altas + LGP)",
+      "target": "Hartford Sprinkler Co., Inc.",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Hartford, CT",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-07-16",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire / Pye-Barker news",
+      "subsector_detail": "Sprinkler, fire alarm, suppression",
+      "new_in": "1.8",
+      "id": 224
+    },
+    {
+      "sponsor": "Cobalt Service Partners (Alpine Investors)",
+      "target": "North Carolina Sound",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Pikeville, NC",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-07-13",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Cobalt Service Partners",
+      "subsector_detail": "Security and systems integration",
+      "new_in": "1.8",
+      "id": 225
+    },
+    {
+      "sponsor": "Pye-Barker (Altas + LGP)",
+      "target": "ResponseTECH",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Rockville, MD",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-07-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "PRNewswire / Pye-Barker news",
+      "subsector_detail": "Security, fire alarm, access control, nurse-call",
+      "new_in": "1.8",
+      "id": 226
+    },
+    {
+      "sponsor": "Modigent (OMERS Private Equity)",
+      "target": "P&E Mechanical",
+      "subsector": "HVAC / Mechanical / Refrigeration",
+      "geography": "Waco, TX",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-07-08",
+      "date_precision": "exact",
+      "date_basis": "announced",
+      "source": "Modigent",
+      "subsector_detail": "Commercial HVAC / plumbing",
+      "new_in": "1.8",
+      "id": 227
+    },
+    {
+      "sponsor": "Guardian Fire Services (Investcorp)",
+      "target": "Midwest Protection Services",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Omaha, NE",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-07",
+      "date_precision": "month",
+      "date_basis": "reported",
+      "source": "GlobeNewswire (Guardian release)",
+      "subsector_detail": "Commercial fire and life safety",
+      "new_in": "1.8",
+      "id": 228
+    },
+    {
+      "sponsor": "Summit Fire & Security (BlackRock LTPC → BDT & MSD)",
+      "target": "Noremac Sprinkler + North Atlantic Fire & Safety",
+      "subsector": "Fire, Life, Safety, Security",
+      "geography": "Attleboro, MA",
+      "employee_count": null,
+      "deal_type": "Add-on",
+      "transaction_date": "2026-06-23",
+      "date_precision": "exact",
+      "date_basis": "effective",
+      "source": "Summit Companies",
+      "subsector_detail": "Fire sprinkler and fire & safety",
+      "new_in": "1.8",
+      "id": 229
     }
   ],
   "top5": [
@@ -3011,9 +3484,9 @@
       "type": "Recap"
     },
     {
-      "deal": "Blackstone -> AIR Control Concepts",
-      "subsector": "HVAC",
-      "type": "Recap"
+      "deal": "Apax Partners -> NextGen Security",
+      "subsector": "Security Integration",
+      "type": "Platform (PE-to-PE, from Dunes Point)"
     },
     {
       "deal": "Wind Point Partners -> The Hiller Companies",
@@ -3076,6 +3549,10 @@
     {
       "version": "1.7",
       "change": "Scott/Shannon call directives applied (Sept 14 2026, per Call_with_Scott_Avirett transcript): (1) SPONSOR CONSOLIDATION -- unified all Astra Service Partners / Orion Group / Alpine Investors variants under a single 'Orion Group / Alpine Investors' label (13 rows relabeled); Cobalt Service Partners left distinct as a separate Alpine platform, not an Astra/Orion rename. (2) SUBSECTOR TAXONOMY STREAMLINED from ~85 freeform variants down to Scott's 6 target master categories: Fire, Life, Safety, Security; HVAC / Mechanical / Refrigeration; Plumbing; Electrical; Building Controls / BAS; Energy Services / ESCO. Original granular subsector text preserved in a new subsector_detail field on each row for reference. Routing convention for genuinely multi-trade/MEP entries: fire/security-flagged terms always route to Fire/Life/Safety/Security per Scott's explicit master-category directive; otherwise routed by first-listed trade in the original description. Facilities-management-type entries (Maintera, MCS, Airside, etc.) folded into HVAC/Mechanical/Refrigeration to stay within the 6-category target -- flagged for Scott's review since this loses some specificity. (3) SERVICE LOGIC deep review per Scott's specific concern: checked servicelogic.com directly (About, Acquisition Program, and News/Boston-market pages) plus multiple advisor and press sources. Confirmed only ONE additional in-window add-on beyond the already-tracked Bain/Mubadala recap: L&H Airco (Jul 17 2026, CA building automation, confirmed via DCA Partners advisory release). Caswell Mechanical + Caswell Schena Electric and HVAC Incorporated -- the three companies specifically named in the Gemini research screenshot -- are all confirmed 2024 (pre-baseline) via Service Logic's own site and CT Acquisitions; moved to Section 04 heritage context, not the master. Refined the Bain/Mubadala transaction date to the exact close date, Dec 16 2025."
+    },
+    {
+      "version": "1.8",
+      "change": "Sep 24 2026 weekly sweep (sources A-J, incl. Tier 1 Orion/Astra/State Group/Apollo/Schryver; web search enabled mid-pass). Added 30 verified deals announced Jun 23-Sep 18 2026: Apax Partners / NextGen Security; Commonwealth Electrical Technologies / Horton Electrical Services; Pavion / Communication Company; Convergint / Surveillance Systems Incorporated (SSI); Summit Fire & Security / Casteel Automatic Fire Protection; Fire Protection Team / Brake Fire Protection; Pye-Barker / Suppression Systems, Inc.; Security 101 / Silverstrand Technologies; Flow Service Partners / Altman Air Conditioning Co., Inc.; AI Fire / Impact Fire / River City Sprinklers; AI Fire / Impact Fire / Blaze Master Fire Protection; Albireo Energy / Powers — Oklahoma and Mississippi/Louisiana divisions; Security Fire Solutions / Industrial Electronic Systems (IES); Sciens Building Solutions / Fire Safe Protection Services; Bluejack Fire & Life Safety / Phillips Fire & Life Safety; Sciens Building Solutions / Priority Systems, Inc.; Optimum Energy Co. / Hussung Mechanical Contractors + HMC Service Company; Guardian Fire Services / Houston Fire & Security; Heartwood Partners / Vintage Electric, Inc.; Everon / Scarsdale Security Systems; Gemspring Capital / Key Line Construction + Palouse Power; Pye-Barker / Southland Fire & Safety Equipment, Inc.; Trivest Partners / Halo Service Partners (ProTech Security + Verified Security); Greenbelt Capital Partners / Bowe & Gant; Pye-Barker / Hartford Sprinkler Co., Inc.; Cobalt Service Partners / North Carolina Sound; Pye-Barker / ResponseTECH; Modigent / P&E Mechanical; Guardian Fire Services / Midwest Protection Services; Summit Fire & Security / Noremac Sprinkler + North Atlantic Fire & Safety. Section 04: replaced legacy 'Astra Service Partners / Orion Group' label with 'Orion Group / Alpine Investors' (rule 5); corrected Altus sponsor to Apax; added new platform formations, H2 cadence notes, JT Thorpe close (Sep 3 2026), Security 101 sponsor transition, APi/Evergreen context. meta.version synced to 1.8; meta.subsectors updated to the 6-category taxonomy; counts recomputed from active rows to match the live KPI strip. HELD for Scott (not applied): archive/reclassification flags, Canada policy, rep/distributor scope, IPS sponsor correction, GreenArrow scope, Pye-Barker itemization, and the ~115-deal 2025-H1 2026 re-audit backlog (see claude/DealScout_Sweep_Log_2026-09-24*.md). SCOTT RULINGS APPLIED (Teams, Sep 24 2026): (1) archived manufacturers / pure distributors / manufacturers' reps: L Squared/Functional Devices (#14, dup #126), Platte River/BCS (#2), AIR Control Concepts/Technical Air Systems (#16) and Blackstone/AIR recap (#20); kept Ambient Enterprises and Impact Climate/Heat Transfer Systems of GA (distributors that also service). (2) Canada stays in scope. (3) archived pre-baseline rows: Slate/VMG (#36, Jun 2023), Upchurch platform (#26, Mar 2024), Pavion/Integrated Security & Communications (#90, Jan 2024). Housekeeping: archived exact duplicates #124 (Gallo), #15 (Regency Plumbing), #39 (MCS). Sourced corrections: IPS/TechPro sponsor -> Searchlight Capital (#51); Pye-Barker/Texas Homeland Security & Sound dated Nov 19 2025 (#42). Top 10: Blackstone/AIR replaced with Apax/NextGen Security."
     }
   ],
   "intel": [
@@ -3083,11 +3560,10 @@
       "h": "Highest-frequency acquirers (in window)",
       "items": [
         "Pye-Barker Fire & Safety (Altas + Leonard Green; ADIA/GIC minority) -> 57 acquisitions in 2025; 2026 cadence continuing (ASCI Security, Fire Protection Specialists, Texas Homeland Security & Sound)",
-        "AIR Control Concepts (Blackstone) -> three acquisitions in 2025 plus Technical Air Systems (Feb 2026); six commercial-HVAC-equipment add-ons YTD in 2026 per Capstone",
         "Kelso Industries (PE: Oxbow Equity Partners + Peterson Partners; $50M Paceline investment 2023) -> 31+ acquisitions since 2021 to ~$1.2B revenue and ~3,500 employees; recent commercial add-ons now itemized on the master (Rowbel Services, McClintock Electric, Brother's Mechanical, NTD Mechanical, Premier Electric, YES/ENETK, Wallace Electric)",
         "FirstCall Mechanical Group (SkyKnight Capital) -> CLS Facility Services, Automated Building Solutions, Force Electrical Services",
         "APIC Solutions (Tower Arch Capital) -> Control Fire Systems and Sierra Detention Systems (Aug 2025); platform now 500+ employees; new fire/life-safety and corrections-security lines",
-        "Astra Service Partners / Orion Group (Alpine Investors) -> commercial mechanical add-ons (Air Comfort Service Group, Knott Mechanical)",
+        "Orion Group / Alpine Investors (Astra + Leo) -> commercial mechanical / facilities add-ons (Air Comfort Service Group, Knott Mechanical, CMC Corporate Solutions, Andrew's, J.L. Refrigeration)",
         "Grizzly MEP (Garnett Station Partners) -> multi-add-on commercial MEP build (Vermont Mechanical, Excel Mechanical Contractors)",
         "Nextech / CMS Nextech (Audax Private Equity, since 2020; Banyan Growth co-investor) -> largest independent self-performing commercial HVAC/R provider (Melbourne, FL; ~2,000 employees, 45+ states, 50,000+ sites; $353M raised). ~11 acquisitions since 2020, nearly all pre-baseline: Arctic Services & Patriot Mechanical (2021), DegreeOne portfolio (~2022), CMI Mechanical (Denver, Dec 2022), Aire Rite (So. Cal, Jan 2023), Ramco Refrigeration (Anaheim, 2023), Service Specialists (Madison WI, 2023), Brine's Refrigeration (Lathrup Village MI, 2023), Hotside Equipment Services (2023); only in-window deal is Chandler's Air Conditioning & Refrigeration (Nov 14, 2025), shown in the master",
         "Crete United (Ridgemont Equity Partners) -> national commercial MEP network (HVAC, electrical, plumbing, building automation); 40+ partner companies, 4,000+ employees, ~$680M revenue, all 50 states; 23 investments incl. CAM H.V.A.C. & Construction (Jun 2025), Hartwig Mechanical, AC Corporation, C&C Service",
@@ -3098,12 +3574,12 @@
         "Convergint (Ares Management, since 2018) -> global security + fire/life-safety integrator; 220+ centers, 40+ acquisitions; 2025 add-ons A-Technology, A+ Technology & Security, NuSource; ~$850M Ares continuation vehicle (LGP co-lead, Mar 2026)",
         "CertaSite (The Riverside Company, 2018-2025) -> Midwest commercial FLS; 27 add-ons, 17 facilities/8 states, ~$90M revenue; add-on Accurate Fire Equipment (Sep 2025); being sold to APi Group (below)",
         "AI Fire (TRUARC Partners) -> national FLS; sold to Blackstone (below)",
-        "Altus Fire & Life Safety (AE Industrial Partners) -> West Coast FLS (WA/CA/OR)",
+        "Altus Fire & Life Safety (Apax Partners, since Sep 2024; fmr AE Industrial Partners) -> West Coast FLS (WA/CA/OR)",
         "CoolSys (Ares Management, since 2019) -> national commercial refrigeration/HVAC/energy; 22+ acquisitions; in-window add-ons Lima Company (Philadelphia, Mar 2026) and Georgia Air Solutions (Jackson GA, 2026)",
         "ArchKey Solutions (26North Partners, since Nov 2024; fmr One Rock) -> national electrical & technologies platform, 4,000+ employees; 2025 add-ons Orlando Diefenderfer and Bruce & Merrilees Electric (both Sep 2025, PA)",
         "Pye-Barker (Altas + LGP) -> 22 acquisitions in H1 2026 (No. 3 on SDM 100); notable: Jersey Fire Protection, Universal Fire Systems, Priority One Security, ASCI Security, Fire Protection Specialists",
         "Cobalt Service Partners (Alpine Investors, since Dec 2023) -> national commercial security integrator; 18 acquisitions incl. six in 2025 (FTS, SAS, Acme, System Integrations, Galaxy Integrated, DSI) and STS360 (Dallas, Feb 2026)",
-        "Pavion (Wind Point Partners, since Jun 2020) -> global fire/security/integration leader; 70+ US locations, 25 investments; add-ons Safeway Fire & Protection (Dec 2025) and Integrated Security & Communications (Mar 2026)",
+        "Pavion (Wind Point Partners, since Jun 2020) -> global fire/security/integration leader; 70+ US locations, 25 investments; add-ons Safeway Fire & Protection (Dec 2025) and Communication Company (Midwest, Sep 2026); Integrated Security & Communications dates to Jan 2024 (pre-baseline)",
         "PowerGrid Services (Apollo Hybrid Funds, since Jul 2025, from The Sterling Group) -> electric utility maintenance & construction, 35+ states (in-scope utility infrastructure)",
         "Loenbro (Kohlberg & Company, stake Dec 2025) -> industrial/electrical services with data-center focus; add-ons Stewart Electric (Las Vegas, Apr 2025) and Weifield Group Contracting (CO, Jul 2025)",
         "The Hiller Companies (Littlejohn & Co. since Sep 20, 2022; Pon Holdings co-investor; CEO Santiago Perez; HQ Mobile AL; 44+ locations) -> fire & life safety incl. marine/special-hazard/energy-storage/data-center; 33 add-ons under Littlejohn (23 in-window 2025-26 now in master); pre-2025 add-ons incl. 2024: Regency Fire Sprinklers LA, Premium Fire & Security, Pinnacle Fire Systems, Amppro, Fire Ace, Wester Fire; 2023: Fire Defense Services, Nevada Fire Protection, Mid Rivers Fire Safety, Unifour Fire & Safety (merger). Agreed to be sold to Wind Point Partners (Jan 15, 2026; also owns Pavion)",
@@ -3116,7 +3592,11 @@
         "NexCore (Trinity Hunt Partners, since Mar 2023) -> commercial HVAC platform; 11 total add-ons, 4 in-window (DWC Mechanical, Action Air Systems, Accutemp Engineering, FX Automation) plus Mechanical Systems Technology (Apr 2026)",
         "RESA Power (Kohlberg & Co., recap from Investcorp Apr 2025) -> electrical infrastructure/power systems, 50+ locations US/Canada; 3 in-window add-ons (Commercial Switchgear, 3MD Power Services, Societe Generale d'Electrotechnique)",
         "Kassel Mechanical (Paceline Equity Partners) -> electrical/mechanical roll-up; in-window add-ons Arrow Electric (Apr 2025), Henderson Electric (Feb 2026), Coastal Electric of FL (2026)",
-        "Service Logic (Bain Capital + Mubadala, from Leonard Green & Partners, Dec 16 2025) -> largest privately-held commercial HVAC/mechanical platform in North America, 140-155+ locations, 5,000+ technicians, 110+ acquisitions disclosed historically; in-window add-on L&H Airco (Jul 2026, CA building automation); heritage 2024 add-ons Caswell Mechanical + Caswell Schena Electric (Boston) and HVAC Incorporated (Milwaukie OR) confirmed pre-baseline via servicelogic.com and CT Acquisitions"
+        "Service Logic (Bain Capital + Mubadala, from Leonard Green & Partners, Dec 16 2025) -> largest privately-held commercial HVAC/mechanical platform in North America, 140-155+ locations, 5,000+ technicians, 110+ acquisitions disclosed historically; in-window add-on L&H Airco (Jul 2026, CA building automation); heritage 2024 add-ons Caswell Mechanical + Caswell Schena Electric (Boston) and HVAC Incorporated (Milwaukie OR) confirmed pre-baseline via servicelogic.com and CT Acquisitions",
+        "Pye-Barker (Altas + LGP) -> H2 2026 cadence continuing: ResponseTECH (Jul 8), Hartford Sprinkler (Jul 16), Southland Fire & Safety (Jul 29), Suppression Systems (Aug 31)",
+        "Sciens Building Solutions (Carlyle) -> Gulf Coast expansion: Priority Systems (Metairie LA, Aug 2026) and Fire Safe Protection Services (Houston, Aug 2026)",
+        "AI Fire / Impact Fire (Blackstone, 2025, from TruArc) -> national fire-protection roll-up; River City Sprinklers (Aug 2026) and Blaze Master Fire Protection (Sep 2026)",
+        "Guardian Fire Services (Investcorp, since Dec 2025) -> Midwest Protection Services (Jul 2026) and Houston Fire & Security (Aug 2026)"
       ]
     },
     {
@@ -3127,9 +3607,7 @@
         "Truelink Capital -> Horwitz (commercial/industrial MEP; Minneapolis; data-center/semiconductor end markets) — Jul 1, 2026",
         "Percheron Capital -> ASPYRE Fire & Life Safety; Agellus Capital -> Bluejack Fire & Life Safety (FirePro/Chase/AAA)",
         "Crescendo Capital -> PIPCO under new holdco EFI Services (Midwest MEP + fire protection)",
-        "Broadwing Capital -> Upchurch Services (commercial MEP; HVAC repair/maintenance)",
         "Bear Castle Capital -> Allied Services Group; anchor Colstrip Electrical (Mountain West; power/industrial/data-center)",
-        "L Squared Capital -> Functional Devices (BAS peripheral-components roll-up)",
         "Green Heron Partners -> Regency Plumbing (commercial facility-services platform; Texas Gulf Coast)",
         "MFG Partners -> Regency Electric (Colorado); New State Capital -> Harrell-Fish (Midwest mechanical); Hudson Glade -> ComNet Communications (low-voltage)",
         "Leo (Orion Group / Alpine Investors) -> formally unified/launched as single national facilities-maintenance brand Feb 10, 2026 (West Chester, PA), consolidating existing self-perform + vetted-partner network; CEO Cecil Moore",
@@ -3139,7 +3617,12 @@
         "Heritage Holdings -> Airside Technology Corporation (Jul 2026) -> union commercial HVAC platform (East Syracuse, NY)",
         "Broad Sky Partners -> Commonwealth Electrical Technologies (Mar 2025) -> electrical/energy-solutions platform; add-on NuWave Energy Solutions (Oct 2025)",
         "The State Group (Apollo Global Management, majority stake from Blue Wolf Capital, Nov 18 2024; Blue Wolf retains minority) -> Franklin TN-HQ'd multi-trade industrial/electrical/mechanical contractor, est. 1961, 1,100+ employees, 8M+ man-hours/year; Brian Jones appointed CEO Jan 5 2026; 3 in-window add-ons: Ruder Electric (Feb 2026), J&J Electric of Indiana (Dec 2025), MelKay (Sep 2026)",
-        "Hidden Harbor Capital Partners (Boca Raton, FL) -> Escape Fire Protection (Vadnais Heights, MN) -- new Midwest fire & life-safety platform, Fund III (\\$825M), President Jason Gahm staying, add-ons planned"
+        "Hidden Harbor Capital Partners (Boca Raton, FL) -> Escape Fire Protection (Vadnais Heights, MN) -- new Midwest fire & life-safety platform, Fund III (\\$825M), President Jason Gahm staying, add-ons planned",
+        "Apax Partners -> NextGen Security (Exton, PA; commercial integrated security; acquired from Dunes Point Capital, completed Sep 9 2026)",
+        "Trivest Partners -> Halo Service Partners (commercial security platform formed from ProTech Security + Verified Security, Jul 21 2026)",
+        "Gemspring Capital -> Key Line Construction + Palouse Power (Pacific Northwest utility T&D / substation platform, Jul 29 2026)",
+        "Greenbelt Capital Partners -> Bowe & Gant (Southern NJ electrical and energy-infrastructure services, Jul 20 2026)",
+        "Quad-C Management -> Flow Service Partners (commercial HVACR); Blackford Capital -> Security Fire Solutions (fire/security, anchor Security Fire Systems Dec 2024); Right Angle Partners -> Fire Protection Team (CT fire protection)"
       ]
     },
     {
@@ -3149,8 +3632,7 @@
         "Pye-Barker -> ADIA + GIC minority (Jan 2025; Altas / LGP continuing)",
         "Summit Companies -> BlackRock LTPC -> BDT & MSD Partners (announced 2025)",
         "Sciens Building Solutions -> Huron Capital -> Carlyle (Southern Fire Control add-on, Jan 2026)",
-        "Guardian Fire Services -> Investcorp (Dec 2025); AIR Control Concepts -> Blackstone sole institutional investor (from Madison Dearborn; initial invest Jul 2024)",
-        "Building Controls & Solutions -> LKCM Headwater -> Platte River Equity (Feb 2025)",
+        "Guardian Fire Services -> Investcorp (Dec 2025)",
         "Rogers Building Solutions -> Aterian / Craft Work -> GHK Capital; MCS -> MBO backed by J.P. Morgan Asset Management",
         "Sponsor ownership noted: Modigent = OMERS Private Equity; PremiStar = Partners Group; APIC Solutions = Tower Arch Capital",
         "Nextech (Audax Private Equity) -> sale process underway in 2026; Audax advanced bidders into a second round (PE Hub) — a potential sponsor transition to watch",
@@ -3168,7 +3650,11 @@
         "Kohlberg & Co. -> RESA Power (from Investcorp, Apr 2025)",
         "A&M Capital Partners -> East Coast Power (platform formation, Jan 2025)",
         "Apax Partners -> Altus Fire & Life Safety (from AE Industrial Partners, Sep 2024)",
-        "Peterson Partners -> \\$510M single-asset continuation vehicle for Kelso Industries (Peterson Kelso Coinvest, LP), closed Sep 9 2026; NorthSands Capital (founded 2023 by fmr Blackstone SMD Bruce McEvoy) sole lead investor committing \\$450M+; Peterson Partners Fund X rolled its position and added further investment"
+        "Peterson Partners -> \\$510M single-asset continuation vehicle for Kelso Industries (Peterson Kelso Coinvest, LP), closed Sep 9 2026; NorthSands Capital (founded 2023 by fmr Blackstone SMD Bruce McEvoy) sole lead investor committing \\$450M+; Peterson Partners Fund X rolled its position and added further investment",
+        "Truelink Capital -> JT Thorpe Group: acquisition completed Sep 3 2026 (announced Jul 30 2026)",
+        "Security 101 -> Gemspring Capital -> Morgan Stanley Capital Partners (Feb 2026); add-on Silverstrand Technologies (Aug 2026)",
+        "Pre-baseline context: Broadwing Capital + Davidson Kempner -> Upchurch Companies (Mar 27 2024); Slate Capital -> Vertical Mechanical Group (Sterling VA, Jun 22 2023)",
+        "Integrated Power Services (Searchlight Capital Partners) -> completed TechPro Power Group acquisition Jan 29 2026 (sponsor corrected from Ares/EIP)"
       ]
     },
     {
@@ -3178,7 +3664,8 @@
         "APi Group (NYSE: APG) -> ~$7.0B FY2025 revenue; FLS market-share leader (~15%+); EMCOR Group (NYSE: EME) -> active commercial mechanical/electrical acquirer",
         "APi Group (NYSE: APG) -> continued public-strategic FLS consolidation: CertaSite (from Riverside, Dec 2025), WTech Fire Group (Europe, closed Jul 2026), Onyx-Fire Protection (Canada, from Blackstone Tactical Opportunities, 2026) — public buyer; context, not PE master",
         "Legence (Nasdaq: LGN; IPO Sep 2025; Blackstone retains a stake) -> commercial energy-services, engineering & mechanical; acquired The Bowers Group (Beltsville MD; mechanical/plumbing/process; ~$325M+, Jan 2026); now a public strategic — context, not PE master",
-        "Limbach Holdings (Nasdaq: LMB) -> public building-systems/MEPC strategic; acquired 1901 Inc. (Madison WI union MEP contractor, $63M, Sep 1 2026) and CYMCOR Inc. (TX, data-center commissioning, $30M, closed Aug 4 2026) -- public buyer, context only, not PE master"
+        "Limbach Holdings (Nasdaq: LMB) -> public building-systems/MEPC strategic; acquired 1901 Inc. (Madison WI union MEP contractor, $63M, Sep 1 2026) and CYMCOR Inc. (TX, data-center commissioning, $30M, closed Aug 4 2026) -- public buyer, context only, not PE master",
+        "APi Group (NYSE: APG) -> Evergreen Fire and Security (Tacoma WA, ~$55M revenue, Sep 2026); CertaSite acquisition closed Feb 2 2026 -- public buyer, context only"
       ]
     },
     {
@@ -3192,7 +3679,7 @@
     }
   ],
   "notes": {
-    "new": "New in v1.3 (highlighted for proofing): 18 commercial deals added — Fortis/LaMarco, Exigent/Superior Building Services, Symbiome/Total Mechanical, FirstCall x3 (CLS, Automated Building Solutions, Force Electrical), Sciens/Southern Fire Control, Ares/Techpro Power Group, Legence/Bowers, Prime Electric/Scholes, Investcorp/Guardian, Percheron/ASPYRE, Agellus/Bluejack, McNally-Foundral/Smith & Oby, Foundral/A. Hattersley & Sons, APIC/Control Fire Systems, APIC/Sierra Detention Systems, Modigent/Southland Mechanical. Modigent ownership corrected to OMERS Private Equity. ERG (Godspeed) archived as an architecture/engineering firm, out of commercial-contractor scope. Top 10 updated (ERG -> Foundral).",
-    "archive": "Archive note: residential/residential-led transactions remain archived (commercial-only scope). Engineering Resource Group (ERG) / Godspeed archived in v1.3 — architecture/engineering firm, outside commercial-contractor scope. Kelso Industries (~$1B+ revenue, 31 acquisitions since 2021) noted in Section 04 as a platform milestone, not a single transaction. Sila Services / Goldman Sachs (~$1.7B) is context-only: residential-led and pre-baseline. Stonebridge/Paramount Mechanical excluded (unverifiable transaction date)."
+    "new": "New in v1.8 (highlighted for proofing): 30 commercial deals added from the Sep 24 2026 sweep (Jul-Sep 2026 announcements, each confirmed on a primary source). Section 04: Orion label consolidated per rule 5; Altus sponsor corrected to Apax.",
+    "archive": "Archive note: residential/residential-led transactions remain archived (commercial-only scope). Engineering Resource Group (ERG) / Godspeed archived in v1.3 — architecture/engineering firm, outside commercial-contractor scope. Kelso Industries (~$1B+ revenue, 31 acquisitions since 2021) noted in Section 04 as a platform milestone, not a single transaction. Sila Services / Goldman Sachs (~$1.7B) is context-only: residential-led and pre-baseline. Stonebridge/Paramount Mechanical excluded (unverifiable transaction date). v1.8 scope rulings (Scott, Sep 24 2026): manufacturers, pure distributors and manufacturers' reps archived (Functional Devices, Building Controls & Solutions, AIR Control Concepts / Technical Air Systems) -- distributors that also self-perform contracting/service stay in scope; Canadian targets of U.S. PE platforms stay in scope; pre-baseline rows archived to Section 04 context."
   }
 }
